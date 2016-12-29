@@ -14,6 +14,7 @@ using DevExpress.XtraBars;
 
 
 //https://www.youtube.com/watch?v=D2m0OGFyufU
+//https://www.youtube.com/watch?v=D2m0OGFyufU
 
 
 namespace WindowsFormsApplication2
@@ -54,7 +55,7 @@ namespace WindowsFormsApplication2
             // funciona - SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='"+ txtusuario.Text + "' and Password = '" +txtsenha.Text+ "' and NivelAcesso = @NivelAcesso ", con);
 
            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login  ", con);
-
+           
 
             cmd.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
             cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
