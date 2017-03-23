@@ -336,16 +336,7 @@ namespace WindowsFormsApplication2
             }
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -355,26 +346,13 @@ namespace WindowsFormsApplication2
             ss.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Agenda_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private static List<Agend> BuscarAgenda(String pData)
         {
 
