@@ -366,6 +366,7 @@ namespace WindowsFormsApplication2
                 Console.WriteLine(string.Format(
                     "select Id, Data, Hora, Cliente, Projeto, Servico, Sala, Descricao from Agenda where Agenda.Data = '{0}'", pData));
 
+
                 SqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
