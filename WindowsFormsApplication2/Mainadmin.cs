@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    public partial class LocInstrum : Form
+    public partial class MenuADMin : Form
     {
-        public LocInstrum()
+        public MenuADMin()
         {
             InitializeComponent();
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
 
-            Pagamento ss = new Pagamento();
-            ss.Show();
         }
     }
 }

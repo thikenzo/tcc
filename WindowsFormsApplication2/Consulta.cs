@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication2
 {
@@ -15,6 +16,20 @@ namespace WindowsFormsApplication2
         public Consulta()
         {
             InitializeComponent();
+        }
+
+        public class BDComun
+        {
+            public static SqlConnection ObterConexao()
+            {
+                SqlConnection Conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
+                Conn.Open();
+
+                return Conn;
+
+            }
+
+
         }
 
         public Cliente ClienteSelecionado { get; set; }
@@ -27,7 +42,7 @@ namespace WindowsFormsApplication2
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-
+            
             this.Hide();
 
             Maincs ss = new Maincs();
@@ -45,7 +60,14 @@ namespace WindowsFormsApplication2
 
         private void pesquisa_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ClienteFunc.BuscarCliente(nomepesquisa.Text);
+      
+                dataGridView1.DataSource = ClienteFunc.BuscarCliente(nomepesquisa.Text);
+
+            this.dataGridView1.Columns["Id"].Visible = false;
+            this.dataGridView1.Columns["Rg"].Visible = false;
+            this.dataGridView1.Columns["Cpf"].Visible = false;
+            
+        
         }
 
        
@@ -121,6 +143,18 @@ namespace WindowsFormsApplication2
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Text = "";
+        }
+
+        private void comboBox1_Enter(object sender, EventArgs e)
+        {
+            Validar val = new Validar();
+            comboBox1.DataSource = val.listanivel();
+            comboBox1.DisplayMember = "NivelAcesso";
         }
     }
 }

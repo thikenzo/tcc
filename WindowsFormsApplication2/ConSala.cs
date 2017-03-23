@@ -28,7 +28,7 @@ namespace WindowsFormsApplication2
         private void btnMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainADM ss = new MainADM();
+            MenuADM ss = new MenuADM();
             ss.Show();
         }
 
@@ -79,10 +79,12 @@ namespace WindowsFormsApplication2
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = SalaFunc.BuscarEquip(textBox1.Text);
+            this.dataGridView2.Columns["Id"].Visible = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            this.dataGridView2.Columns["Id"].Visible = false;
             SalaCad salaC = new SalaCad();
             salaC.salatxt.Text = this.dataGridView2.CurrentRow.Cells[1].Value.ToString();
             salaC.identificacaotxt.Text = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
@@ -90,13 +92,12 @@ namespace WindowsFormsApplication2
             salaC.valortxt.Text = this.dataGridView2.CurrentRow.Cells[4].Value.ToString();
             salaC.situacao = this.dataGridView2.CurrentRow.Cells[5].Value.ToString();
             this.Close();
-
             salaC.ShowDialog();
         }
 
         private void ConSala_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

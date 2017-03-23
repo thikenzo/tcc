@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,49 +38,59 @@
             this.pesquisa = new System.Windows.Forms.Button();
             this.editarcliente = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 318);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 306);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1914, 624);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(225, 19);
+            this.label1.Location = new System.Drawing.Point(628, 65);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 36);
+            this.label1.Size = new System.Drawing.Size(394, 67);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CONSULTA CLIENTE";
+            this.label1.Text = "CONSULTAR";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(587, 110);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(190, 216);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.Size = new System.Drawing.Size(182, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pesquisar Nome :";
             // 
             // nomepesquisa
             // 
-            this.nomepesquisa.Location = new System.Drawing.Point(590, 135);
+            this.nomepesquisa.Location = new System.Drawing.Point(414, 216);
+            this.nomepesquisa.Margin = new System.Windows.Forms.Padding(6);
             this.nomepesquisa.Name = "nomepesquisa";
-            this.nomepesquisa.Size = new System.Drawing.Size(182, 20);
+            this.nomepesquisa.Size = new System.Drawing.Size(360, 31);
             this.nomepesquisa.TabIndex = 3;
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(707, 235);
+            this.btnVoltar.Location = new System.Drawing.Point(1768, 1012);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(6);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(87, 38);
+            this.btnVoltar.Size = new System.Drawing.Size(174, 73);
             this.btnVoltar.TabIndex = 4;
             this.btnVoltar.Text = "VOLTAR";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -87,9 +98,10 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(590, 235);
+            this.btnCadastrar.Location = new System.Drawing.Point(1560, 1012);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(87, 38);
+            this.btnCadastrar.Size = new System.Drawing.Size(174, 73);
             this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -97,9 +109,10 @@
             // 
             // pesquisa
             // 
-            this.pesquisa.Location = new System.Drawing.Point(590, 174);
+            this.pesquisa.Location = new System.Drawing.Point(1322, 206);
+            this.pesquisa.Margin = new System.Windows.Forms.Padding(6);
             this.pesquisa.Name = "pesquisa";
-            this.pesquisa.Size = new System.Drawing.Size(89, 23);
+            this.pesquisa.Size = new System.Drawing.Size(178, 44);
             this.pesquisa.TabIndex = 6;
             this.pesquisa.Text = "PESQUISAR";
             this.pesquisa.UseVisualStyleBackColor = true;
@@ -107,9 +120,10 @@
             // 
             // editarcliente
             // 
-            this.editarcliente.Location = new System.Drawing.Point(590, 375);
+            this.editarcliente.Location = new System.Drawing.Point(70, 1041);
+            this.editarcliente.Margin = new System.Windows.Forms.Padding(6);
             this.editarcliente.Name = "editarcliente";
-            this.editarcliente.Size = new System.Drawing.Size(75, 23);
+            this.editarcliente.Size = new System.Drawing.Size(150, 44);
             this.editarcliente.TabIndex = 7;
             this.editarcliente.Text = "edita";
             this.editarcliente.UseVisualStyleBackColor = true;
@@ -117,19 +131,33 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(691, 374);
+            this.btnExcluir.Location = new System.Drawing.Point(272, 1039);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(6);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(150, 44);
             this.btnExcluir.TabIndex = 8;
             this.btnExcluir.Text = "excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(893, 216);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(241, 33);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Enter += new System.EventHandler(this.comboBox1_Enter);
+            // 
             // Consulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 438);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(2014, 1142);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.editarcliente);
             this.Controls.Add(this.pesquisa);
@@ -139,6 +167,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Consulta";
@@ -161,5 +191,6 @@
         private System.Windows.Forms.Button pesquisa;
         private System.Windows.Forms.Button editarcliente;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

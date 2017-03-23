@@ -50,21 +50,25 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(232, 31);
+            this.label2.Location = new System.Drawing.Point(464, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(280, 38);
+            this.label2.Size = new System.Drawing.Size(532, 69);
             this.label2.TabIndex = 5;
             this.label2.Text = "CONSULTA SALA";
             // 
             // dataGridView2
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(45, 154);
+            this.dataGridView2.Location = new System.Drawing.Point(90, 296);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(644, 226);
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1274, 435);
             this.dataGridView2.TabIndex = 6;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -75,19 +79,22 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(39, 114);
+            this.label1.Location = new System.Drawing.Point(78, 219);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 17);
+            this.label1.Size = new System.Drawing.Size(280, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "PESQUISAR SALA :";
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Location = new System.Drawing.Point(198, 111);
+            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(390, 206);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 20);
+            this.textBox1.Size = new System.Drawing.Size(476, 49);
             this.textBox1.TabIndex = 8;
             // 
             // btnCadastrar
@@ -100,9 +107,10 @@
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrar.Location = new System.Drawing.Point(368, 405);
+            this.btnCadastrar.Location = new System.Drawing.Point(736, 779);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(121, 33);
+            this.btnCadastrar.Size = new System.Drawing.Size(242, 63);
             this.btnCadastrar.TabIndex = 11;
             this.btnCadastrar.Text = "     CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -118,9 +126,10 @@
             this.btnAgenda.ForeColor = System.Drawing.Color.White;
             this.btnAgenda.Image = ((System.Drawing.Image)(resources.GetObject("btnAgenda.Image")));
             this.btnAgenda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgenda.Location = new System.Drawing.Point(495, 405);
+            this.btnAgenda.Location = new System.Drawing.Point(990, 779);
+            this.btnAgenda.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgenda.Name = "btnAgenda";
-            this.btnAgenda.Size = new System.Drawing.Size(121, 33);
+            this.btnAgenda.Size = new System.Drawing.Size(242, 63);
             this.btnAgenda.TabIndex = 11;
             this.btnAgenda.Text = "     AGENDAR";
             this.btnAgenda.UseVisualStyleBackColor = false;
@@ -136,9 +145,10 @@
             this.btnMenu.ForeColor = System.Drawing.Color.White;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(623, 405);
+            this.btnMenu.Location = new System.Drawing.Point(1246, 779);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(6);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(98, 33);
+            this.btnMenu.Size = new System.Drawing.Size(196, 63);
             this.btnMenu.TabIndex = 12;
             this.btnMenu.Text = "    MENU";
             this.btnMenu.UseVisualStyleBackColor = false;
@@ -154,9 +164,10 @@
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(22, 405);
+            this.btnEditar.Location = new System.Drawing.Point(44, 779);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(98, 33);
+            this.btnEditar.Size = new System.Drawing.Size(196, 63);
             this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "      EDITAR";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -172,9 +183,10 @@
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(126, 405);
+            this.btnExcluir.Location = new System.Drawing.Point(252, 779);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(6);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(98, 33);
+            this.btnExcluir.Size = new System.Drawing.Size(196, 63);
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "     EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
@@ -184,19 +196,19 @@
             // 
             this.btnPesquisa.BackColor = System.Drawing.Color.SteelBlue;
             this.btnPesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btnPesquisa.Image")));
-            this.btnPesquisa.Location = new System.Drawing.Point(455, 96);
+            this.btnPesquisa.Location = new System.Drawing.Point(910, 185);
+            this.btnPesquisa.Margin = new System.Windows.Forms.Padding(6);
             this.btnPesquisa.Name = "btnPesquisa";
-            this.btnPesquisa.Size = new System.Drawing.Size(48, 44);
+            this.btnPesquisa.Size = new System.Drawing.Size(96, 85);
             this.btnPesquisa.TabIndex = 9;
             this.btnPesquisa.UseVisualStyleBackColor = false;
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // ConSala
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(733, 455);
+            this.ClientSize = new System.Drawing.Size(1552, 946);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
@@ -207,11 +219,14 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConSala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOAR ESTÚDIO - CONSULTAR SALA";
             this.Load += new System.EventHandler(this.ConSala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

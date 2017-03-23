@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication2
 {
-    class AgendFunc
+    class conectcli
     {
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataAdapter dr;
+
+
         public class BDComun
         {
             public static SqlConnection ObterConexao()
@@ -19,28 +25,21 @@ namespace WindowsFormsApplication2
                 return Conn;
 
             }
-            
-               
-
 
         }
-
-        public static int btnInstrum(Agend pAgend)
+            public void autocomplete(TextBox atxt)
         {
-            int retorno = 0;
-            using (SqlConnection Conn = BDComun.ObterConexao())
+            using (SqlConnection conn = BDComun.ObterConexao())
             {
-                SqlCommand Comando = new SqlCommand(string.Format("Insert Into Agenda (Data, Cliente, Projeto, Servico, Sala, Descricao ) values ('{0}', '{1}','{2}','{3}','{4}','{5}')",
-                    pAgend.Data, pAgend.Cliente, pAgend.Projeto, pAgend.Servico, pAgend.Sala, pAgend.Descricao), Conn);
+                SqlCommand cmd = new SqlCommand("Select Nome from CAD", conn);
 
-                retorno = Comando.ExecuteNonQuery();
-                Conn.Close();
+                SqlDataReader reader1 = cmd.ExecuteReader();
 
-
+                while (reader1.Read())
+                {
+                    atxt.AutoCompleteCustomSource.Add(reader1["Nome"].ToString());
+                }
             }
-            return retorno;
-
-
         }
     }
 }

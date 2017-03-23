@@ -11,6 +11,7 @@ namespace WindowsFormsApplication2
 
         public Int64 Id { get; set; }
         public String Data { get; set; }
+        public String Hora { get; set; }
         public String Cliente { get; set; }
         public String Projeto { get; set; }
         public String Servico { get; set; }
@@ -20,11 +21,12 @@ namespace WindowsFormsApplication2
 
         public Agend() { }
 
-        public Agend(Int64 pId,String pData, String pCliente, String pProjeto, String pServico, String pSala, String pDescricao)
+        public Agend(Int64 pId,String pData, String pHora, String pCliente, String pProjeto, String pServico, String pSala, String pDescricao)
 
         {
             this.Id = Id;
             this.Data = pData;
+            this.Hora = pHora;
             this.Cliente = pCliente;
             this.Projeto = pProjeto;
             this.Servico = pServico;

@@ -28,5 +28,15 @@ namespace WindowsFormsApplication2
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nomecliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

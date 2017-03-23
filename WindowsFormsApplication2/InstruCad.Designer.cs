@@ -50,36 +50,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 112);
+            this.label1.Location = new System.Drawing.Point(64, 215);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(198, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome Instrumento :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 158);
+            this.label2.Location = new System.Drawing.Point(112, 304);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.Size = new System.Drawing.Size(152, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Classificação :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(97, 203);
+            this.label3.Location = new System.Drawing.Point(194, 390);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tipo :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 262);
+            this.label4.Location = new System.Drawing.Point(188, 504);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(74, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Valor :";
             // 
@@ -87,17 +91,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(81, 29);
+            this.label6.Location = new System.Drawing.Point(162, 56);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(457, 36);
+            this.label6.Size = new System.Drawing.Size(904, 67);
             this.label6.TabIndex = 5;
             this.label6.Text = "CADASTRO DE INSTRUMENTO";
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(237, 331);
+            this.btnAdicionar.Location = new System.Drawing.Point(474, 637);
+            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(150, 44);
             this.btnAdicionar.TabIndex = 6;
             this.btnAdicionar.Text = "ADICIONAR";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -105,9 +111,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(333, 331);
+            this.btnEditar.Location = new System.Drawing.Point(666, 637);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.Size = new System.Drawing.Size(150, 44);
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -115,9 +122,10 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(426, 331);
+            this.btnExcluir.Location = new System.Drawing.Point(852, 637);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(150, 44);
             this.btnExcluir.TabIndex = 8;
             this.btnExcluir.Text = "REMOVER";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -125,9 +133,10 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(518, 331);
+            this.btnVoltar.Location = new System.Drawing.Point(1036, 637);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 23);
+            this.btnVoltar.Size = new System.Drawing.Size(150, 44);
             this.btnVoltar.TabIndex = 9;
             this.btnVoltar.Text = "VOLTAR";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -135,17 +144,19 @@
             // 
             // txtNomeEquip
             // 
-            this.txtNomeEquip.Location = new System.Drawing.Point(149, 104);
+            this.txtNomeEquip.Location = new System.Drawing.Point(298, 200);
+            this.txtNomeEquip.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtNomeEquip.Name = "txtNomeEquip";
-            this.txtNomeEquip.Size = new System.Drawing.Size(259, 20);
+            this.txtNomeEquip.Size = new System.Drawing.Size(514, 31);
             this.txtNomeEquip.TabIndex = 10;
             // 
             // radionacional
             // 
             this.radionacional.AutoSize = true;
-            this.radionacional.Location = new System.Drawing.Point(149, 156);
+            this.radionacional.Location = new System.Drawing.Point(298, 300);
+            this.radionacional.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radionacional.Name = "radionacional";
-            this.radionacional.Size = new System.Drawing.Size(67, 17);
+            this.radionacional.Size = new System.Drawing.Size(127, 29);
             this.radionacional.TabIndex = 11;
             this.radionacional.TabStop = true;
             this.radionacional.Text = "Nacional";
@@ -155,9 +166,10 @@
             // radiointernacional
             // 
             this.radiointernacional.AutoSize = true;
-            this.radiointernacional.Location = new System.Drawing.Point(247, 156);
+            this.radiointernacional.Location = new System.Drawing.Point(494, 300);
+            this.radiointernacional.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radiointernacional.Name = "radiointernacional";
-            this.radiointernacional.Size = new System.Drawing.Size(86, 17);
+            this.radiointernacional.Size = new System.Drawing.Size(166, 29);
             this.radiointernacional.TabIndex = 12;
             this.radiointernacional.TabStop = true;
             this.radiointernacional.Text = "Internacional";
@@ -167,26 +179,29 @@
             // combotipo
             // 
             this.combotipo.FormattingEnabled = true;
-            this.combotipo.Location = new System.Drawing.Point(149, 195);
+            this.combotipo.Location = new System.Drawing.Point(298, 375);
+            this.combotipo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.combotipo.Name = "combotipo";
-            this.combotipo.Size = new System.Drawing.Size(120, 21);
+            this.combotipo.Size = new System.Drawing.Size(236, 33);
             this.combotipo.TabIndex = 13;
             this.combotipo.SelectedIndexChanged += new System.EventHandler(this.combotipo_SelectedIndexChanged);
             this.combotipo.Enter += new System.EventHandler(this.combotipo_Enter);
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(149, 254);
+            this.txtValor.Location = new System.Drawing.Point(298, 488);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.Size = new System.Drawing.Size(196, 31);
             this.txtValor.TabIndex = 14;
             // 
             // button3
             // 
             this.button3.Image = global::WindowsFormsApplication2.Properties.Resources.Bot_o_Editar_;
-            this.button3.Location = new System.Drawing.Point(457, 203);
+            this.button3.Location = new System.Drawing.Point(914, 390);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 40);
+            this.button3.Size = new System.Drawing.Size(252, 77);
             this.button3.TabIndex = 17;
             this.button3.Text = "PNG";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -195,9 +210,10 @@
             // button2
             // 
             this.button2.Image = global::WindowsFormsApplication2.Properties.Resources.Botão_Remover;
-            this.button2.Location = new System.Drawing.Point(457, 249);
+            this.button2.Location = new System.Drawing.Point(914, 479);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 40);
+            this.button2.Size = new System.Drawing.Size(272, 77);
             this.button2.TabIndex = 16;
             this.button2.Text = "PNG";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -205,18 +221,19 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(350, 232);
+            this.button1.Location = new System.Drawing.Point(700, 446);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(150, 44);
             this.button1.TabIndex = 18;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // InstruCad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 375);
+            this.ClientSize = new System.Drawing.Size(1238, 721);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -234,6 +251,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InstruCad";

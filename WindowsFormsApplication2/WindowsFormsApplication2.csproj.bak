@@ -33,17 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +68,7 @@
     <Compile Include="Agenda.Designer.cs">
       <DependentUpon>Agenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Agendamento.cs" />
     <Compile Include="AgendaServico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +134,23 @@
     <Compile Include="MainADM.Designer.cs">
       <DependentUpon>MainADM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mainadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainadmin.Designer.cs">
+      <DependentUpon>Mainadmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maincs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maincs.Designer.cs">
       <DependentUpon>Maincs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuADM.Designer.cs">
+      <DependentUpon>MenuADM.cs</DependentUpon>
     </Compile>
     <Compile Include="Pagamento.cs">
       <SubType>Form</SubType>
@@ -195,8 +214,14 @@
     <EmbeddedResource Include="MainADM.resx">
       <DependentUpon>MainADM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mainadmin.resx">
+      <DependentUpon>Mainadmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maincs.resx">
       <DependentUpon>Maincs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuADM.resx">
+      <DependentUpon>MenuADM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagamento.resx">
       <DependentUpon>Pagamento.cs</DependentUpon>

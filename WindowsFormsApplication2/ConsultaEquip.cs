@@ -26,6 +26,7 @@ namespace WindowsFormsApplication2
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = InstrumFunc.BuscarEquip(textBox1.Text);
+            this.dataGridView2.Columns["Id"].Visible = false;
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace WindowsFormsApplication2
         {
 
             this.Hide();
-            MainADM ss = new MainADM();
+            MenuADM ss = new MenuADM();
             ss.Show();
         }
 

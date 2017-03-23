@@ -9,22 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
+
 namespace WindowsFormsApplication2
 {
-    public partial class AgendaServico : Form
+    public partial class AgendaServico : XtraForm
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Thiago\Desktop\WindowsFormsApplication2\banco.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
 
         public AgendaServico()
         {
             InitializeComponent();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
         }
 
         public AgendaServico(string texto)
         {
             InitializeComponent();
             datalabel.Text = texto;
+            //label10.Text = label22;
         }
 
 
@@ -92,6 +99,11 @@ namespace WindowsFormsApplication2
 
         private void AgendaServico_Load(object sender, EventArgs e)
         {
+            conectcli c = new conectcli();
+            c.autocomplete(clientetxt);
+
+            
+
             sala.Items.Clear();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -141,8 +153,8 @@ namespace WindowsFormsApplication2
 
 
 
-                Pagamento destino = new Pagamento(clientetxt.Text);
-                destino.Show();
+                Pagamento novaForm = new Pagamento(clientetxt.Text);
+                novaForm.Show();
 
             }
         }
@@ -153,6 +165,24 @@ namespace WindowsFormsApplication2
         }
 
         private void datalabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show(" Agendamento não será salvo! Deseja sair?", "NOAR ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                this.Hide();
+
+                MenuADM ss = new MenuADM();
+                ss.Show();
+            }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }

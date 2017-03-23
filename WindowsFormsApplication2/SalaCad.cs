@@ -32,7 +32,7 @@ namespace WindowsFormsApplication2
 
         }
 
-        static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Thiago\Desktop\WindowsFormsApplication2\banco.mdf;Integrated Security=True;Connect Timeout=30";
+        static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
         SqlConnection conexao = new SqlConnection(strCn);
 
 
@@ -130,7 +130,7 @@ namespace WindowsFormsApplication2
         {
             this.Hide();
 
-            MainADM ss = new MainADM();
+            MenuADM ss = new MenuADM();
             ss.Show();
         }
 

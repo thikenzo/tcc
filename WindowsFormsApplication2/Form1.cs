@@ -51,45 +51,44 @@ namespace WindowsFormsApplication2
         public void LogarF()
         {
 
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Thiago\Desktop\WindowsFormsApplication2\banco.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
             // funciona - SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='"+ txtusuario.Text + "' and Password = '" +txtsenha.Text+ "' and NivelAcesso = @NivelAcesso ", con);
 
-           SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login  ", con);
-           
+            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login  and NivelAcesso = @NivelAcesso ", con);
+
 
             cmd.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
             cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
-            //cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = nivelacesso.Text;
+            cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = nivelacesso.Text;
             con.Open();
-            
+
             SqlDataReader le = null;
             le = cmd.ExecuteReader();
             if (le.Read())
             {
-                this.Hide();
-                
-                if(nivelacesso.SelectedIndex == 1)
-                {
-                    
-                    this.Hide();
-                    Maincs cc = new Maincs();
-                    cc.Show();
-                }
-                else
-                
+                if (nivelacesso.SelectedIndex == 0)
                 {
                     this.Hide();
-                    MainADM cc = new MainADM();
-                    cc.Show();
+                    MenuADM ssa = new MenuADM();
+                    ssa.Show();
                 }
-                }
+
+                    if (nivelacesso.SelectedIndex == 1)
+                    {
+                        this.Hide();
+                        Maincs ss = new Maincs();
+                        ss.Show();
+                    }
+               
+            }
                 else
                 {
-                    MessageBox.Show("Nivel de acesso ou senha INCORRETOS!", "ERRO AO LOGAR");
-                    logado = false;
+                MessageBox.Show("Usuário ou Nivel de Acesso não confere!!", "ERRO AO LOGAR");
                 }
             
         }
+            
+        
         
             
 
@@ -158,6 +157,21 @@ namespace WindowsFormsApplication2
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+
+            Application.Exit();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuADM ss = new MenuADM();
+            ss.Show();
         }
     }
 }

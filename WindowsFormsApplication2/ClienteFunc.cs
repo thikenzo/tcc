@@ -14,7 +14,7 @@ namespace WindowsFormsApplication2
         {
             public static SqlConnection ObterConexao()
             {
-                SqlConnection Conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Thiago\Desktop\WindowsFormsApplication2\banco.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection Conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
                 Conn.Open();
 
                 return Conn;
@@ -84,6 +84,7 @@ namespace WindowsFormsApplication2
             List<Cliente> Lista = new List<Cliente>();
             using (SqlConnection con = BDComun.ObterConexao())
             {
+                
                 SqlCommand comando = new SqlCommand(string.Format(
                     "Select  Id, Nome, Telefone, Celular, Email, Endereco, N, Bairro, Rg, Cpf, NivelAcesso from CAD where Nome like '%{0}%'", pNome), con);
 
@@ -123,7 +124,7 @@ namespace WindowsFormsApplication2
 
                 Cliente pCliente = new Cliente();
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select Id, Nome, Telefone, Celular, Email, Endereco, N, Bairro, Rg, Cpf, NivelAcesso from CAD where Id={0}", pId), conexao);
+                    "Select Id, Nome, Telefone, Celular, Email, Endereco, N, Bairro, Rg, Cpf, NivelAcesso from CAD where Id={0} and", pId), conexao);
 
                SqlDataReader reader = comando.ExecuteReader();
 
