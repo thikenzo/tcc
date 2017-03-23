@@ -24,36 +24,19 @@ namespace WindowsFormsApplication2
 
     private void Relatorio_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select Dia from Tb_Dia";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                comboBox1.Items.Add(dr["Dia"].ToString());
-            }
-  
-                servico.Items.Clear();
-                //con.Open();
-                SqlCommand cmda = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select Relatorio from Tb_Relatorio";
-                cmd.ExecuteNonQuery();
-                DataTable dta = new DataTable();
-                SqlDataAdapter daa = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    servico.Items.Add(dr["Relatorio"].ToString());
-                }
-                con.Close();
-            
+ 
         }
-     
+
+        private void servico_Enter(object sender, EventArgs e)
+        {
+            Validar val = new Validar();
+            servico.DataSource = val.listarelatorio();
+            servico.DisplayMember = "Relatorio";
+        }
+
+        private void servico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            servico.Text = "";
+        }
     }
 }

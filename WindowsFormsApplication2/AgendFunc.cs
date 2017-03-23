@@ -30,8 +30,8 @@ namespace WindowsFormsApplication2
             int retorno = 0;
             using (SqlConnection Conn = BDComun.ObterConexao())
             {
-                SqlCommand Comando = new SqlCommand(string.Format("Insert Into Agenda (Data, Cliente, Projeto, Servico, Sala, Descricao ) values ('{0}', '{1}','{2}','{3}','{4}','{5}')",
-                    pAgend.Data, pAgend.Cliente, pAgend.Projeto, pAgend.Servico, pAgend.Sala, pAgend.Descricao), Conn);
+                SqlCommand Comando = new SqlCommand(string.Format("Insert Into Agenda (Data, Hora, Cliente, Projeto, Servico, Sala, Descricao ) values ('{0}', '{1}','{2}','{3}','{4}','{5}','{6}')",
+                    pAgend.Data,pAgend.Hora , pAgend.Cliente, pAgend.Projeto, pAgend.Servico, pAgend.Sala, pAgend.Descricao), Conn);
 
                 retorno = Comando.ExecuteNonQuery();
                 Conn.Close();

@@ -48,8 +48,10 @@ namespace WindowsFormsApplication2
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+
+            label23.Visible = true;
             label22.Visible = true;
-            label22.Text = "Agenda - " + monthCalendar1.SelectionStart.Day.ToString() + "/" +
+            label22.Text = monthCalendar1.SelectionStart.Day.ToString() + "/" +
                  monthCalendar1.SelectionStart.Month.ToString() + "/" +
                 monthCalendar1.SelectionStart.Year.ToString();
 
@@ -66,7 +68,7 @@ namespace WindowsFormsApplication2
             button1.Text = "Agendar";
             button1.Enabled = true;
 
-            //Console.WriteLine(dataAgendamento);
+            Console.WriteLine(dataAgendamento);
 
             List<Agend> listaAgendamento = BuscarAgenda(dataAgendamento);
 
@@ -74,6 +76,9 @@ namespace WindowsFormsApplication2
             
             foreach (var agendamento in listaAgendamento)      
             {
+                label22.Text = monthCalendar1.SelectionStart.Day.ToString() + "/" +
+                     monthCalendar1.SelectionStart.Month.ToString() + "/" +
+                    monthCalendar1.SelectionStart.Year.ToString();
 
                 Console.WriteLine(agendamento.Id);
                 if (agendamento.Hora.Equals("09:00"))
@@ -89,7 +94,7 @@ namespace WindowsFormsApplication2
             String dataAgendamento1 = monthCalendar1.SelectionStart.Day.ToString() + "/" +
      monthCalendar1.SelectionStart.Month.ToString() + "/" +
      monthCalendar1.SelectionStart.Year.ToString();
-           
+            
 
             groupBox1.Visible = true;
             groupBox1.Text = "";
@@ -395,7 +400,7 @@ namespace WindowsFormsApplication2
         {
             this.Hide();
             
-            AgendaServico novaForm = new AgendaServico();
+            AgendaServico novaForm = new AgendaServico(label12.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -405,7 +410,7 @@ namespace WindowsFormsApplication2
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label1.Text);
+            AgendaServico novaForm = new AgendaServico(label1.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -413,7 +418,7 @@ namespace WindowsFormsApplication2
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label3.Text);
+            AgendaServico novaForm = new AgendaServico(label3.Text, label22.Text);
             novaForm.Show();
 
         
@@ -422,7 +427,7 @@ namespace WindowsFormsApplication2
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label5.Text);
+            AgendaServico novaForm = new AgendaServico(label5.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -430,7 +435,7 @@ namespace WindowsFormsApplication2
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label8.Text);
+            AgendaServico novaForm = new AgendaServico(label8.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -438,7 +443,7 @@ namespace WindowsFormsApplication2
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label10.Text);
+            AgendaServico novaForm = new AgendaServico(label10.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -446,7 +451,7 @@ namespace WindowsFormsApplication2
         private void button7_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label15.Text);
+            AgendaServico novaForm = new AgendaServico(label15.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -454,7 +459,7 @@ namespace WindowsFormsApplication2
         private void button8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label17.Text);
+            AgendaServico novaForm = new AgendaServico(label17.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -462,7 +467,7 @@ namespace WindowsFormsApplication2
         private void button9_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label19.Text);
+            AgendaServico novaForm = new AgendaServico(label19.Text, label22.Text);
             novaForm.Show();
 
         }
@@ -470,7 +475,7 @@ namespace WindowsFormsApplication2
         private void button10_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico novaForm = new AgendaServico(label21.Text);
+            AgendaServico novaForm = new AgendaServico(label21.Text, label22.Text);
             novaForm.Show();
 
         }

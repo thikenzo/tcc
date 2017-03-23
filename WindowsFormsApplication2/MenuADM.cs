@@ -70,7 +70,8 @@ namespace WindowsFormsApplication2
         {
             this.Hide();
             Cad ss = new Cad();
-            ss.Show();
+            ss.editar.Enabled = false;
+            ss.ShowDialog();
         }
 
         private void conpessoa_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)

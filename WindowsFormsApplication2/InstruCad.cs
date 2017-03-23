@@ -36,7 +36,7 @@ namespace WindowsFormsApplication2
 
 
         public string classificacao { get; set; }
-        //public Cliente ClieteAtual { get; set; }
+        public Cliente ClieteAtual { get; set; }
         public Instrum InstrumAtual { get; set; }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -49,8 +49,8 @@ namespace WindowsFormsApplication2
 
         private void InstruCad_Load(object sender, EventArgs e)
         {
-            btnExcluir.Enabled = false;
-            btnEditar.Enabled = false;
+            //btnExcluir.Enabled = false;
+            //btnEditar.Enabled = false;
             btnAdicionar.Enabled = true;
         }
 
@@ -127,6 +127,7 @@ namespace WindowsFormsApplication2
             pInstrum.Classificacao = classificacao;
             pInstrum.Tipo = combotipo.Text;
             pInstrum.valor = txtValor.Text;
+         
 
 
 

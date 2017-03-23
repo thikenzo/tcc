@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label11
@@ -117,6 +118,7 @@
             // 
             // servico
             // 
+            this.servico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.servico.FormattingEnabled = true;
             this.servico.Location = new System.Drawing.Point(242, 412);
             this.servico.Margin = new System.Windows.Forms.Padding(6);
@@ -128,6 +130,7 @@
             // 
             // sala
             // 
+            this.sala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sala.FormattingEnabled = true;
             this.sala.Location = new System.Drawing.Point(242, 521);
             this.sala.Margin = new System.Windows.Forms.Padding(6);
@@ -261,12 +264,21 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(978, 240);
+            this.label10.Location = new System.Drawing.Point(1070, 240);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 25);
             this.label10.TabIndex = 40;
             this.label10.Text = "label10";
             this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(959, 240);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 25);
+            this.label12.TabIndex = 41;
+            this.label12.Text = "Agenda - ";
             // 
             // AgendaServico
             // 
@@ -275,6 +287,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1764, 991);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
@@ -331,5 +344,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
     }
 }

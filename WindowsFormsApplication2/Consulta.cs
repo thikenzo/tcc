@@ -64,10 +64,12 @@ namespace WindowsFormsApplication2
                 dataGridView1.DataSource = ClienteFunc.BuscarCliente(nomepesquisa.Text);
 
             this.dataGridView1.Columns["Id"].Visible = false;
-            this.dataGridView1.Columns["Rg"].Visible = false;
-            this.dataGridView1.Columns["Cpf"].Visible = false;
-            
-        
+            //this.dataGridView1.Columns["Rg"].Visible = false;
+            //this.dataGridView1.Columns["Cpf"].Visible = false;
+            this.dataGridView1.Columns["Login"].Visible = false;
+            this.dataGridView1.Columns["Senha"].Visible = false;
+
+
         }
 
        
@@ -81,6 +83,10 @@ namespace WindowsFormsApplication2
                 //this.Close();
 
                 Cad Cad = new Cad();
+
+                Cad.editar.Enabled = true;
+                Cad.adicionar.Enabled = false;
+
                 Cad.txtNome.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 Cad.txtTelefone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 Cad.txtCelular.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -94,10 +100,6 @@ namespace WindowsFormsApplication2
                 this.Close();
 
                 Cad.ShowDialog();
-
-                //Cad.deletar.Enabled = true;
-                //Cad.editar.Enabled = true;
-                //Cad.adicionar.Enabled = false;
                 
             }
 

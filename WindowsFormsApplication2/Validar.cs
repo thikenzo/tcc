@@ -149,6 +149,78 @@ namespace WindowsFormsApplication2
                 return null;
             }
         }
+
+        public List<string> listanivelcad()
+        {
+            vsql = "Select Nivel from Tb_Cad_Nivel ";
+            SqlCommand objcmd = null;
+            List<string> Tipos = new List<string>();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    objcmd = new SqlCommand(vsql, objCon);
+                    SqlDataReader dr = objcmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Tipos.Add(dr["Nivel"].ToString());
+
+                    }
+                    return Tipos;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public List<string> listarelatorio()
+        {
+            vsql = "Select Relatorio from Tb_Relatorio ";
+            SqlCommand objcmd = null;
+            List<string> Tipos = new List<string>();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    objcmd = new SqlCommand(vsql, objCon);
+                    SqlDataReader dr = objcmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Tipos.Add(dr["Relatorio"].ToString());
+
+                    }
+                    return Tipos;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
  

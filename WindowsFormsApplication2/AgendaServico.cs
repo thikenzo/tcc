@@ -27,11 +27,11 @@ namespace WindowsFormsApplication2
             DevExpress.UserSkins.BonusSkins.Register();
         }
 
-        public AgendaServico(string texto)
+        public AgendaServico(string texto, string label22)
         {
             InitializeComponent();
             datalabel.Text = texto;
-            //label10.Text = label22;
+            label10.Text = label22;
         }
 
 
@@ -56,7 +56,8 @@ namespace WindowsFormsApplication2
             else
             {
                 Agend Agend = new Agend();
-                Agend.Data = datalabel.Text;
+                Agend.Data = label10.Text;
+                Agend.Hora = datalabel.Text;
                 Agend.Cliente = clientetxt.Text;
                 Agend.Projeto = projetotxt.Text;
                 Agend.Servico = servico.Text;
@@ -65,6 +66,7 @@ namespace WindowsFormsApplication2
 
                 int resultado = AgendFunc.btnInstrum(Agend);
 
+                this.Hide();
                 InstruLista ss = new InstruLista();
                 ss.Show();
 
@@ -93,6 +95,7 @@ namespace WindowsFormsApplication2
 
         private void sala_SelectedIndexChanged(object sender, EventArgs e)
         {
+           sala.Text = "";
         }
 
 
@@ -142,7 +145,8 @@ namespace WindowsFormsApplication2
             else
             {
                 Agend Agend = new Agend();
-                Agend.Data = datalabel.Text;
+                Agend.Data = label10.Text;
+                Agend.Hora = datalabel.Text;
                 Agend.Cliente = clientetxt.Text;
                 Agend.Projeto = projetotxt.Text;
                 Agend.Servico = servico.Text;
@@ -152,7 +156,7 @@ namespace WindowsFormsApplication2
                 int resultado = AgendFunc.btnInstrum(Agend);
 
 
-
+                this.Hide();
                 Pagamento novaForm = new Pagamento(clientetxt.Text);
                 novaForm.Show();
 

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cad));
             this.adicionar = new System.Windows.Forms.Button();
             this.voltar = new System.Windows.Forms.Button();
-            this.deletar = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@
             this.adicionar.Image = ((System.Drawing.Image)(resources.GetObject("adicionar.Image")));
             this.adicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.adicionar.Location = new System.Drawing.Point(40, 817);
-            this.adicionar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.adicionar.Margin = new System.Windows.Forms.Padding(6);
             this.adicionar.Name = "adicionar";
             this.adicionar.Size = new System.Drawing.Size(242, 63);
             this.adicionar.TabIndex = 0;
@@ -91,7 +90,7 @@
             this.voltar.Image = ((System.Drawing.Image)(resources.GetObject("voltar.Image")));
             this.voltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.voltar.Location = new System.Drawing.Point(914, 817);
-            this.voltar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.voltar.Margin = new System.Windows.Forms.Padding(6);
             this.voltar.Name = "voltar";
             this.voltar.Size = new System.Drawing.Size(196, 63);
             this.voltar.TabIndex = 2;
@@ -99,31 +98,12 @@
             this.voltar.UseVisualStyleBackColor = false;
             this.voltar.Click += new System.EventHandler(this.voltar_Click);
             // 
-            // deletar
-            // 
-            this.deletar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.deletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.deletar.FlatAppearance.BorderSize = 2;
-            this.deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deletar.ForeColor = System.Drawing.Color.White;
-            this.deletar.Image = ((System.Drawing.Image)(resources.GetObject("deletar.Image")));
-            this.deletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deletar.Location = new System.Drawing.Point(552, 817);
-            this.deletar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.deletar.Name = "deletar";
-            this.deletar.Size = new System.Drawing.Size(242, 63);
-            this.deletar.TabIndex = 3;
-            this.deletar.Text = "    DELETAR";
-            this.deletar.UseVisualStyleBackColor = false;
-            this.deletar.Click += new System.EventHandler(this.deletar_Click);
-            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.Menu;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(250, 435);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(460, 32);
             this.txtEmail.TabIndex = 15;
@@ -133,7 +113,7 @@
             this.txtNome.BackColor = System.Drawing.SystemColors.Menu;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(248, 281);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(6);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(460, 32);
             this.txtNome.TabIndex = 13;
@@ -184,7 +164,7 @@
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(950, 169);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(6);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.ReadOnly = true;
             this.txtSenha.Size = new System.Drawing.Size(196, 33);
@@ -210,7 +190,7 @@
             this.txtTelefone.BackColor = System.Drawing.SystemColors.Menu;
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(304, 358);
-            this.txtTelefone.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(6);
             this.txtTelefone.Mask = "(00)0000 0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(206, 32);
@@ -232,7 +212,7 @@
             this.txtCelular.BackColor = System.Drawing.SystemColors.Menu;
             this.txtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.Location = new System.Drawing.Point(810, 358);
-            this.txtCelular.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCelular.Margin = new System.Windows.Forms.Padding(6);
             this.txtCelular.Mask = "(00)0000 0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(206, 32);
@@ -255,7 +235,7 @@
             this.txtEndereco.BackColor = System.Drawing.SystemColors.Menu;
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndereco.Location = new System.Drawing.Point(312, 515);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(6);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(460, 32);
             this.txtEndereco.TabIndex = 23;
@@ -277,7 +257,7 @@
             this.txtN.BackColor = System.Drawing.SystemColors.Menu;
             this.txtN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtN.Location = new System.Drawing.Point(902, 435);
-            this.txtN.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtN.Margin = new System.Windows.Forms.Padding(6);
             this.txtN.Name = "txtN";
             this.txtN.Size = new System.Drawing.Size(114, 32);
             this.txtN.TabIndex = 25;
@@ -298,7 +278,7 @@
             this.txtBairro.BackColor = System.Drawing.SystemColors.Menu;
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairro.Location = new System.Drawing.Point(290, 596);
-            this.txtBairro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(6);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(278, 32);
             this.txtBairro.TabIndex = 27;
@@ -319,7 +299,7 @@
             this.txtRg.BackColor = System.Drawing.SystemColors.Menu;
             this.txtRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(212, 675);
-            this.txtRg.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtRg.Margin = new System.Windows.Forms.Padding(6);
             this.txtRg.Mask = "00000000-0";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(206, 32);
@@ -342,7 +322,7 @@
             this.txtCpf.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.Location = new System.Drawing.Point(638, 675);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtCpf.Margin = new System.Windows.Forms.Padding(6);
             this.txtCpf.Mask = "000.000.000.00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(208, 32);
@@ -359,7 +339,7 @@
             this.editar.Image = ((System.Drawing.Image)(resources.GetObject("editar.Image")));
             this.editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editar.Location = new System.Drawing.Point(298, 817);
-            this.editar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.editar.Margin = new System.Windows.Forms.Padding(6);
             this.editar.Name = "editar";
             this.editar.Size = new System.Drawing.Size(242, 63);
             this.editar.TabIndex = 32;
@@ -380,7 +360,7 @@
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(950, 92);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(6);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.ReadOnly = true;
             this.txtLogin.Size = new System.Drawing.Size(196, 33);
@@ -391,7 +371,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(134, 212);
+            this.label11.Location = new System.Drawing.Point(110, 204);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(241, 26);
@@ -401,10 +381,11 @@
             // nivelacesso
             // 
             this.nivelacesso.BackColor = System.Drawing.SystemColors.Menu;
+            this.nivelacesso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nivelacesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nivelacesso.FormattingEnabled = true;
-            this.nivelacesso.Location = new System.Drawing.Point(396, 196);
-            this.nivelacesso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nivelacesso.Location = new System.Drawing.Point(384, 196);
+            this.nivelacesso.Margin = new System.Windows.Forms.Padding(6);
             this.nivelacesso.Name = "nivelacesso";
             this.nivelacesso.Size = new System.Drawing.Size(312, 34);
             this.nivelacesso.TabIndex = 37;
@@ -427,7 +408,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(1152, 913);
+            this.ClientSize = new System.Drawing.Size(1332, 991);
             this.Controls.Add(this.labelteste);
             this.Controls.Add(this.nivelacesso);
             this.Controls.Add(this.label11);
@@ -455,11 +436,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NOME);
-            this.Controls.Add(this.deletar);
             this.Controls.Add(this.voltar);
             this.Controls.Add(this.adicionar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Cad";
@@ -499,7 +479,6 @@
         public System.Windows.Forms.MaskedTextBox txtCpf;
         public System.Windows.Forms.ComboBox nivelacesso;
         public System.Windows.Forms.Button adicionar;
-        public System.Windows.Forms.Button deletar;
         public System.Windows.Forms.Button editar;
     }
 }

@@ -15,10 +15,11 @@ namespace WindowsFormsApplication2
 {
     public partial class Cad : XtraForm
     {
-        
-        static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\KENZO\DOCUMENTS\VISUALSTUDIO2015\PROJECTS\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
+
+        static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
+        //bool novo;
         SqlConnection conexao = new SqlConnection(strCn);
-        
+
 
         public Cliente ClieteAtual { get; set; }
 
@@ -41,9 +42,7 @@ namespace WindowsFormsApplication2
 
         private void Cad_Load(object sender, EventArgs e)
         {
-            deletar.Enabled = false;
-            editar.Enabled = false;
-            adicionar.Enabled = true;
+           
         }
 
 
@@ -61,48 +60,60 @@ namespace WindowsFormsApplication2
         }
 
 
+
+
         private void adicionar_Click(object sender, EventArgs e)
         {
-             if (txtNome.Text == "" || txtTelefone.Text == "" || txtCelular.Text == "" || txtEmail.Text == "" || txtEndereco.Text == ""
-                    || txtN.Text == "" || txtBairro.Text == "" || txtRg.Text == "" || txtCpf.Text == "" || txtCpf.Text == "NOAR" || txtCpf.Text == "NOAR")
+
+            if (nivelacesso.Text == "" || txtNome.Text == "" || txtTelefone.Text == "" || txtCelular.Text == "" || txtEmail.Text == "" || txtEndereco.Text == ""
+                   || txtN.Text == "" || txtBairro.Text == "" || txtRg.Text == "" || txtCpf.Text == "" || txtCpf.Text == "NOAR" || txtCpf.Text == "NOAR")
             {
                 MessageBox.Show("Deve preencher todos os campos!!");
             }
             else
             {
-                Cliente Cliente = new Cliente();
-                Cliente.Nome = txtNome.Text;
-                Cliente.Telefone = txtTelefone.Text;
-                Cliente.Celular = txtCelular.Text;
-                Cliente.Email = txtEmail.Text;
-                Cliente.Endereco = txtEndereco.Text;
-                Cliente.N = txtN.Text;
-                Cliente.Bairro = txtBairro.Text;
-                Cliente.Rg = txtRg.Text;
-                Cliente.Cpf = txtCpf.Text;
-                Cliente.Login = txtLogin.Text;
-                Cliente.Senha = txtSenha.Text;
-                Cliente.NivelAcesso = nivelacesso.Text;
-                
+                string sql = "INSERT INTO CAD (Nome, Telefone, Celular ,Email, Endereco, N, Bairro, Rg, Cpf, Login, Senha, NivelAcesso) "
 
-                int resultado = ClienteFunc.Adicionar(Cliente);
+                      + "VALUES ('" + txtNome.Text + "', '" + txtTelefone.Text + "', '"
+                      + txtCelular.Text + "', '" + txtEmail.Text + "', '" + txtEndereco.Text + "','"
+                      + txtN.Text + "', '" + txtBairro.Text
+                      + "', '" + txtRg.Text + "', '" + txtCpf.Text + "', '"
+                      + txtLogin.Text + "', '" + txtSenha.Text + "', '" + nivelacesso.Text + "')";
 
-                if (resultado > 0)
+                SqlConnection con = new SqlConnection(strCn);
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+                try
                 {
-                    MessageBox.Show("Dados Guardados! ");
-                    limpar();
-
+                    int i = cmd.ExecuteNonQuery();
+                    if (i > 0)
+                        MessageBox.Show("Cadastro realizado com sucesso!");
                 }
-
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Não se pode guardar os dados, erro ao guardar");
+                    MessageBox.Show("Erro: " + ex.ToString());
+                }
+                finally
+                {
+                    txtNome.Text = "";
+                    txtN.Text = "";
+                    txtRg.Text = "";
+                    txtTelefone.Text = "";
+                    txtEndereco.Text = "";
+                    txtBairro.Text = "";
+                    txtCelular.Text = "";
+                    txtCpf.Text = "";
+                    txtEmail.Text = "";
+                    nivelacesso.Text = "";
+
+                    con.Close();
                 }
             }
 
+
         }
-
-
+        
 
         private void editar_Click(object sender, EventArgs e)
         {
@@ -117,6 +128,7 @@ namespace WindowsFormsApplication2
             pCliente.Bairro = txtBairro.Text;
             pCliente.Rg = txtRg.Text;
             pCliente.Cpf = txtCpf.Text;
+            pCliente.NivelAcesso = nivelacesso.Text;
             pCliente.Id = ClieteAtual.Id;
 
 
@@ -127,9 +139,6 @@ namespace WindowsFormsApplication2
 
                 MessageBox.Show("Alterado dados Cliente Concluído!");
                 limpar();
-                //deletar.Enabled = false;
-                //editar.Enabled = false;
-                //adicionar.Enabled = true;
             }
 
             else
@@ -141,34 +150,6 @@ namespace WindowsFormsApplication2
 
 
 
-        private void deletar_Click(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("Tem certeza que deseja exluir o Cliente??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-
-                int resultado = ClienteFunc.Excluir(ClieteAtual.Id);
-
-                if (resultado > 0)
-                {
-
-                    MessageBox.Show("Cliente excluído com sucesso!", "Cliente Excluído", MessageBoxButtons.OK);
-                    limpar();
-                    deletar.Enabled = false;
-                    editar.Enabled = false;
-                    adicionar.Enabled = true;
-                }
-
-                else
-                {
-                    MessageBox.Show("Não se pode excluir o cliente, ocorreu um erro!!");
-                }
-
-            }
-            else
-                MessageBox.Show("Você cancelou a exclusão", "Cancelado");
-
-        }
 
         private void consulta_Click(object sender, EventArgs e)
         {
@@ -192,9 +173,6 @@ namespace WindowsFormsApplication2
                     txtCpf.Text = pConsulta.ClienteSelecionado.Cpf;
                     nivelacesso.Text = pConsulta.ClienteSelecionado.NivelAcesso;
                 
-                adicionar.Enabled = false;
-                editar.Enabled = true;
-                deletar.Enabled = true;
             }
         }
 
@@ -206,8 +184,8 @@ namespace WindowsFormsApplication2
         private void nivelacesso_Enter(object sender, EventArgs e)
         {
             Validar val = new Validar();
-            nivelacesso.DataSource = val.listanivel();
-            nivelacesso.DisplayMember = "NivelAcesso";
+            nivelacesso.DataSource = val.listanivelcad();
+            nivelacesso.DisplayMember = "Nivel";
         }
 
         private void txtEndereco_TextChanged(object sender, EventArgs e)

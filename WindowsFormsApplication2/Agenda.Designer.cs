@@ -73,6 +73,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -155,9 +156,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(34, 46);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 25);
+            this.label12.Size = new System.Drawing.Size(89, 25);
             this.label12.TabIndex = 0;
-            this.label12.Text = "09:00";
+            this.label12.Text = "label12";
             // 
             // groupBox1
             // 
@@ -540,12 +541,22 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(805, 158);
+            this.label22.Location = new System.Drawing.Point(912, 150);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 25);
             this.label22.TabIndex = 33;
             this.label22.Text = "label22";
             this.label22.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(805, 150);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(105, 25);
+            this.label23.TabIndex = 34;
+            this.label23.Text = "Agenda - ";
+            this.label23.Visible = false;
             // 
             // Agenda
             // 
@@ -554,6 +565,7 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1708, 1184);
+            this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
@@ -647,5 +659,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
     }
 }
