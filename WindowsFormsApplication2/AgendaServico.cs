@@ -70,7 +70,7 @@ namespace WindowsFormsApplication2
                 int resultado = AgendFunc.btnInstrum(Agend);
 
                 this.Hide();
-                InstruLista ss = new InstruLista(label10.Text , clientetxt.Text, datalabel.Text);
+                InstruLista ss = new InstruLista(label10.Text , clientetxt.Text, datalabel.Text, label13.Text);
                 ss.Show();
 
 
@@ -97,10 +97,27 @@ namespace WindowsFormsApplication2
         {
            sala.Text = "";
 
-            
+
+            label13.Visible = true;
+
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from SalaCad where NomeSala = '" +  sala.SelectedItem.ToString() + "' ";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                label13.Text = dr["Valor"].ToString();
+            }
+            con.Close();
+
+
         }
 
-        
+
 
 
         private void AgendaServico_Load(object sender, EventArgs e)
@@ -108,8 +125,7 @@ namespace WindowsFormsApplication2
             conectcli c = new conectcli();
             c.autocomplete(clientetxt);
 
-            
-           
+
             sala.Items.Clear();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -124,6 +140,7 @@ namespace WindowsFormsApplication2
                 sala.Items.Add(dr["NomeSala"].ToString());
             }
             con.Close();
+           
 
         }
 
@@ -157,7 +174,7 @@ namespace WindowsFormsApplication2
 
 
                 this.Hide();
-                Pagamento novaForm = new Pagamento(clientetxt.Text);
+                Pagamento novaForm = new Pagamento(clientetxt.Text, label13.Text);
                 novaForm.Show();
 
             }

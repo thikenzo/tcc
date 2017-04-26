@@ -165,7 +165,7 @@ namespace WindowsFormsApplication2
         {
 
             this.Hide();
-            Pagamento ss = new Pagamento();
+            InstruLista ss = new InstruLista();
             ss.Show();
         }
 

@@ -1,0 +1,3 @@
+﻿Não foi possível popular automaticamente suas contas do Visual Studio Team Services.
+    
+O seguinte erro foi encontrado: TF400813: Resource not available for anonymous access. Client authentication required.

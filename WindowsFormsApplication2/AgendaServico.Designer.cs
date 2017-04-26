@@ -317,11 +317,13 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1318, 445);
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(1294, 445);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 25);
             this.label13.TabIndex = 43;
             this.label13.Text = "label13";
+            this.label13.Visible = false;
             // 
             // AgendaServico
             // 

@@ -20,12 +20,15 @@ namespace WindowsFormsApplication2
             this.Width = 970; //largura
         }
 
-        public Pagamento(string texto)
+        public Pagamento(string texto, string total)
         {
             InitializeComponent();
-            nomecliente.Text = texto; 
+            nomecliente.Text = texto;
+            label15.Text = total;
+            label14.Text = total;
+            label12.Text = total;
         }
-
+        
 
         private void Pagamento_Load(object sender, EventArgs e)
         {

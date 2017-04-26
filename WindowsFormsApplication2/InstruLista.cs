@@ -24,13 +24,14 @@ namespace WindowsFormsApplication2
 
         }
 
-        public InstruLista(string texto, string label22, string hora)
+        public InstruLista(string texto, string label22, string hora, string valor)
         {
             InitializeComponent();
 
             label4.Text = texto;
             label5.Text = label22;
             label6.Text = hora;
+            label7.Text = valor;
 
         }
 
@@ -81,6 +82,8 @@ namespace WindowsFormsApplication2
             label4.Visible = false;
             label5.Visible = false;
             label6.Visible = false;
+            label7.Visible = false;
+
 
             // add some row to datagridview
             // true the checkBox Is checked
@@ -204,10 +207,18 @@ namespace WindowsFormsApplication2
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Added successfully!");
-            }
-            
 
+                label8.Text = (Convert.ToDecimal(label7.Text) + Convert.ToDecimal(label2.Text)).ToString();
+            }
+
+
+            this.Hide();
+            Pagamento novaForm = new Pagamento(label5.Text, label8.Text);
+            novaForm.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
 
