@@ -42,9 +42,11 @@
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,6 +120,8 @@
     </Compile>
     <Compile Include="Instrum.cs" />
     <Compile Include="InstrumFunc.cs" />
+    <Compile Include="InstruSele.cs" />
+    <Compile Include="InstruSeleFunc.cs" />
     <Compile Include="Mainadmin.cs">
       <SubType>Form</SubType>
     </Compile>

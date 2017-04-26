@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Relatorio));
             this.servico = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // servico
@@ -50,11 +52,25 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(432, 31);
             this.dateTimePicker1.TabIndex = 1;
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(1704, 739);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(150, 65);
+            this.btnVoltar.TabIndex = 29;
+            this.btnVoltar.Text = "VOLTAR";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // Relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1943, 867);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.servico);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -69,5 +85,6 @@
 
         private System.Windows.Forms.ComboBox servico;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

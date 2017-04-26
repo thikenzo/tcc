@@ -119,6 +119,7 @@ namespace WindowsFormsApplication2
         {
 
             Cliente pCliente = new Cliente();
+            
             pCliente.Nome = txtNome.Text;
             pCliente.Telefone = txtTelefone.Text;
             pCliente.Celular = txtCelular.Text;
@@ -129,7 +130,7 @@ namespace WindowsFormsApplication2
             pCliente.Rg = txtRg.Text;
             pCliente.Cpf = txtCpf.Text;
             pCliente.NivelAcesso = nivelacesso.Text;
-            pCliente.Id = ClieteAtual.Id;
+            //pCliente.Id = ClieteAtual.Id;
 
 
             int resultado = ClienteFunc.Editar(pCliente);
@@ -160,7 +161,7 @@ namespace WindowsFormsApplication2
             {
 
                     ClieteAtual = pConsulta.ClienteSelecionado;
-
+                
                     txtNome.Text = pConsulta.ClienteSelecionado.Nome;
                     //labelteste.Text = pConsulta.ClienteSelecionado.Nome;
                     txtTelefone.Text = pConsulta.ClienteSelecionado.Telefone;

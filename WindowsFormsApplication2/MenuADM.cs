@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
+
+
 namespace WindowsFormsApplication2
 {
-    public partial class MenuADM : Form
+    public partial class MenuADM : XtraForm
     {
         public MenuADM()
         {
             InitializeComponent();
+            this.Height = 480; //altura
+            this.Width = 900; //largura
         }
 
         private void sair_Click(object sender, EventArgs e)
@@ -79,6 +85,15 @@ namespace WindowsFormsApplication2
             this.Hide();
             Consulta ss = new Consulta();
             ss.Show();
+        }
+
+        private void tileControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuADM_Load(object sender, EventArgs e)
+        {
         }
     }
 }

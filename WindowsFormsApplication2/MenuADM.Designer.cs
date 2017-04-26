@@ -40,17 +40,17 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
-            this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.tileGroup4 = new DevExpress.XtraEditors.TileGroup();
+            this.tileItem8 = new DevExpress.XtraEditors.TileItem();
             this.agendamento = new DevExpress.XtraEditors.TileItem();
+            this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
+            this.consala = new DevExpress.XtraEditors.TileItem();
+            this.Cadsala = new DevExpress.XtraEditors.TileItem();
+            this.conequip = new DevExpress.XtraEditors.TileItem();
+            this.cadequip = new DevExpress.XtraEditors.TileItem();
+            this.tileGroup4 = new DevExpress.XtraEditors.TileGroup();
+            this.relatorio = new DevExpress.XtraEditors.TileItem();
             this.cadpessoa = new DevExpress.XtraEditors.TileItem();
             this.conpessoa = new DevExpress.XtraEditors.TileItem();
-            this.consala = new DevExpress.XtraEditors.TileItem();
-            this.relatorio = new DevExpress.XtraEditors.TileItem();
-            this.cadequip = new DevExpress.XtraEditors.TileItem();
-            this.Cadsala = new DevExpress.XtraEditors.TileItem();
-            this.tileItem8 = new DevExpress.XtraEditors.TileItem();
-            this.conequip = new DevExpress.XtraEditors.TileItem();
             this.sair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -74,12 +74,30 @@
             this.tileControl1.Size = new System.Drawing.Size(1736, 857);
             this.tileControl1.TabIndex = 0;
             this.tileControl1.Text = "tileControl1";
+            this.tileControl1.Click += new System.EventHandler(this.tileControl1_Click);
             // 
             // tileGroup2
             // 
             this.tileGroup2.Items.Add(this.tileItem8);
             this.tileGroup2.Items.Add(this.agendamento);
             this.tileGroup2.Name = "tileGroup2";
+            // 
+            // tileItem8
+            // 
+            tileItemElement10.Text = "tileItem8";
+            this.tileItem8.Elements.Add(tileItemElement10);
+            this.tileItem8.Id = 8;
+            this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem8.Name = "tileItem8";
+            // 
+            // agendamento
+            // 
+            tileItemElement11.Text = "Agendamento";
+            this.agendamento.Elements.Add(tileItemElement11);
+            this.agendamento.Id = 1;
+            this.agendamento.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.agendamento.Name = "agendamento";
+            this.agendamento.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.agendamento_ItemClick);
             // 
             // tileGroup3
             // 
@@ -89,57 +107,32 @@
             this.tileGroup3.Items.Add(this.cadequip);
             this.tileGroup3.Name = "tileGroup3";
             // 
-            // tileGroup4
-            // 
-            this.tileGroup4.Items.Add(this.relatorio);
-            this.tileGroup4.Items.Add(this.cadpessoa);
-            this.tileGroup4.Items.Add(this.conpessoa);
-            this.tileGroup4.Name = "tileGroup4";
-            // 
-            // agendamento
-            // 
-            tileItemElement10.Text = "Agendamento";
-            this.agendamento.Elements.Add(tileItemElement10);
-            this.agendamento.Id = 1;
-            this.agendamento.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.agendamento.Name = "agendamento";
-            this.agendamento.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.agendamento_ItemClick);
-            // 
-            // cadpessoa
-            // 
-            tileItemElement11.Text = "Cadastrar Nome";
-            this.cadpessoa.Elements.Add(tileItemElement11);
-            this.cadpessoa.Id = 2;
-            this.cadpessoa.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.cadpessoa.Name = "cadpessoa";
-            this.cadpessoa.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.cadpessoa_ItemClick);
-            // 
-            // conpessoa
-            // 
-            tileItemElement12.Text = "Consultar Nome";
-            this.conpessoa.Elements.Add(tileItemElement12);
-            this.conpessoa.Id = 3;
-            this.conpessoa.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.conpessoa.Name = "conpessoa";
-            this.conpessoa.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.conpessoa_ItemClick);
-            // 
             // consala
             // 
-            tileItemElement13.Text = "Consultar Sala";
-            this.consala.Elements.Add(tileItemElement13);
+            tileItemElement12.Text = "Consultar Sala";
+            this.consala.Elements.Add(tileItemElement12);
             this.consala.Id = 4;
             this.consala.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.consala.Name = "consala";
             this.consala.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.consala_ItemClick);
             // 
-            // relatorio
+            // Cadsala
             // 
-            tileItemElement14.Text = "Relatorio";
-            this.relatorio.Elements.Add(tileItemElement14);
-            this.relatorio.Id = 5;
-            this.relatorio.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.relatorio.Name = "relatorio";
-            this.relatorio.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.relatorio_ItemClick);
+            tileItemElement13.Text = "Cadastrar Sala";
+            this.Cadsala.Elements.Add(tileItemElement13);
+            this.Cadsala.Id = 7;
+            this.Cadsala.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.Cadsala.Name = "Cadsala";
+            this.Cadsala.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.Cadsala_ItemClick);
+            // 
+            // conequip
+            // 
+            tileItemElement14.Text = "Consultar Equipamento";
+            this.conequip.Elements.Add(tileItemElement14);
+            this.conequip.Id = 9;
+            this.conequip.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.conequip.Name = "conequip";
+            this.conequip.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.conequip_ItemClick);
             // 
             // cadequip
             // 
@@ -150,31 +143,39 @@
             this.cadequip.Name = "cadequip";
             this.cadequip.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.cadequip_ItemClick);
             // 
-            // Cadsala
+            // tileGroup4
             // 
-            tileItemElement16.Text = "Cadastrar Sala";
-            this.Cadsala.Elements.Add(tileItemElement16);
-            this.Cadsala.Id = 7;
-            this.Cadsala.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.Cadsala.Name = "Cadsala";
-            this.Cadsala.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.Cadsala_ItemClick);
+            this.tileGroup4.Items.Add(this.relatorio);
+            this.tileGroup4.Items.Add(this.cadpessoa);
+            this.tileGroup4.Items.Add(this.conpessoa);
+            this.tileGroup4.Name = "tileGroup4";
             // 
-            // tileItem8
+            // relatorio
             // 
-            tileItemElement17.Text = "tileItem8";
-            this.tileItem8.Elements.Add(tileItemElement17);
-            this.tileItem8.Id = 8;
-            this.tileItem8.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem8.Name = "tileItem8";
+            tileItemElement16.Text = "Relatorio";
+            this.relatorio.Elements.Add(tileItemElement16);
+            this.relatorio.Id = 5;
+            this.relatorio.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.relatorio.Name = "relatorio";
+            this.relatorio.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.relatorio_ItemClick);
             // 
-            // conequip
+            // cadpessoa
             // 
-            tileItemElement18.Text = "Consultar Equipamento";
-            this.conequip.Elements.Add(tileItemElement18);
-            this.conequip.Id = 9;
-            this.conequip.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.conequip.Name = "conequip";
-            this.conequip.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.conequip_ItemClick);
+            tileItemElement17.Text = "Cadastrar Nome";
+            this.cadpessoa.Elements.Add(tileItemElement17);
+            this.cadpessoa.Id = 2;
+            this.cadpessoa.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.cadpessoa.Name = "cadpessoa";
+            this.cadpessoa.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.cadpessoa_ItemClick);
+            // 
+            // conpessoa
+            // 
+            tileItemElement18.Text = "Consultar Nome";
+            this.conpessoa.Elements.Add(tileItemElement18);
+            this.conpessoa.Id = 3;
+            this.conpessoa.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.conpessoa.Name = "conpessoa";
+            this.conpessoa.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.conpessoa_ItemClick);
             // 
             // sair
             // 
@@ -202,13 +203,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1736, 857);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sair);
             this.Controls.Add(this.tileControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MenuADM";
-            this.Text = "MenuADM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "NOAR ESTÚDIO";
+            this.Load += new System.EventHandler(this.MenuADM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

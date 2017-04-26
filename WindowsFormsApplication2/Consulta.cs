@@ -8,15 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.OleDb;
+
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
 
 namespace WindowsFormsApplication2
 {
-    public partial class Consulta : Form
+    public partial class Consulta : XtraForm
     {
         public Consulta()
         {
             InitializeComponent();
+            this.Height = 630; //altura
+            this.Width = 1013; //largura
         }
+
 
         public class BDComun
         {
@@ -37,7 +44,7 @@ namespace WindowsFormsApplication2
 
         private void Consulta_Load(object sender, EventArgs e)
         {
-
+                
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -58,22 +65,79 @@ namespace WindowsFormsApplication2
 
         }
 
+
         private void pesquisa_Click(object sender, EventArgs e)
         {
-      
-                dataGridView1.DataSource = ClienteFunc.BuscarCliente(nomepesquisa.Text);
-
-            this.dataGridView1.Columns["Id"].Visible = false;
-            //this.dataGridView1.Columns["Rg"].Visible = false;
-            //this.dataGridView1.Columns["Cpf"].Visible = false;
-            this.dataGridView1.Columns["Login"].Visible = false;
-            this.dataGridView1.Columns["Senha"].Visible = false;
 
 
-        }
+            if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                MessageBox.Show("Campo Tipo Usuário em branco! , OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                comboBox1.Focus();
 
-       
-     private void editarcliente_Click_1(object sender, EventArgs e)
+                return;
+            }
+            
+
+
+
+            if (comboBox1.Text == "Administrador")
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * from CAD where Nome like '" + nomepesquisa.Text + "%' and NivelAcesso = 'Administrador'", conexao);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridView1.DataSource = data;
+
+
+                this.dataGridView1.Columns["Id"].Visible = false;
+                this.dataGridView1.Columns["Rg"].Visible = false;
+                this.dataGridView1.Columns["Cpf"].Visible = false;
+                this.dataGridView1.Columns["Login"].Visible = false;
+                this.dataGridView1.Columns["Senha"].Visible = false;
+                this.dataGridView1.Columns["NivelAcesso"].Visible = false;
+                //Id, Nome, Telefone, Celular, Email, Endereco, N, Bairro, Rg, Cpf, Login, Senha, NivelAcesso
+
+            }
+            else if (comboBox1.Text == "Usuário")
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * from CAD where Nome like '" + nomepesquisa.Text + "%' and NivelAcesso = 'Usuário'", conexao);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridView1.DataSource = data;
+
+                this.dataGridView1.Columns["Id"].Visible = false;
+                this.dataGridView1.Columns["Rg"].Visible = false;
+                this.dataGridView1.Columns["Cpf"].Visible = false;
+                this.dataGridView1.Columns["Login"].Visible = false;
+                this.dataGridView1.Columns["Senha"].Visible = false;
+                this.dataGridView1.Columns["NivelAcesso"].Visible = false;
+            }
+            else if (comboBox1.Text == "Cliente")
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * from CAD where Nome like '" + nomepesquisa.Text + "%' and NivelAcesso = 'Cliente'", conexao);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridView1.DataSource = data;
+
+                this.dataGridView1.Columns["Id"].Visible = false;
+                this.dataGridView1.Columns["Rg"].Visible = false;
+                this.dataGridView1.Columns["Cpf"].Visible = false;
+                this.dataGridView1.Columns["Login"].Visible = false;
+                this.dataGridView1.Columns["Senha"].Visible = false;
+                this.dataGridView1.Columns["NivelAcesso"].Visible = false;
+            }
+
+            if (dataGridView1.RowCount == 0) { 
+            
+                    MessageBox.Show("Nenhum Nome encontrado!! ", "ERRO");
+                
+            }
+
+    }
+
+
+
+        private void editarcliente_Click_1(object sender, EventArgs e)
         {
             
             if (dataGridView1.SelectedRows.Count == 1)
@@ -86,7 +150,7 @@ namespace WindowsFormsApplication2
 
                 Cad.editar.Enabled = true;
                 Cad.adicionar.Enabled = false;
-
+                
                 Cad.txtNome.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 Cad.txtTelefone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 Cad.txtCelular.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -144,19 +208,25 @@ namespace WindowsFormsApplication2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.Text = "";
+
         }
 
         private void comboBox1_Enter(object sender, EventArgs e)
         {
-            Validar val = new Validar();
-            comboBox1.DataSource = val.listanivel();
-            comboBox1.DisplayMember = "NivelAcesso";
+           // Validar val = new Validar();
+           // comboBox1.DataSource = val.listanivelcad();
+            //comboBox1.DisplayMember = "NivelAcesso";
+        }
+
+
+        SqlConnection conexao = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
+
+        private void nomepesquisa_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

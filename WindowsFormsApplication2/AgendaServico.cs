@@ -25,6 +25,9 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
+
+            this.Height = 570; //altura
+            this.Width = 870; //largura
         }
 
         public AgendaServico(string texto, string label22)
@@ -67,12 +70,9 @@ namespace WindowsFormsApplication2
                 int resultado = AgendFunc.btnInstrum(Agend);
 
                 this.Hide();
-                InstruLista ss = new InstruLista();
+                InstruLista ss = new InstruLista(label10.Text , clientetxt.Text, datalabel.Text);
                 ss.Show();
 
-                //this.Hide();
-                //InstruLista ss = new InstruLista();
-                //ss.Show();
 
 
                 if (resultado > 0)
@@ -96,8 +96,11 @@ namespace WindowsFormsApplication2
         private void sala_SelectedIndexChanged(object sender, EventArgs e)
         {
            sala.Text = "";
+
+            
         }
 
+        
 
 
         private void AgendaServico_Load(object sender, EventArgs e)
@@ -106,7 +109,7 @@ namespace WindowsFormsApplication2
             c.autocomplete(clientetxt);
 
             
-
+           
             sala.Items.Clear();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -126,9 +129,6 @@ namespace WindowsFormsApplication2
 
         private void servico_Enter(object sender, EventArgs e)
         {
-            Validar val = new Validar();
-            servico.DataSource = val.listanivel2();
-            servico.DisplayMember = "Servico";
         }
 
         private void servico_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,6 +187,16 @@ namespace WindowsFormsApplication2
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

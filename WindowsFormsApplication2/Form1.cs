@@ -43,7 +43,7 @@ namespace WindowsFormsApplication2
             this.Close();
         }
 
-
+        bool aaa;
 
 
 
@@ -51,98 +51,92 @@ namespace WindowsFormsApplication2
         public void LogarF()
         {
 
+
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
             // funciona - SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='"+ txtusuario.Text + "' and Password = '" +txtsenha.Text+ "' and NivelAcesso = @NivelAcesso ", con);
 
-            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login  and NivelAcesso = @NivelAcesso ", con);
-
+            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso", con);
 
             cmd.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
             cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
-            cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = nivelacesso.Text;
+            cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Usuário";
             con.Open();
 
             SqlDataReader le = null;
             le = cmd.ExecuteReader();
             if (le.Read())
             {
-                if (nivelacesso.SelectedIndex == 0)
-                {
-                    this.Hide();
-                    MenuADM ssa = new MenuADM();
-                    ssa.Show();
-                }
+                SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Administrador'", con);
 
-                    if (nivelacesso.SelectedIndex == 1)
-                    {
-                        this.Hide();
-                        Maincs ss = new Maincs();
-                        ss.Show();
-                    }
-               
+                this.Hide();
+                Maincs ss = new Maincs();
+                ss.Show();
             }
-                else
-                {
-                MessageBox.Show("Usuário ou Nivel de Acesso não confere!!", "ERRO AO LOGAR");
-                }
-            
-        }
-            
-        
-        
-            
+            else
+            {
+                SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Usuário'", con);
 
+                this.Hide();
+                MenuADM ss = new MenuADM();
+                ss.Show();
+            }
+
+        }
+        
 
         private void logar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtsenha.Text))
             {
-                MessageBox.Show("Campo senha em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                if (string.IsNullOrEmpty(txtusuario.Text))
+                {
+                    txtusuario.Text = "";
+                    MessageBox.Show("Campo Login e Senha em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                    txtusuario.Focus();
+
+                    return;
+
+                }
+                MessageBox.Show("Campo Senha em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
                 txtsenha.Focus();
 
                 return;
             }
-            else {
-                LogarF();
+            else
+            {
+                //LogarF();
             }
-        }
+                
+            /////////////////////////////
+            if (string.IsNullOrEmpty(txtusuario.Text))
+                {
+                    txtusuario.Text = "";
+                    MessageBox.Show("Campo Login em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                    txtusuario.Focus();
 
-
-
+                    return;
+                }
+                else
+                {
+                    LogarF();
+                }
+            }
+        
 
 
 
 
         private void nivelacesso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nivelacesso.Text = "";
         }
-
-        private void txtsenha_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                LogarF();
-            }
-        }
-
-        private void nivelacesso_Enter(object sender, EventArgs e)
-        {
-            Validar val = new Validar();
-            nivelacesso.DataSource = val.listanivel();
-            nivelacesso.DisplayMember = "NivelAcesso";
-
-        }
+        
+    
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -169,9 +163,17 @@ namespace WindowsFormsApplication2
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             this.Hide();
-            MenuADM ss = new MenuADM();
+            Pagamento ss = new Pagamento();
             ss.Show();
         }
+
+        private void tileControl1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
     }
+    
 }

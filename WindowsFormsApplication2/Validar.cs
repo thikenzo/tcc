@@ -221,6 +221,80 @@ namespace WindowsFormsApplication2
                 return null;
             }
         }
+
+
+        public List<string> pagamento()
+        {
+            vsql = "Select Tpgto from TipoPgt ";
+            SqlCommand objcmd = null;
+            List<string> Tipos = new List<string>();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    objcmd = new SqlCommand(vsql, objCon);
+                    SqlDataReader dr = objcmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Tipos.Add(dr["Tpgto"].ToString());
+
+                    }
+                    return Tipos;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        public List<string> parcela()
+        {
+            vsql = "Select Parcela from Parcela ";
+            SqlCommand objcmd = null;
+            List<string> Tipos = new List<string>();
+
+            if (this.conectar())
+            {
+                try
+                {
+                    objcmd = new SqlCommand(vsql, objCon);
+                    SqlDataReader dr = objcmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        Tipos.Add(dr["Parcela"].ToString());
+
+                    }
+                    return Tipos;
+                }
+                catch (SqlException erro)
+                {
+                    throw erro;
+                }
+                finally
+                {
+                    this.desconectar();
+                }
+
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
  

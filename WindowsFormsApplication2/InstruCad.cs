@@ -47,12 +47,7 @@ namespace WindowsFormsApplication2
             ss.Show();
         }
 
-        private void InstruCad_Load(object sender, EventArgs e)
-        {
-            //btnExcluir.Enabled = false;
-            //btnEditar.Enabled = false;
-            btnAdicionar.Enabled = true;
-        }
+
 
         void limpar()
         {
@@ -138,9 +133,6 @@ namespace WindowsFormsApplication2
 
                 MessageBox.Show("Alterado dados Instrumento Concluído!");
                 limpar();
-                btnExcluir.Enabled = false;
-                btnEditar.Enabled = false;
-                btnAdicionar.Enabled = true;
             }
 
             else
@@ -150,6 +142,11 @@ namespace WindowsFormsApplication2
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InstruCad_Load(object sender, EventArgs e)
         {
 
         }

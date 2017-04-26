@@ -41,6 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(422, 71);
+            this.label1.Location = new System.Drawing.Point(506, 93);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(824, 67);
@@ -59,7 +62,7 @@
             // 
             // btnNacional
             // 
-            this.btnNacional.Location = new System.Drawing.Point(898, 212);
+            this.btnNacional.Location = new System.Drawing.Point(898, 255);
             this.btnNacional.Margin = new System.Windows.Forms.Padding(6);
             this.btnNacional.Name = "btnNacional";
             this.btnNacional.Size = new System.Drawing.Size(284, 63);
@@ -70,7 +73,7 @@
             // 
             // btnInternacional
             // 
-            this.btnInternacional.Location = new System.Drawing.Point(518, 212);
+            this.btnInternacional.Location = new System.Drawing.Point(518, 255);
             this.btnInternacional.Margin = new System.Windows.Forms.Padding(6);
             this.btnInternacional.Name = "btnInternacional";
             this.btnInternacional.Size = new System.Drawing.Size(284, 63);
@@ -83,7 +86,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 346);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 389);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -97,19 +100,19 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(988, 346);
+            this.dataGridView2.Location = new System.Drawing.Point(988, 389);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(686, 438);
+            this.dataGridView2.Size = new System.Drawing.Size(686, 533);
             this.dataGridView2.TabIndex = 4;
             this.dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView2_RowsAdded);
             this.dataGridView2.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView2_RowsRemoved);
             // 
             // btnAdicina
             // 
-            this.btnAdicina.Location = new System.Drawing.Point(766, 510);
+            this.btnAdicina.Location = new System.Drawing.Point(766, 553);
             this.btnAdicina.Margin = new System.Windows.Forms.Padding(6);
             this.btnAdicina.Name = "btnAdicina";
             this.btnAdicina.Size = new System.Drawing.Size(204, 88);
@@ -120,29 +123,29 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(988, 796);
+            this.btnRemove.Location = new System.Drawing.Point(766, 683);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(6);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(150, 56);
+            this.btnRemove.Size = new System.Drawing.Size(204, 89);
             this.btnRemove.TabIndex = 6;
-            this.btnRemove.Text = "REMOVER";
+            this.btnRemove.Text = ">>REMOVER>>";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnProximo
             // 
-            this.btnProximo.Location = new System.Drawing.Point(1292, 940);
+            this.btnProximo.Location = new System.Drawing.Point(1278, 1077);
             this.btnProximo.Margin = new System.Windows.Forms.Padding(6);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(178, 67);
             this.btnProximo.TabIndex = 7;
             this.btnProximo.Text = "PRÓXIMO";
             this.btnProximo.UseVisualStyleBackColor = true;
-            this.btnProximo.Click += new System.EventHandler(this.btnVoltar_Click);
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnAgenda
             // 
-            this.btnAgenda.Location = new System.Drawing.Point(1074, 940);
+            this.btnAgenda.Location = new System.Drawing.Point(1060, 1077);
             this.btnAgenda.Margin = new System.Windows.Forms.Padding(6);
             this.btnAgenda.Name = "btnAgenda";
             this.btnAgenda.Size = new System.Drawing.Size(178, 67);
@@ -156,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1572, 803);
+            this.label2.Location = new System.Drawing.Point(1558, 940);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 37);
             this.label2.TabIndex = 10;
@@ -167,21 +170,48 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1429, 803);
+            this.label3.Location = new System.Drawing.Point(1351, 940);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 37);
+            this.label3.Size = new System.Drawing.Size(209, 37);
             this.label3.TabIndex = 11;
-            this.label3.Text = "TOTAL :";
+            this.label3.Text = "TOTAL :  R$";
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(1509, 940);
+            this.btnVoltar.Location = new System.Drawing.Point(1495, 1077);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(165, 67);
             this.btnVoltar.TabIndex = 12;
             this.btnVoltar.Text = "Sair";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1722, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 25);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1722, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 25);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1722, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 25);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "label6";
             // 
             // InstruLista
             // 
@@ -190,7 +220,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1804, 1038);
+            this.ClientSize = new System.Drawing.Size(1744, 1176);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -208,6 +241,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InstruLista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOAR ESTÚDIO";
             this.Load += new System.EventHandler(this.InstruLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -231,5 +265,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

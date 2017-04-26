@@ -42,9 +42,6 @@ namespace WindowsFormsApplication2
 
         private void SalaCad_Load(object sender, EventArgs e)
         {
-            btnDeletar.Enabled = false;
-            btnEditar.Enabled = false;
-            btnAdicionar.Enabled = true;
         }
 
 
@@ -101,9 +98,6 @@ namespace WindowsFormsApplication2
 
                 MessageBox.Show("Alterado dados da Sala Concluído!");
                 limpar();
-                btnDeletar.Enabled = false;
-                btnEditar.Enabled = false;
-                btnAdicionar.Enabled = true;
             }
 
             else

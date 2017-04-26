@@ -7,21 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication2
 {
     public partial class InstruLista : Form
     {
+
+
+
         public InstruLista()
         {
             InitializeComponent();
+            this.Height = 670; //altura
+            this.Width = 880; //largura
+
+        }
+
+        public InstruLista(string texto, string label22, string hora)
+        {
+            InitializeComponent();
+
+            label4.Text = texto;
+            label5.Text = label22;
+            label6.Text = hora;
 
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Hide();
 
+            this.Hide();
             MenuADM ss = new MenuADM();
             ss.Show();
         }
@@ -62,7 +78,9 @@ namespace WindowsFormsApplication2
 
         private void InstruLista_Load(object sender, EventArgs e)
         {
-
+            label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
 
             // add some row to datagridview
             // true the checkBox Is checked
@@ -162,5 +180,83 @@ namespace WindowsFormsApplication2
         {
 
         }
+
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                //InstruSele Agend = new InstruSele();
+                //Agend.Nome = label5.Text;
+                //Agend.Data = label4.Text;
+                //int resultado = InstruSeleFunc.btnIntru(Agend);
+
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
+                SqlCommand cmd = new SqlCommand("INSERT INTO InstruSelec (Nome, Data, Hora, NomeEquip,Tipo,Valor) values ( @Nome, @Data, @Hora, @NomeEquip, @Tipo,@valor)", con);
+
+                cmd.Parameters.AddWithValue("@Nome", label5.Text);
+                cmd.Parameters.AddWithValue("@Data", label4.Text);
+                cmd.Parameters.AddWithValue("@Hora", label6.Text);
+                cmd.Parameters.AddWithValue("@NomeEquip", dataGridView2.Rows[i].Cells[0].Value);
+                cmd.Parameters.AddWithValue("@Tipo", dataGridView2.Rows[i].Cells[1].Value);
+                cmd.Parameters.AddWithValue("@Valor", dataGridView2.Rows[i].Cells[2].Value);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Added successfully!");
+            }
+            
+
+
+        }
+
+
+
+
+
+
+
+        /*
+
+        public void SalvarDados()
+        {
+            try
+            {
+                if (dataGridView2.Rows.Count > 1)
+                {
+                    for (int i = 0; i <= dataGridView2.Rows.Count - 1; i++)
+                    {
+                        //int col1 = Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value); //id
+                        string col2 = dataGridView2.Rows[i].Cells[0].Value.ToString(); //Descricao 
+                        string col3 = dataGridView2.Rows[i].Cells[1].Value.ToString(); //Quantidade
+                        string col4 = dataGridView2.Rows[i].Cells[2].Value.ToString();
+
+                        using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[dataGridView2.ToString()].ConnectionString))
+                        {
+                            string insert = "INSERT INTO IntruSele (NomeEquip, Tipo, Valor) VALUES (@NomeEquip, @Tipo, @Valor)";
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand(insert, con);
+                            //cmd.Parameters.AddWithValue("@Id", col1);
+                            cmd.Parameters.AddWithValue("@NomeEquip", col2);
+                            cmd.Parameters.AddWithValue("@Tipo", col3);
+                            cmd.Parameters.AddWithValue("@Valor", col4);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                }
+                MessageBox.Show("Dados incluídos com sucesso !!", "Inclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+        }
+
+
+
+    */
+
     }
 }

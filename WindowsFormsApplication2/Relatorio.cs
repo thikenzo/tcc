@@ -38,5 +38,13 @@ namespace WindowsFormsApplication2
         {
             servico.Text = "";
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            MenuADM ss = new MenuADM();
+            ss.Show();
+        }
     }
 }
