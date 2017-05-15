@@ -70,12 +70,12 @@
             this.adicionar.ForeColor = System.Drawing.Color.White;
             this.adicionar.Image = ((System.Drawing.Image)(resources.GetObject("adicionar.Image")));
             this.adicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adicionar.Location = new System.Drawing.Point(80, 1073);
+            this.adicionar.Location = new System.Drawing.Point(113, 1073);
             this.adicionar.Margin = new System.Windows.Forms.Padding(6);
             this.adicionar.Name = "adicionar";
-            this.adicionar.Size = new System.Drawing.Size(242, 63);
+            this.adicionar.Size = new System.Drawing.Size(206, 63);
             this.adicionar.TabIndex = 0;
-            this.adicionar.Text = "    ADICIONAR";
+            this.adicionar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.adicionar.UseVisualStyleBackColor = false;
             this.adicionar.Click += new System.EventHandler(this.adicionar_Click);
             // 
@@ -89,10 +89,10 @@
             this.voltar.ForeColor = System.Drawing.Color.White;
             this.voltar.Image = ((System.Drawing.Image)(resources.GetObject("voltar.Image")));
             this.voltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.voltar.Location = new System.Drawing.Point(992, 1073);
+            this.voltar.Location = new System.Drawing.Point(961, 1073);
             this.voltar.Margin = new System.Windows.Forms.Padding(6);
             this.voltar.Name = "voltar";
-            this.voltar.Size = new System.Drawing.Size(196, 63);
+            this.voltar.Size = new System.Drawing.Size(206, 63);
             this.voltar.TabIndex = 2;
             this.voltar.Text = "     MENU";
             this.voltar.UseVisualStyleBackColor = false;
@@ -175,15 +175,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(460, 92);
+            this.label2.Font = new System.Drawing.Font("Arabic Typesetting", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label2.Location = new System.Drawing.Point(376, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(367, 69);
+            this.label2.Size = new System.Drawing.Size(451, 123);
             this.label2.TabIndex = 18;
             this.label2.Text = "CADASTRO";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtTelefone
             // 
@@ -338,10 +338,10 @@
             this.editar.ForeColor = System.Drawing.Color.White;
             this.editar.Image = ((System.Drawing.Image)(resources.GetObject("editar.Image")));
             this.editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editar.Location = new System.Drawing.Point(368, 1073);
+            this.editar.Location = new System.Drawing.Point(412, 1073);
             this.editar.Margin = new System.Windows.Forms.Padding(6);
             this.editar.Name = "editar";
-            this.editar.Size = new System.Drawing.Size(242, 63);
+            this.editar.Size = new System.Drawing.Size(206, 63);
             this.editar.TabIndex = 32;
             this.editar.Text = "     EDITAR";
             this.editar.UseVisualStyleBackColor = false;

@@ -35,8 +35,12 @@ namespace WindowsFormsApplication2
             // Invoke the Print Preview form modally  
             // with the specified look and feel settings.  
             printTool.ShowPreviewDialog(UserLookAndFeel.Default);
-  
+
+
+
+            xrLabel1.Visible = false;
 
         }
+        
     }
 }

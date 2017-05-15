@@ -184,7 +184,7 @@ namespace WindowsFormsApplication2
         {
 
             this.Hide();
-            Cad ss = new Cad();
+            MenuADM ss = new MenuADM();
             ss.Show();
         }
 

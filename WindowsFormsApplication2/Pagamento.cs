@@ -269,6 +269,11 @@ namespace WindowsFormsApplication2
             else
             {
                 btnSalvar.Enabled = true;
+
+                tipopagamento.Enabled = false;
+                textBox1.Enabled = false;
+                btnGerar.Enabled = false;
+                
             }
 
             
