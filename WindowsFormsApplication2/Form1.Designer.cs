@@ -31,17 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.txtsenha = new System.Windows.Forms.TextBox();
-            this.logar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.button4 = new System.Windows.Forms.Button();
+            this.logar = new DevExpress.XtraEditors.SimpleButton();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
             // txtusuario
             // 
-            this.txtusuario.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtusuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtusuario.Location = new System.Drawing.Point(140, 141);
@@ -51,71 +51,13 @@
             // 
             // txtsenha
             // 
-            this.txtsenha.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtsenha.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtsenha.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtsenha.Location = new System.Drawing.Point(140, 250);
             this.txtsenha.Name = "txtsenha";
             this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(250, 34);
             this.txtsenha.TabIndex = 1;
-            // 
-            // logar
-            // 
-            this.logar.BackColor = System.Drawing.Color.MidnightBlue;
-            this.logar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.logar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.logar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.logar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logar.ForeColor = System.Drawing.Color.White;
-            this.logar.Image = ((System.Drawing.Image)(resources.GetObject("logar.Image")));
-            this.logar.Location = new System.Drawing.Point(107, 387);
-            this.logar.Name = "logar";
-            this.logar.Size = new System.Drawing.Size(216, 84);
-            this.logar.TabIndex = 7;
-            this.logar.Text = "   LOGAR";
-            this.logar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.logar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.logar.UseCompatibleTextRendering = true;
-            this.logar.UseVisualStyleBackColor = false;
-            this.logar.Click += new System.EventHandler(this.logar_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::WindowsFormsApplication2.Properties.Resources.Custom_Icon_Design_Pretty_Office_6_Logout;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(362, 387);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.button1.Size = new System.Drawing.Size(206, 84);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "    SAIR";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseCompatibleTextRendering = true;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(30, 122);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 81);
-            this.button2.TabIndex = 8;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(30, 232);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 81);
-            this.button3.TabIndex = 9;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // tileControl1
             // 
@@ -131,7 +73,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1077, 232);
+            this.button4.Location = new System.Drawing.Point(1067, 54);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(235, 205);
             this.button4.TabIndex = 11;
@@ -139,17 +81,60 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // logar
+            // 
+            this.logar.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.logar.Appearance.Options.UseFont = true;
+            this.logar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.logar.Image = ((System.Drawing.Image)(resources.GetObject("logar.Image")));
+            this.logar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.logar.Location = new System.Drawing.Point(97, 386);
+            this.logar.Name = "logar";
+            this.logar.Size = new System.Drawing.Size(216, 85);
+            this.logar.TabIndex = 12;
+            this.logar.Text = "LOGAR";
+            this.logar.Click += new System.EventHandler(this.logar_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.button1.Appearance.Options.UseFont = true;
+            this.button1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(341, 386);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(216, 85);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "SAIR";
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(44, 232);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(74, 74);
+            this.simpleButton3.TabIndex = 15;
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(44, 125);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(74, 74);
+            this.simpleButton4.TabIndex = 16;
+            // 
             // Form1
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1354, 525);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.logar);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.txtsenha);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.tileControl1);
@@ -173,12 +158,12 @@
 
         private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.TextBox txtsenha;
-        private System.Windows.Forms.Button logar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private DevExpress.XtraEditors.TileControl tileControl1;
         private System.Windows.Forms.Button button4;
+        private DevExpress.XtraEditors.SimpleButton logar;
+        private DevExpress.XtraEditors.SimpleButton button1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
 

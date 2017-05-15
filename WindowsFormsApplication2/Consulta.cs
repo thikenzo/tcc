@@ -21,7 +21,7 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
             this.Height = 630; //altura
-            this.Width = 1013; //largura
+            this.Width = 930; //largura
         }
 
 
@@ -90,7 +90,7 @@ namespace WindowsFormsApplication2
 
 
                 this.dataGridView1.Columns["Id"].Visible = false;
-                this.dataGridView1.Columns["Rg"].Visible = false;
+                //this.dataGridView1.Columns["Rg"].Visible = false;
                 this.dataGridView1.Columns["Cpf"].Visible = false;
                 this.dataGridView1.Columns["Login"].Visible = false;
                 this.dataGridView1.Columns["Senha"].Visible = false;
@@ -106,7 +106,7 @@ namespace WindowsFormsApplication2
                 dataGridView1.DataSource = data;
 
                 this.dataGridView1.Columns["Id"].Visible = false;
-                this.dataGridView1.Columns["Rg"].Visible = false;
+                //this.dataGridView1.Columns["Rg"].Visible = false;
                 this.dataGridView1.Columns["Cpf"].Visible = false;
                 this.dataGridView1.Columns["Login"].Visible = false;
                 this.dataGridView1.Columns["Senha"].Visible = false;
@@ -120,7 +120,7 @@ namespace WindowsFormsApplication2
                 dataGridView1.DataSource = data;
 
                 this.dataGridView1.Columns["Id"].Visible = false;
-                this.dataGridView1.Columns["Rg"].Visible = false;
+                //this.dataGridView1.Columns["Rg"].Visible = false;
                 this.dataGridView1.Columns["Cpf"].Visible = false;
                 this.dataGridView1.Columns["Login"].Visible = false;
                 this.dataGridView1.Columns["Senha"].Visible = false;
@@ -148,8 +148,10 @@ namespace WindowsFormsApplication2
 
                 Cad Cad = new Cad();
 
-                Cad.editar.Enabled = true;
-                Cad.adicionar.Enabled = false;
+                //Cad.editar.Enabled = true;
+                //Cad.adicionar.Enabled = false;
+
+               
 
                 Cad.Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
                 Cad.txtNome.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();

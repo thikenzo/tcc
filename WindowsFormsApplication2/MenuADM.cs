@@ -23,12 +23,7 @@ namespace WindowsFormsApplication2
             this.Width = 900; //largura
         }
 
-        private void sair_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 ss = new Form1();
-            ss.Show();
-        }
+
 
         private void agendamento_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
@@ -76,7 +71,7 @@ namespace WindowsFormsApplication2
         {
             this.Hide();
             Cad ss = new Cad();
-            ss.editar.Enabled = false;
+            //ss.editar.Enabled = false;
             ss.ShowDialog();
         }
 
@@ -94,6 +89,13 @@ namespace WindowsFormsApplication2
 
         private void MenuADM_Load(object sender, EventArgs e)
         {
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 ss = new Form1();
+            ss.Show();
         }
     }
 }

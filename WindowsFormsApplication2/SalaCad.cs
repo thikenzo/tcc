@@ -8,15 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
 
 
 namespace WindowsFormsApplication2
 {
-    public partial class SalaCad : Form
+    public partial class SalaCad : XtraForm
     {
         public SalaCad()
         {
             InitializeComponent();
+
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
         }
 
         public class BDComun
@@ -42,6 +47,9 @@ namespace WindowsFormsApplication2
 
         private void SalaCad_Load(object sender, EventArgs e)
         {
+            this.Height = 430; //altura
+            this.Width = 700; //largura
+
         }
 
 

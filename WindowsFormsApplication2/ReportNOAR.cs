@@ -36,9 +36,7 @@ namespace WindowsFormsApplication2
             // with the specified look and feel settings.  
             printTool.ShowPreviewDialog(UserLookAndFeel.Default);
 
-
-
-            xrLabel1.Visible = false;
+            
 
         }
         

@@ -43,7 +43,10 @@ namespace WindowsFormsApplication2
 
         private void Cad_Load(object sender, EventArgs e)
         {
-           
+            this.Height = 640; //altura
+            this.Width = 550; //largura
+
+            editar.Enabled = false; 
         }
 
 
