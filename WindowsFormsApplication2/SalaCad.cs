@@ -80,10 +80,13 @@ namespace WindowsFormsApplication2
             }
         }
 
+        public Int64 Id { get; set; }
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
             Sala pSala = new Sala();
+            pSala.Id = Id;
             pSala.NomeSala = salatxt.Text;
             pSala.Identificacao = identificacaotxt.Text;
             pSala.Tamanho = tamanho.Text;

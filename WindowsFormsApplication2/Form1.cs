@@ -67,21 +67,36 @@ namespace WindowsFormsApplication2
             le = cmd.ExecuteReader();
             if (le.Read())
             {
-                SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Administrador'", con);
+                // SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Administrador'", con);
 
                 this.Hide();
                 MenuADM ss = new MenuADM();
                 ss.Show();
+                le.Close();
             }
             else
             {
-                SqlCommand cmd111 = new SqlCommand("Select * From CAD where NivelAcesso = 'Usuário'", con);
+                le.Close();
+                SqlCommand cmd111 = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso", con);
+                cmd111.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
+                cmd111.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
+                cmd111.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Usuário";
 
-                this.Hide();
-                Maincs ss1 = new Maincs();
-                ss1.Show();
-            }
+                le = cmd111.ExecuteReader();
+
+                if (le.Read())
+                {
+                    this.Hide();
+                    Maincs ss1 = new Maincs();
+                    ss1.Show();
+                    le.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário e Senha incorretos! ");
+                }
             
+            }
         }
         
                   

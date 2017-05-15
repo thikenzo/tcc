@@ -86,6 +86,8 @@ namespace WindowsFormsApplication2
         {
             this.dataGridView2.Columns["Id"].Visible = false;
             SalaCad salaC = new SalaCad();
+
+            salaC.Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
             salaC.salatxt.Text = this.dataGridView2.CurrentRow.Cells[1].Value.ToString();
             salaC.identificacaotxt.Text = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
             salaC.tamanho.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();

@@ -30,6 +30,10 @@ namespace WindowsFormsApplication2
             }
            
         }
+        
+        public Int64 Id { get; set; }
+
+
 
         static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
         SqlConnection conexao = new SqlConnection(strCn);
@@ -118,6 +122,7 @@ namespace WindowsFormsApplication2
         {
 
             Instrum pInstrum = new Instrum();
+            pInstrum.Id = Id;
             pInstrum.NomeEquip = txtNomeEquip.Text;
             pInstrum.Classificacao = classificacao;
             pInstrum.Tipo = combotipo.Text;

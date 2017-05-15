@@ -68,6 +68,7 @@ namespace WindowsFormsApplication2
                 //this.Close();
 
                 InstruCad InstruCad = new InstruCad();
+                InstruCad.Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
                 InstruCad.txtNomeEquip.Text = this.dataGridView2.CurrentRow.Cells[1].Value.ToString();
                 InstruCad.classificacao = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
                 InstruCad.combotipo.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();

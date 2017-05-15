@@ -150,7 +150,8 @@ namespace WindowsFormsApplication2
 
                 Cad.editar.Enabled = true;
                 Cad.adicionar.Enabled = false;
-                
+
+                Cad.Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
                 Cad.txtNome.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 Cad.txtTelefone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
                 Cad.txtCelular.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();

@@ -15,6 +15,7 @@ namespace WindowsFormsApplication2
 {
     public partial class Cad : XtraForm
     {
+        
 
         static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
         //bool novo;
@@ -113,13 +114,15 @@ namespace WindowsFormsApplication2
 
 
         }
-        
+
+        public Int64 Id { get; set; }
 
         private void editar_Click(object sender, EventArgs e)
         {
 
             Cliente pCliente = new Cliente();
-            
+
+            pCliente.Id = Id;
             pCliente.Nome = txtNome.Text;
             pCliente.Telefone = txtTelefone.Text;
             pCliente.Celular = txtCelular.Text;

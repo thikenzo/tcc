@@ -78,8 +78,8 @@ namespace WindowsFormsApplication2
             using (SqlConnection conexao = BDComun.ObterConexao())
             {
 
-                SqlCommand comando = new SqlCommand(string.Format("Update SalaCad set NomeSala = '{0}', Identificacao = '{1}', Tamanho = '{2}', Valor = '{3}', Situacao = '{4}'",
-                    pSala.NomeSala, pSala.Identificacao, pSala.Tamanho, pSala.Valor, pSala.Situacao), conexao);
+                SqlCommand comando = new SqlCommand(string.Format("Update SalaCad set NomeSala = '{0}', Identificacao = '{1}', Tamanho = '{2}', Valor = '{3}', Situacao = '{4}' where Id = {5}",
+                    pSala.NomeSala, pSala.Identificacao, pSala.Tamanho, pSala.Valor, pSala.Situacao, pSala.Id), conexao);
 
                 retorno = comando.ExecuteNonQuery();
                 conexao.Close();
