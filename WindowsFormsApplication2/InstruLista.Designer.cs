@@ -228,11 +228,12 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1651, 271);
+            this.label8.Location = new System.Drawing.Point(1675, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 25);
             this.label8.TabIndex = 17;
             this.label8.Text = "total";
+            this.label8.Visible = false;
             // 
             // InstruLista
             // 

@@ -125,7 +125,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(150, 44);
             this.btnVoltar.TabIndex = 9;
-            this.btnVoltar.Text = "VOLTAR";
+            this.btnVoltar.Text = "MENU";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 

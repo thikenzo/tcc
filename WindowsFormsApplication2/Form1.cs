@@ -55,11 +55,12 @@ namespace WindowsFormsApplication2
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
             // funciona - SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='"+ txtusuario.Text + "' and Password = '" +txtsenha.Text+ "' and NivelAcesso = @NivelAcesso ", con);
 
-            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso", con);
+            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso ", con);
 
             cmd.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
             cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
-            cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Usuário";
+            cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Administrador";
+            //cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Administrador";
             con.Open();
 
             SqlDataReader le = null;
@@ -69,22 +70,25 @@ namespace WindowsFormsApplication2
                 SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Administrador'", con);
 
                 this.Hide();
-                Maincs ss = new Maincs();
+                MenuADM ss = new MenuADM();
                 ss.Show();
             }
             else
             {
-                SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Usuário'", con);
+                SqlCommand cmd111 = new SqlCommand("Select * From CAD where NivelAcesso = 'Usuário'", con);
 
                 this.Hide();
-                MenuADM ss = new MenuADM();
-                ss.Show();
+                Maincs ss1 = new Maincs();
+                ss1.Show();
             }
-
+            
         }
         
+                  
 
-        private void logar_Click_1(object sender, EventArgs e)
+
+
+    private void logar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtsenha.Text))
             {
@@ -165,7 +169,7 @@ namespace WindowsFormsApplication2
         {
 
             this.Hide();
-            InstruLista ss = new InstruLista();
+            Cad ss = new Cad();
             ss.Show();
         }
 

@@ -22,9 +22,11 @@ namespace WindowsFormsApplication2
             InitializeComponent();
         }
 
-    private void Relatorio_Load(object sender, EventArgs e)
+        private void Relatorio_Load(object sender, EventArgs e)
         {
- 
+            // TODO: esta linha de código carrega dados na tabela 'bancoDataSet.Agenda'. Você pode movê-la ou removê-la conforme necessário.
+            this.agendaTableAdapter1.Fill(this.bancoDataSet.Agenda);
+
         }
 
         private void servico_Enter(object sender, EventArgs e)

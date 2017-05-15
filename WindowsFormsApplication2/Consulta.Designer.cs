@@ -76,7 +76,7 @@
             this.label2.Location = new System.Drawing.Point(684, 225);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 25);
+            this.label2.Size = new System.Drawing.Size(176, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Pesquisar Nome :";
             // 
@@ -85,7 +85,7 @@
             this.nomepesquisa.Location = new System.Drawing.Point(892, 219);
             this.nomepesquisa.Margin = new System.Windows.Forms.Padding(6);
             this.nomepesquisa.Name = "nomepesquisa";
-            this.nomepesquisa.Size = new System.Drawing.Size(360, 31);
+            this.nomepesquisa.Size = new System.Drawing.Size(360, 33);
             this.nomepesquisa.TabIndex = 3;
             this.nomepesquisa.TextChanged += new System.EventHandler(this.nomepesquisa_TextChanged);
             // 
@@ -96,7 +96,7 @@
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(174, 73);
             this.btnVoltar.TabIndex = 4;
-            this.btnVoltar.Text = "VOLTAR";
+            this.btnVoltar.Text = "MENU";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
@@ -172,8 +172,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(2014, 1142);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);

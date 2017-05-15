@@ -174,7 +174,7 @@ namespace WindowsFormsApplication2
 
 
                 this.Hide();
-                Pagamento novaForm = new Pagamento(clientetxt.Text, label13.Text);
+                Pagamento novaForm = new Pagamento(clientetxt.Text, label13.Text, label10.Text, datalabel.Text);
                 novaForm.Show();
 
             }

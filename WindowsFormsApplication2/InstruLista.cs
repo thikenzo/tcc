@@ -213,7 +213,7 @@ namespace WindowsFormsApplication2
 
 
             this.Hide();
-            Pagamento novaForm = new Pagamento(label5.Text, label8.Text);
+            Pagamento novaForm = new Pagamento(label5.Text, label8.Text, label4.Text, label6.Text);
             novaForm.Show();
         }
 

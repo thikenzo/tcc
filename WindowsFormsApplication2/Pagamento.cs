@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WindowsFormsApplication2
 {
     public partial class Pagamento : Form
     {
+        static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
+        SqlCommand com;
+        public String cartao { get; set; }
+        public String tipocartao { get; set; }
+
         public Pagamento()
         {
             InitializeComponent();
@@ -20,18 +27,21 @@ namespace WindowsFormsApplication2
             this.Width = 970; //largura
         }
 
-        public Pagamento(string texto, string total)
+        public Pagamento(string texto, string total, string data, string hora)
         {
             InitializeComponent();
             nomecliente.Text = texto;
             label15.Text = total;
             label14.Text = total;
             label12.Text = total;
+            label26.Text = data;
+            label28.Text = hora;
         }
         
 
         private void Pagamento_Load(object sender, EventArgs e)
         {
+            btnGerar.Enabled = true;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -183,40 +193,52 @@ namespace WindowsFormsApplication2
             radioPrazo.Enabled = false;
             comboBox1.Enabled = false;
             label23.Visible = false;
+            label24.Visible = false;
+            comboBox1.Text = "";
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            
+            cartao = "Crédito";
 
             radioPrazo.Enabled = true;
             radioVista.Enabled = true;
             label23.Visible = false;
+            label24.Visible = false;
+            comboBox1.Text = "";
 
             if (radioPrazo.Checked)
             {
                 comboBox1.Enabled = true;
+                comboBox1.Text = "";
 
-               // NpgsqlCommand cmd10 = new NpgsqlCommand("INSERT INTO visual_acuity (eid, corrected, is_left_eye, value) VALUES (@eid, @corrected, @is_left_eye, @value)", conn);
+                // NpgsqlCommand cmd10 = new NpgsqlCommand("INSERT INTO visual_acuity (eid, corrected, is_left_eye, value) VALUES (@eid, @corrected, @is_left_eye, @value)", conn);
                 //cmd10.Parameters.AddWithValue("@is_left_eye", radioButton2.Checked);
                 //cmd10.Parameters.AddWithValue("@corrected", radioButton4.Checked);
                 //cmd10.ExecuteNonQuery();
+            }
+            else
+            {
+                comboBox1.Text = "";
             }
 
         }
 
         private void radioPrazo_CheckedChanged(object sender, EventArgs e)
         {
+            tipocartao = "Parcelado";
+
             if (radioPrazo.Checked)
             {
                 comboBox1.Enabled = true;
+                comboBox1.Text = "";
 
                 // NpgsqlCommand cmd10 = new NpgsqlCommand("INSERT INTO visual_acuity (eid, corrected, is_left_eye, value) VALUES (@eid, @corrected, @is_left_eye, @value)", conn);
                 //cmd10.Parameters.AddWithValue("@is_left_eye", radioButton2.Checked);
                 //cmd10.Parameters.AddWithValue("@corrected", radioButton4.Checked);
                 //cmd10.ExecuteNonQuery();
 
-               
+
 
 
             }
@@ -229,9 +251,128 @@ namespace WindowsFormsApplication2
 
         private void radioVista_CheckedChanged(object sender, EventArgs e)
         {
+            tipocartao = "À Vista";
+
             label23.Text = "";
             comboBox1.Enabled = false;
             label23.Visible = false;
+            label24.Visible = false;
+            comboBox1.Text = "";
+        }
+
+        private void btnGerar_Click(object sender, EventArgs e)
+        {
+            if(tipopagamento.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escolha tipo de pagamento!");
+            }
+            else
+            {
+                btnSalvar.Enabled = true;
+            }
+
+            
+
+            if (tipopagamento.SelectedIndex == 0)
+            {
+                string sql = "INSERT INTO PgtoDin (Nome, Data, Hora, Valor, Desconto, VLDesconto, Obs) "
+
+                          + "VALUES ('" + nomecliente.Text + "', '" + label26.Text + "', '"
+                          + label28.Text + "', '" + label15.Text + "', '" + textBox3.Text + "','"
+                          + label20.Text + "', '" + textBox1.Text + "')";
+
+                SqlConnection con = new SqlConnection(strCn);
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+                try
+                {
+                    int i = cmd.ExecuteNonQuery();
+
+                    FormRepost ss1 = new FormRepost();
+                    ss1.Show();
+                }
+                catch (Exception ex)
+                {
+                }
+                
+            }
+            if(tipopagamento.SelectedIndex == 2)
+            {
+                string sql = "INSERT INTO PgtoCheq (Nome, Data, Hora, Valor, NumCheq, Conta, Agencia, Obs) "
+
+                          + "VALUES ('" + nomecliente.Text + "', '" + label26.Text + "', '"
+                          + label28.Text + "', '" + label14.Text + "', '" + textBox4.Text + "','"
+                          + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox1.Text + "')";
+
+                SqlConnection con = new SqlConnection(strCn);
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+                try
+                {
+                    int i = cmd.ExecuteNonQuery();
+
+                    FormRepost ss1 = new FormRepost();
+                    ss1.Show();
+                }
+                catch (Exception ex)
+                {
+                }
+
+            }
+
+
+            
+
+            if (tipopagamento.SelectedIndex == 1)
+            {
+                string sql = "INSERT INTO PgtoCartao (Nome, Data, Hora, Valor, Cartao, TipoCartao, Parcela, VlParcela, NumCartao, Cod, Obs) "
+
+                          + "VALUES ('" + nomecliente.Text + "', '" + label26.Text + "', '"
+                          + label28.Text + "', '" + label12.Text + "', '" + cartao + "', '" + tipocartao + "','" + label23.Text + "','"
+                          + label24.Text + "', '" + textBox2.Text + "', '" + textBox7.Text + "', '" + textBox1.Text + "')";
+
+                SqlConnection con = new SqlConnection(strCn);
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+                try
+                {
+                    int i = cmd.ExecuteNonQuery();
+
+                    FormRepost ss1 = new FormRepost();
+                    ss1.Show();
+                }
+                catch (Exception ex)
+                {
+                }
+
+                
+            }
+
+           
+
+        }
+
+
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            cartao = "Débito";
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            MenuADM ss = new MenuADM();
+            ss.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

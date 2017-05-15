@@ -227,7 +227,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(838, 903);
+            this.button1.Location = new System.Drawing.Point(904, 939);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 85);
@@ -238,7 +238,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1090, 903);
+            this.button2.Location = new System.Drawing.Point(1156, 939);
             this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 85);
@@ -249,7 +249,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1278, 903);
+            this.button3.Location = new System.Drawing.Point(1344, 939);
             this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(150, 85);
@@ -271,7 +271,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1462, 903);
+            this.button4.Location = new System.Drawing.Point(1528, 939);
             this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 85);
@@ -360,6 +360,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AgendaServico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOAR ESTÚDIO";
             this.Load += new System.EventHandler(this.AgendaServico_Load);
             this.ResumeLayout(false);

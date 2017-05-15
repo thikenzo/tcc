@@ -89,7 +89,7 @@
             this.voltar.ForeColor = System.Drawing.Color.White;
             this.voltar.Image = ((System.Drawing.Image)(resources.GetObject("voltar.Image")));
             this.voltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.voltar.Location = new System.Drawing.Point(974, 1073);
+            this.voltar.Location = new System.Drawing.Point(992, 1073);
             this.voltar.Margin = new System.Windows.Forms.Padding(6);
             this.voltar.Name = "voltar";
             this.voltar.Size = new System.Drawing.Size(196, 63);
@@ -394,7 +394,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 119);
+            this.textBox1.Location = new System.Drawing.Point(1003, 122);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 33);
             this.textBox1.TabIndex = 38;
