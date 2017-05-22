@@ -1,0 +1,20 @@
+Logar
+Sair
+
+Inserir
+Editar
+Deletar
+Voltar
+Próximo
+
+Pesquisar
+Inserir (cliente/funcionário)
+Inserir (para instrumentos e salas)
+Agendar (na tela de consultar sala)
+Instrumentos
+Finalizar
+Salvar
+Gerar PDF
+Gerar relatório
+Imprimir relatório
+

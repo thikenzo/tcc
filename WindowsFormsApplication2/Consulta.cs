@@ -204,7 +204,7 @@ namespace WindowsFormsApplication2
 
                 }
                 else
-                    MessageBox.Show("Você cancelou a exclusão", "Cancelado");
+                    MessageBox.Show("Você cancelou a exclusão!", "Cancelado");
 
             }
         }

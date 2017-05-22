@@ -8,14 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
 
 namespace WindowsFormsApplication2
 {
-    public partial class InstruCad : Form
+    public partial class InstruCad : XtraForm
     {
         public InstruCad()
         {
             InitializeComponent();
+
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
+
+            this.Height = 390; //altura
+            this.Width = 690; //largura
+
+
+
+            btnEditar.Enabled = false;
         }
 
         public class BDComun
@@ -84,11 +96,13 @@ namespace WindowsFormsApplication2
             classificacao = "Internacional";
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        
+
+private void btnAdicionar_Click(object sender, EventArgs e)
         {
             if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "")
             {
-                MessageBox.Show("Deve preencher todos os campos!!");
+                MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
             }
             else
             {
@@ -104,7 +118,7 @@ namespace WindowsFormsApplication2
 
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Dados Guardados! ");
+                    MessageBox.Show("Instrumento cadastrado! ", "CADASTRO");
                     limpar();
                     combotipo.Text = "";
                     classificacao = "";
@@ -121,6 +135,11 @@ namespace WindowsFormsApplication2
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
+            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "")
+            {
+                MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO EDITAR");
+            }
+
             Instrum pInstrum = new Instrum();
             pInstrum.Id = Id;
             pInstrum.NomeEquip = txtNomeEquip.Text;
@@ -136,8 +155,10 @@ namespace WindowsFormsApplication2
             if (resultado > 0)
             {
 
-                MessageBox.Show("Alterado dados Instrumento Concluído!");
+                MessageBox.Show("Alteração dos dados do Instrumento OK!");
                 limpar();
+
+                combotipo.Text = ""; 
             }
 
             else
@@ -153,7 +174,12 @@ namespace WindowsFormsApplication2
 
         private void InstruCad_Load(object sender, EventArgs e)
         {
+        }
 
+        public System.Windows.Forms.Button BtnAdicionar;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
     }
     }

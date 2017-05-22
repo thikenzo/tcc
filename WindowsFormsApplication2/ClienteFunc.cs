@@ -124,7 +124,7 @@ namespace WindowsFormsApplication2
 
                 Cliente pCliente = new Cliente();
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select Id, Nome, Telefone, Celular, Email, Endereco, N, Bairro, Rg, Cpf, NivelAcesso from CAD where Id={0} and", pId), conexao);
+                    "Select Id, Nome, Telefone, Celular, Email, Endereco, N, Bairro, Rg, Cpf, NivelAcesso from CAD where Id={0}", pId), conexao);
 
                SqlDataReader reader = comando.ExecuteReader();
 

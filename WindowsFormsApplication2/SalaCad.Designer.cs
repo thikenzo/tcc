@@ -41,10 +41,8 @@
             this.identificacaotxt = new System.Windows.Forms.TextBox();
             this.valortxt = new System.Windows.Forms.TextBox();
             this.tamanho = new System.Windows.Forms.ComboBox();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdicionar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEditar = new DevExpress.XtraEditors.SimpleButton();
             this.btnVoltar = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
             // 
@@ -53,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arabic Typesetting", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(301, 79);
+            this.label1.Location = new System.Drawing.Point(258, 79);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(809, 123);
@@ -183,52 +181,33 @@
             this.tamanho.Name = "tamanho";
             this.tamanho.Size = new System.Drawing.Size(240, 33);
             this.tamanho.TabIndex = 24;
+            this.tamanho.SelectedIndexChanged += new System.EventHandler(this.tamanho_SelectedIndexChanged);
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(700, 628);
-            this.btnAdicionar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnAdicionar.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAdicionar.Appearance.Options.UseFont = true;
+            this.btnAdicionar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
+            this.btnAdicionar.Location = new System.Drawing.Point(602, 658);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(150, 65);
-            this.btnAdicionar.TabIndex = 25;
-            this.btnAdicionar.Text = "ADICIONAR";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Size = new System.Drawing.Size(206, 63);
+            this.btnAdicionar.TabIndex = 29;
+            this.btnAdicionar.Text = "INSERIR";
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(884, 628);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEditar.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.Appearance.Options.UseFont = true;
+            this.btnEditar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(856, 658);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(150, 65);
-            this.btnEditar.TabIndex = 27;
+            this.btnEditar.Size = new System.Drawing.Size(206, 63);
+            this.btnEditar.TabIndex = 30;
             this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(672, 537);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(206, 63);
-            this.simpleButton1.TabIndex = 29;
-            this.simpleButton1.Text = "INSERIR";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(926, 537);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(206, 63);
-            this.simpleButton2.TabIndex = 30;
-            this.simpleButton2.Text = "EDITAR";
             // 
             // btnVoltar
             // 
@@ -236,7 +215,7 @@
             this.btnVoltar.Appearance.Options.UseFont = true;
             this.btnVoltar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
-            this.btnVoltar.Location = new System.Drawing.Point(1106, 628);
+            this.btnVoltar.Location = new System.Drawing.Point(1112, 658);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(206, 63);
             this.btnVoltar.TabIndex = 31;
@@ -251,8 +230,6 @@
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1610, 784);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAdicionar);
             this.Controls.Add(this.tamanho);
@@ -289,16 +266,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.Button btnEditar;
         public System.Windows.Forms.RadioButton radioAtivo;
         public System.Windows.Forms.RadioButton radioInativo;
         public System.Windows.Forms.TextBox salatxt;
         public System.Windows.Forms.TextBox identificacaotxt;
         public System.Windows.Forms.TextBox valortxt;
         public System.Windows.Forms.ComboBox tamanho;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnAdicionar;
+        private DevExpress.XtraEditors.SimpleButton btnEditar;
         private DevExpress.XtraEditors.SimpleButton btnVoltar;
     }
 }

@@ -7,56 +7,80 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
 
 namespace WindowsFormsApplication2
 {
-    public partial class ConsultaEquip : Form
+    public partial class ConsultaEquip : XtraForm
     {
         public ConsultaEquip()
         {
             InitializeComponent();
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
+
+            this.Height = 460; //altura
+            this.Width = 858; //largura
         }
 
         
         public Instrum InstrumSelecionado { get; set; }
 
 
-
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = InstrumFunc.BuscarEquip(textBox1.Text);
             this.dataGridView2.Columns["Id"].Visible = false;
+
+            if (dataGridView2.RowCount == 0)
+            {
+
+                MessageBox.Show("Nenhum Nome encontrado!! ", "ERRO");
+
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+
             {
-                Int64 Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
-                InstrumSelecionado = InstrumFunc.ObterEquip(Id);
-
-                if (MessageBox.Show("Tem certeza que deseja exluir o Cliente??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridView2.RowCount == 0)
                 {
-
-                    int resultado = InstrumFunc.Excluir(InstrumSelecionado.Id);
-
-                    if (resultado > 0)
+                    MessageBox.Show("Não se pode excluir nenhum equipamento selecionado!");
+                }
+                else
+                
                     {
+                        Int64 Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
 
-                        MessageBox.Show("Cliente excluído com sucesso!", "Cliente Excluído", MessageBoxButtons.OK);
+                        InstrumSelecionado = InstrumFunc.ObterEquip(Id);
+                    
+                        if (MessageBox.Show("Tem certeza que deseja exluir o Equipamento??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
 
-                    }
+                            int resultado = InstrumFunc.Excluir(InstrumSelecionado.Id);
 
-                    else
-                    {
-                        MessageBox.Show("Não se pode excluir o cliente, ocorreu um erro!!");
+                            if (resultado > 0)
+                            {
+
+                                MessageBox.Show("Equipamento excluído com sucesso!", "Equipamento Excluído", MessageBoxButtons.OK);
+
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("Não se pode excluir o equipamento, ocorreu um erro!!");
+                            }
+
+                        }
+                        else
+                            MessageBox.Show("Você cancelou a exclusão, equipamento não excluído!", "Cancelado");
+
                     }
 
                 }
-                else
-                    MessageBox.Show("Você cancelou a exclusão", "Cancelado");
-
-        }
+            
     }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -73,14 +97,18 @@ namespace WindowsFormsApplication2
                 InstruCad.classificacao = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
                 InstruCad.combotipo.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();
                 InstruCad.txtValor.Text = this.dataGridView2.CurrentRow.Cells[4].Value.ToString();
-                this.Close();
+                InstruCad.Owner = this;
+                InstruCad.btnAdicionar.Enabled = false;
+                InstruCad.btnEditar.Enabled = true;
 
-                InstruCad.ShowDialog();
+                InstruCad.Show();
+                this.Hide();
+                
 
             }
             else
             {
-                MessageBox.Show("Não selecioando nenhum Equipamento!");
+                MessageBox.Show("Não selecioando nenhum Equipamento para edição!");
             }
         }
 

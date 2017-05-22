@@ -93,7 +93,7 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
-                    MessageBox.Show("Usuário e Senha incorretos! ");
+                    MessageBox.Show("Usuário e Senha incorretos!", "ERRO AO LOGAR");
                 }
             
             }

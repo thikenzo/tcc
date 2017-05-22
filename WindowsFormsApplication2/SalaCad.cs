@@ -74,7 +74,7 @@ namespace WindowsFormsApplication2
 
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Dados Guardados! ");
+                    MessageBox.Show("Sala Cadastrado, OK! ");
                     limpar();
                     tamanho.Text = "";
                     situacao = "";
@@ -83,7 +83,7 @@ namespace WindowsFormsApplication2
 
                 else
                 {
-                    MessageBox.Show("Não se pode guardar os dados, erro ao guardar");
+                    MessageBox.Show("Não se pode salvar os dados, erro ao salvar!");
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication2
             if (resultado > 0)
             {
 
-                MessageBox.Show("Alterado dados da Sala Concluído!");
+                MessageBox.Show("Alterção dos dados da Sala Concluído!");
                 limpar();
             }
 
@@ -147,6 +147,11 @@ namespace WindowsFormsApplication2
         private void radioInativo_CheckedChanged(object sender, EventArgs e)
         {
             situacao = "INATIVO";
+        }
+
+        private void tamanho_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

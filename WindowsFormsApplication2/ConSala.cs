@@ -19,6 +19,10 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
+
+
+            this.Height = 520; //altura
+            this.Width = 785; //largura
         }
 
 

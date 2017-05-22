@@ -23,6 +23,10 @@ namespace WindowsFormsApplication2
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
 
+
+            this.Height = 745; //altura
+            this.Width = 870; //largura
+
         }
 
         public class BDComun
@@ -37,11 +41,6 @@ namespace WindowsFormsApplication2
 
             }
 
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -65,7 +64,7 @@ namespace WindowsFormsApplication2
             label12.Text = "09:00";
 
             label14.Text = "Horário Disponível";
-            button1.Text = "Agendar";
+            button1.Text = "AGENDAR";
             button1.Enabled = true;
 
             Console.WriteLine(dataAgendamento);
@@ -85,7 +84,7 @@ namespace WindowsFormsApplication2
                 {
                     label14.Text = agendamento.Projeto;
 
-                    button1.Text = "Ocupado";
+                    button1.Text = "OCUPADO";
                     button1.Enabled = false;
                 }
 
@@ -101,7 +100,7 @@ namespace WindowsFormsApplication2
             label1.Text = "10:00";
 
             label2.Text = "Horário Disponível";
-            button2.Text = "Agendar";
+            button2.Text = "AGENDAR";
             button2.Enabled = true;
 
             Console.WriteLine(dataAgendamento);
@@ -114,7 +113,7 @@ namespace WindowsFormsApplication2
                 {
                     label2.Text = agendamento.Projeto;
 
-                    button2.Text = "Ocupado";
+                    button2.Text = "OCUPADO";
                     button2.Enabled = false;
                 }
 
@@ -131,7 +130,7 @@ namespace WindowsFormsApplication2
             label3.Text = "11:00";
 
             label4.Text = "Horário Disponível";
-            button3.Text = "Agendar";
+            button3.Text = "AGENDAR";
             button3.Enabled = true;
 
             Console.WriteLine(dataAgendamento);
@@ -144,7 +143,7 @@ namespace WindowsFormsApplication2
                 {
                     label4.Text = agendamento.Projeto;
 
-                    button3.Text = "Ocupado";
+                    button3.Text = "OCUPADO";
                     button3.Enabled = false;
                 }
 
@@ -159,7 +158,7 @@ namespace WindowsFormsApplication2
             label5.Text = "12:00";
 
             label6.Text = "Horário Disponível";
-            button4.Text = "Agendar";
+            button4.Text = "AGENDAR";
             button4.Enabled = true;
 
             Console.WriteLine(dataAgendamento);
@@ -173,7 +172,7 @@ namespace WindowsFormsApplication2
                 {
                     label6.Text = agendamento.Projeto;
 
-                    button4.Text = "Ocupado";
+                    button4.Text = "OCUPADO";
                     button4.Enabled = false;
                 }
 
@@ -188,7 +187,7 @@ namespace WindowsFormsApplication2
             label8.Text = "13:00";
 
             label7.Text = "Horário Disponível";
-            button5.Text = "Agendar";
+            button5.Text = "AGENDAR";
             button5.Enabled = true;
             
 
@@ -200,7 +199,7 @@ namespace WindowsFormsApplication2
                 {
                     label7.Text = agendamento.Projeto;
 
-                    button5.Text = "Ocupado";
+                    button5.Text = "OCUPADO";
                     button5.Enabled = false;
                 }
 
@@ -216,7 +215,7 @@ namespace WindowsFormsApplication2
             label10.Text = "14:00";
 
             label9.Text = "Horário Disponível";
-            button6.Text = "Agendar";
+            button6.Text = "AGENDAR";
             button6.Enabled = true;
           
 
@@ -228,7 +227,7 @@ namespace WindowsFormsApplication2
                 {
                     label9.Text = agendamento.Projeto;
 
-                    button6.Text = "Ocupado";
+                    button6.Text = "OCUPADO";
                     button6.Enabled = false;
                 }
 
@@ -243,7 +242,7 @@ namespace WindowsFormsApplication2
             label15.Text = "15:00";
 
             label13.Text = "Horário Disponível";
-            button7.Text = "Agendar";
+            button7.Text = "AGENDAR";
             button7.Enabled = true;
 
             foreach (var agendamento in listaAgendamento)
@@ -254,7 +253,7 @@ namespace WindowsFormsApplication2
                 {
                     label13.Text = agendamento.Projeto;
 
-                    button7.Text = "Ocupado";
+                    button7.Text = "OCUPADO";
                     button7.Enabled = false;
                 }
 
@@ -270,7 +269,7 @@ namespace WindowsFormsApplication2
             label17.Text = "16:00";
 
             label16.Text = "Horário Disponível";
-            button8.Text = "Agendar";
+            button8.Text = "AGENDAR";
             button8.Enabled = true;
 
             foreach (var agendamento in listaAgendamento)
@@ -281,7 +280,7 @@ namespace WindowsFormsApplication2
                 {
                     label16.Text = agendamento.Projeto;
 
-                    button8.Text = "Ocupado";
+                    button8.Text = "OCUPADO";
                     button8.Enabled = false;
                 }
 
@@ -296,7 +295,7 @@ namespace WindowsFormsApplication2
             label19.Text = "17:00";
 
             label18.Text = "Horário Disponível";
-            button9.Text = "Agendar";
+            button9.Text = "AGENDAR";
             button9.Enabled = true;
 
             foreach (var agendamento in listaAgendamento)
@@ -307,7 +306,7 @@ namespace WindowsFormsApplication2
                 {
                     label18.Text = agendamento.Projeto;
 
-                    button9.Text = "Ocupado";
+                    button9.Text = "OCUPADO";
                     button9.Enabled = false;
                 }
 
@@ -322,7 +321,7 @@ namespace WindowsFormsApplication2
             label21.Text = "18:00";
 
             label20.Text = "Horário Disponível";
-            button10.Text = "Agendar";
+            button10.Text = "AGENDAR";
             button10.Enabled = true;
             
 
@@ -334,7 +333,7 @@ namespace WindowsFormsApplication2
                 {
                     label20.Text = agendamento.Projeto;
 
-                    button10.Text = "Ocupado";
+                    button10.Text = "OCUPADO";
                     button10.Enabled = false;
                 }
 
@@ -480,6 +479,19 @@ namespace WindowsFormsApplication2
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

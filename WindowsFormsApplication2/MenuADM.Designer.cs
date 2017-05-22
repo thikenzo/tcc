@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuADM));
-            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement21 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement22 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement24 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement26 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement27 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.agendamento = new DevExpress.XtraEditors.TileItem();
@@ -92,10 +92,10 @@
             // 
             this.agendamento.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.agendamento.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement15.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement15.Image")));
-            tileItemElement15.ImageLocation = new System.Drawing.Point(153, 35);
-            tileItemElement15.Text = "Agendamento";
-            this.agendamento.Elements.Add(tileItemElement15);
+            tileItemElement1.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement1.Image")));
+            tileItemElement1.ImageLocation = new System.Drawing.Point(153, 35);
+            tileItemElement1.Text = "Agendamento";
+            this.agendamento.Elements.Add(tileItemElement1);
             this.agendamento.Id = 1;
             this.agendamento.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.agendamento.Name = "agendamento";
@@ -113,14 +113,14 @@
             // 
             this.consala.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.consala.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
-            tileItemElement16.ImageLocation = new System.Drawing.Point(40, -25);
-            tileItemElement16.Text = "Consultar";
-            tileItemElement16.TextLocation = new System.Drawing.Point(45, 0);
-            tileItemElement17.Text = "Sala";
-            tileItemElement17.TextLocation = new System.Drawing.Point(-62, 180);
-            this.consala.Elements.Add(tileItemElement16);
-            this.consala.Elements.Add(tileItemElement17);
+            tileItemElement2.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement2.Image")));
+            tileItemElement2.ImageLocation = new System.Drawing.Point(40, -25);
+            tileItemElement2.Text = "Consultar";
+            tileItemElement2.TextLocation = new System.Drawing.Point(45, 0);
+            tileItemElement3.Text = "Sala";
+            tileItemElement3.TextLocation = new System.Drawing.Point(-62, 180);
+            this.consala.Elements.Add(tileItemElement2);
+            this.consala.Elements.Add(tileItemElement3);
             this.consala.Id = 4;
             this.consala.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.consala.Name = "consala";
@@ -130,14 +130,14 @@
             // 
             this.Cadsala.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.Cadsala.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement18.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement18.Image")));
-            tileItemElement18.ImageLocation = new System.Drawing.Point(45, -25);
-            tileItemElement18.Text = "Cadastrar ";
-            tileItemElement18.TextLocation = new System.Drawing.Point(45, 0);
-            tileItemElement19.Text = "Sala";
-            tileItemElement19.TextLocation = new System.Drawing.Point(-62, 180);
-            this.Cadsala.Elements.Add(tileItemElement18);
-            this.Cadsala.Elements.Add(tileItemElement19);
+            tileItemElement4.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement4.Image")));
+            tileItemElement4.ImageLocation = new System.Drawing.Point(45, -25);
+            tileItemElement4.Text = "Cadastrar ";
+            tileItemElement4.TextLocation = new System.Drawing.Point(45, 0);
+            tileItemElement5.Text = "Sala";
+            tileItemElement5.TextLocation = new System.Drawing.Point(-62, 180);
+            this.Cadsala.Elements.Add(tileItemElement4);
+            this.Cadsala.Elements.Add(tileItemElement5);
             this.Cadsala.Id = 7;
             this.Cadsala.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.Cadsala.Name = "Cadsala";
@@ -147,14 +147,14 @@
             // 
             this.conequip.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.conequip.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement20.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement20.Image")));
-            tileItemElement20.ImageLocation = new System.Drawing.Point(40, -25);
-            tileItemElement20.Text = "Consultar ";
-            tileItemElement20.TextLocation = new System.Drawing.Point(50, 0);
-            tileItemElement21.Text = "Equipamento";
-            tileItemElement21.TextLocation = new System.Drawing.Point(-8, 180);
-            this.conequip.Elements.Add(tileItemElement20);
-            this.conequip.Elements.Add(tileItemElement21);
+            tileItemElement6.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement6.Image")));
+            tileItemElement6.ImageLocation = new System.Drawing.Point(40, -25);
+            tileItemElement6.Text = "Consultar ";
+            tileItemElement6.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement7.Text = "Equipamento";
+            tileItemElement7.TextLocation = new System.Drawing.Point(-8, 180);
+            this.conequip.Elements.Add(tileItemElement6);
+            this.conequip.Elements.Add(tileItemElement7);
             this.conequip.Id = 9;
             this.conequip.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.conequip.Name = "conequip";
@@ -164,14 +164,14 @@
             // 
             this.cadequip.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.cadequip.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement22.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement22.Image")));
-            tileItemElement22.ImageLocation = new System.Drawing.Point(45, -25);
-            tileItemElement22.Text = "Cadastrar";
-            tileItemElement22.TextLocation = new System.Drawing.Point(50, 0);
-            tileItemElement23.Text = "Equipamento";
-            tileItemElement23.TextLocation = new System.Drawing.Point(-8, 180);
-            this.cadequip.Elements.Add(tileItemElement22);
-            this.cadequip.Elements.Add(tileItemElement23);
+            tileItemElement8.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement8.Image")));
+            tileItemElement8.ImageLocation = new System.Drawing.Point(45, -25);
+            tileItemElement8.Text = "Cadastrar";
+            tileItemElement8.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement9.Text = "Equipamento";
+            tileItemElement9.TextLocation = new System.Drawing.Point(-8, 180);
+            this.cadequip.Elements.Add(tileItemElement8);
+            this.cadequip.Elements.Add(tileItemElement9);
             this.cadequip.Id = 6;
             this.cadequip.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.cadequip.Name = "cadequip";
@@ -196,11 +196,11 @@
             this.relatorio.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.relatorio.AppearanceItem.Normal.Options.UseBackColor = true;
             this.relatorio.AppearanceItem.Normal.Options.UseFont = true;
-            tileItemElement24.Height = -1;
-            tileItemElement24.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement24.Image")));
-            tileItemElement24.ImageLocation = new System.Drawing.Point(140, 30);
-            tileItemElement24.Text = "Relatório";
-            this.relatorio.Elements.Add(tileItemElement24);
+            tileItemElement10.Height = -1;
+            tileItemElement10.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement10.Image")));
+            tileItemElement10.ImageLocation = new System.Drawing.Point(140, 30);
+            tileItemElement10.Text = "Relatório";
+            this.relatorio.Elements.Add(tileItemElement10);
             this.relatorio.Id = 5;
             this.relatorio.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.relatorio.Name = "relatorio";
@@ -210,14 +210,14 @@
             // 
             this.cadpessoa.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.cadpessoa.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement25.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement25.Image")));
-            tileItemElement25.ImageLocation = new System.Drawing.Point(45, -25);
-            tileItemElement25.Text = "Cadastrar";
-            tileItemElement25.TextLocation = new System.Drawing.Point(50, 0);
-            tileItemElement26.Text = "Nome";
-            tileItemElement26.TextLocation = new System.Drawing.Point(-50, 180);
-            this.cadpessoa.Elements.Add(tileItemElement25);
-            this.cadpessoa.Elements.Add(tileItemElement26);
+            tileItemElement11.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement11.Image")));
+            tileItemElement11.ImageLocation = new System.Drawing.Point(45, -25);
+            tileItemElement11.Text = "Cadastrar";
+            tileItemElement11.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement12.Text = "Nome";
+            tileItemElement12.TextLocation = new System.Drawing.Point(-50, 180);
+            this.cadpessoa.Elements.Add(tileItemElement11);
+            this.cadpessoa.Elements.Add(tileItemElement12);
             this.cadpessoa.Id = 2;
             this.cadpessoa.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.cadpessoa.Name = "cadpessoa";
@@ -227,14 +227,14 @@
             // 
             this.conpessoa.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
             this.conpessoa.AppearanceItem.Normal.Options.UseBackColor = true;
-            tileItemElement27.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement27.Image")));
-            tileItemElement27.ImageLocation = new System.Drawing.Point(45, -25);
-            tileItemElement27.Text = "Consultar";
-            tileItemElement27.TextLocation = new System.Drawing.Point(50, 0);
-            tileItemElement28.Text = "Nome";
-            tileItemElement28.TextLocation = new System.Drawing.Point(-50, 180);
-            this.conpessoa.Elements.Add(tileItemElement27);
-            this.conpessoa.Elements.Add(tileItemElement28);
+            tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
+            tileItemElement13.ImageLocation = new System.Drawing.Point(45, -25);
+            tileItemElement13.Text = "Consultar";
+            tileItemElement13.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement14.Text = "Nome";
+            tileItemElement14.TextLocation = new System.Drawing.Point(-50, 180);
+            this.conpessoa.Elements.Add(tileItemElement13);
+            this.conpessoa.Elements.Add(tileItemElement14);
             this.conpessoa.Id = 3;
             this.conpessoa.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.conpessoa.Name = "conpessoa";
@@ -267,11 +267,15 @@
             // 
             // MenuADM
             // 
+            this.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1736, 857);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.tileControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MenuADM";
