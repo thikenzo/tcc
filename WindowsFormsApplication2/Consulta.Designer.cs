@@ -223,7 +223,7 @@
         private System.Windows.Forms.TextBox nomepesquisa;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.SimpleButton editarcliente;
+        public DevExpress.XtraEditors.SimpleButton editarcliente;
         private DevExpress.XtraEditors.SimpleButton btnExcluir;
         private DevExpress.XtraEditors.SimpleButton btnCadastrar;
         private DevExpress.XtraEditors.SimpleButton btnVoltar;

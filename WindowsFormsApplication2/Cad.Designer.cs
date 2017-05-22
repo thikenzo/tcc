@@ -119,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1027, 85);
+            this.label1.Location = new System.Drawing.Point(1125, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 25);
@@ -128,7 +128,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(1103, 77);
+            this.txtSenha.Location = new System.Drawing.Point(1201, 75);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(6);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.ReadOnly = true;
@@ -142,7 +142,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arabic Typesetting", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label2.Location = new System.Drawing.Point(376, 86);
+            this.label2.Location = new System.Drawing.Point(325, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(451, 123);
@@ -302,7 +302,7 @@
             // Login
             // 
             this.Login.AutoSize = true;
-            this.Login.Location = new System.Drawing.Point(1029, 50);
+            this.Login.Location = new System.Drawing.Point(1127, 48);
             this.Login.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(73, 25);
@@ -311,7 +311,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(1103, 42);
+            this.txtLogin.Location = new System.Drawing.Point(1201, 40);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(6);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.ReadOnly = true;
@@ -348,7 +348,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1075, 14);
+            this.textBox1.Location = new System.Drawing.Point(1173, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 33);
             this.textBox1.TabIndex = 38;
@@ -371,6 +371,7 @@
             this.editar.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
             this.editar.Appearance.Options.UseFont = true;
             this.editar.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.editar.Enabled = false;
             this.editar.Image = ((System.Drawing.Image)(resources.GetObject("editar.Image")));
             this.editar.Location = new System.Drawing.Point(318, 1057);
             this.editar.Name = "editar";
@@ -398,7 +399,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(1206, 1145);
+            this.ClientSize = new System.Drawing.Size(1304, 1145);
             this.Controls.Add(this.voltar);
             this.Controls.Add(this.editar);
             this.Controls.Add(this.adicionar);
@@ -469,8 +470,8 @@
         public System.Windows.Forms.MaskedTextBox txtCpf;
         public System.Windows.Forms.ComboBox nivelacesso;
         private System.Windows.Forms.TextBox textBox1;
-        private DevExpress.XtraEditors.SimpleButton adicionar;
-        private DevExpress.XtraEditors.SimpleButton editar;
+        public DevExpress.XtraEditors.SimpleButton adicionar;
+        public DevExpress.XtraEditors.SimpleButton editar;
         private DevExpress.XtraEditors.SimpleButton voltar;
     }
 }

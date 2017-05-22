@@ -72,7 +72,7 @@ namespace WindowsFormsApplication2
 
             if (string.IsNullOrEmpty(comboBox1.Text))
             {
-                MessageBox.Show("Campo Tipo Usuário em branco! , OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                MessageBox.Show("Campo Tipo Pessoa em branco! , OBRIGATÓRIO!!", "ERRO AO LOGAR");
                 comboBox1.Focus();
 
                 return;
@@ -147,12 +147,7 @@ namespace WindowsFormsApplication2
                 //this.Close();
 
                 Cad Cad = new Cad();
-
-                //Cad.editar.Enabled = true;
-                //Cad.adicionar.Enabled = false;
-
                
-
                 Cad.Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
                 Cad.txtNome.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 Cad.txtTelefone.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -164,15 +159,18 @@ namespace WindowsFormsApplication2
                 Cad.txtRg.Text = this.dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 Cad.txtCpf.Text = this.dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 Cad.nivelacesso.Text = this.dataGridView1.CurrentRow.Cells[10].Value.ToString();
-                this.Close();
+                Cad.Owner = this;
+                Cad.editar.Enabled = true;
+                Cad.adicionar.Enabled = true;
 
-                Cad.ShowDialog();
-                
+
+                Cad.Show();
+                this.Hide();
             }
 
             else
             {
-                MessageBox.Show("Nenhum cliente selecionado!");
+                MessageBox.Show("Nenhum nome selecionado para Edição!");
             }
         }
 
@@ -182,30 +180,37 @@ namespace WindowsFormsApplication2
         {
             
             {
-                Int64 Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
-                ClienteSelecionado = ClienteFunc.ObterCliente(Id);
-
-                if (MessageBox.Show("Tem certeza que deseja exluir o Cliente??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridView1.RowCount == 0)
                 {
-
-                    int resultado = ClienteFunc.Excluir(ClienteSelecionado.Id);
-
-                    if (resultado > 0)
-                    {
-
-                        MessageBox.Show("Cliente excluído com sucesso!", "Cliente Excluído", MessageBoxButtons.OK);
-
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Não se pode excluir o cliente, ocorreu um erro!!");
-                    }
-
+                    MessageBox.Show("Não se pode excluir, nenhum nome selecionado!");
                 }
                 else
-                    MessageBox.Show("Você cancelou a exclusão!", "Cancelado");
 
+                {
+                    Int64 Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
+                    ClienteSelecionado = ClienteFunc.ObterCliente(Id);
+
+                    if (MessageBox.Show("Tem certeza que deseja exluir a Pessoa??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+                        int resultado = ClienteFunc.Excluir(ClienteSelecionado.Id);
+
+                        if (resultado > 0)
+                        {
+
+                            MessageBox.Show("Cliente excluído com sucesso!", "Pessoa Excluído", MessageBoxButtons.OK);
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Não se pode excluir o pessoa, ocorreu um erro!!");
+                        }
+
+                    }
+                    else
+                        MessageBox.Show("Você cancelou a exclusão!", "Cancelado");
+                }
             }
         }
 

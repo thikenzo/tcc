@@ -209,7 +209,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton btnPesquisa;
-        private DevExpress.XtraEditors.SimpleButton btnEditar;
+        public DevExpress.XtraEditors.SimpleButton btnEditar;
         private DevExpress.XtraEditors.SimpleButton btnExcluir;
         private DevExpress.XtraEditors.SimpleButton btnMenu;
         private DevExpress.XtraEditors.SimpleButton btnCadastrar;

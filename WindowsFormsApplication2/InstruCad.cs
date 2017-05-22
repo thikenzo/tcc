@@ -100,9 +100,11 @@ namespace WindowsFormsApplication2
 
 private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "")
+            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "" || radionacional.Checked == false && radiointernacional.Checked == false)
             {
-                MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
+                    MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
+                
+              //  MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
             }
             else
             {
@@ -122,7 +124,8 @@ private void btnAdicionar_Click(object sender, EventArgs e)
                     limpar();
                     combotipo.Text = "";
                     classificacao = "";
-
+                    radiointernacional.Checked = false;
+                    radionacional.Checked = false;
                 }
 
                 else
@@ -158,7 +161,10 @@ private void btnAdicionar_Click(object sender, EventArgs e)
                 MessageBox.Show("Alteração dos dados do Instrumento OK!");
                 limpar();
 
-                combotipo.Text = ""; 
+                combotipo.Text = "";
+
+                radiointernacional.Checked = false;
+                radionacional.Checked = false;
             }
 
             else
@@ -176,7 +182,7 @@ private void btnAdicionar_Click(object sender, EventArgs e)
         {
         }
 
-        public System.Windows.Forms.Button BtnAdicionar;
+       // public System.Windows.Forms.Button BtnAdicionar;
 
         private void button1_Click(object sender, EventArgs e)
         {

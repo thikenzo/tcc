@@ -53,30 +53,37 @@ namespace WindowsFormsApplication2
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             {
-                Int64 Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
-                InstrumSelecionado = SalaFunc.ObterEquip(Id);
-
-                if (MessageBox.Show("Tem certeza que deseja exluir o Cliente??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridView2.RowCount == 0)
                 {
-
-                    int resultado = SalaFunc.Excluir(InstrumSelecionado.Id);
-
-                    if (resultado > 0)
-                    {
-
-                        MessageBox.Show("Cliente excluído com sucesso!", "Cliente Excluído", MessageBoxButtons.OK);
-
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Não se pode excluir o cliente, ocorreu um erro!!");
-                    }
-
+                    MessageBox.Show("Não se pode excluir, nenhuma sala selecionado!");
                 }
                 else
-                    MessageBox.Show("Você cancelou a exclusão", "Cancelado");
 
+                {
+                    Int64 Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
+                    InstrumSelecionado = SalaFunc.ObterEquip(Id);
+
+                    if (MessageBox.Show("Tem certeza que deseja excluir a Sala??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+                        int resultado = SalaFunc.Excluir(InstrumSelecionado.Id);
+
+                        if (resultado > 0)
+                        {
+
+                            MessageBox.Show("Sala excluído com sucesso!", "Sala Excluído", MessageBoxButtons.OK);
+
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Não se pode excluir a sala, ocorreu um erro!!");
+                        }
+
+                    }
+                    else
+                        MessageBox.Show("Você cancelou a exclusão", "Cancelado");
+                }
             }
         }
 
@@ -88,7 +95,9 @@ namespace WindowsFormsApplication2
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.dataGridView2.Columns["Id"].Visible = false;
+            if (dataGridView2.SelectedRows.Count == 1)
+            {
+                this.dataGridView2.Columns["Id"].Visible = false;
             SalaCad salaC = new SalaCad();
 
             salaC.Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
@@ -97,11 +106,20 @@ namespace WindowsFormsApplication2
             salaC.tamanho.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();
             salaC.valortxt.Text = this.dataGridView2.CurrentRow.Cells[4].Value.ToString();
             salaC.situacao = this.dataGridView2.CurrentRow.Cells[5].Value.ToString();
-            this.Close();
-            salaC.ShowDialog();
-        }
+            salaC.Owner = this;
+            salaC.btnAdicionar.Enabled = false;
+            salaC.btnEditar.Enabled = true;
 
-        private void ConSala_Load(object sender, EventArgs e)
+            salaC.Show();
+            this.Hide();
+        }
+          else
+            {
+                MessageBox.Show("Não selecionado nenhuma Sala para edição!");
+            }
+}
+
+    private void ConSala_Load(object sender, EventArgs e)
         {
             
         }

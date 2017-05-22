@@ -128,7 +128,6 @@
             this.radioAtivo.Name = "radioAtivo";
             this.radioAtivo.Size = new System.Drawing.Size(111, 33);
             this.radioAtivo.TabIndex = 19;
-            this.radioAtivo.TabStop = true;
             this.radioAtivo.Text = "ATIVO";
             this.radioAtivo.UseVisualStyleBackColor = false;
             this.radioAtivo.CheckedChanged += new System.EventHandler(this.radioAtivo_CheckedChanged);
@@ -143,7 +142,6 @@
             this.radioInativo.Name = "radioInativo";
             this.radioInativo.Size = new System.Drawing.Size(135, 33);
             this.radioInativo.TabIndex = 20;
-            this.radioInativo.TabStop = true;
             this.radioInativo.Text = "INATIVO";
             this.radioInativo.UseVisualStyleBackColor = false;
             this.radioInativo.CheckedChanged += new System.EventHandler(this.radioInativo_CheckedChanged);
@@ -272,8 +270,8 @@
         public System.Windows.Forms.TextBox identificacaotxt;
         public System.Windows.Forms.TextBox valortxt;
         public System.Windows.Forms.ComboBox tamanho;
-        private DevExpress.XtraEditors.SimpleButton btnAdicionar;
-        private DevExpress.XtraEditors.SimpleButton btnEditar;
+        public DevExpress.XtraEditors.SimpleButton btnAdicionar;
+        public DevExpress.XtraEditors.SimpleButton btnEditar;
         private DevExpress.XtraEditors.SimpleButton btnVoltar;
     }
 }

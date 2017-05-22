@@ -29,6 +29,9 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
+
+
+            editar.Enabled = false;
         }
 
 
@@ -110,6 +113,7 @@ namespace WindowsFormsApplication2
                     txtCpf.Text = "";
                     txtEmail.Text = "";
                     nivelacesso.Text = "";
+                    nivelacesso.SelectedIndex = -1;
 
                     con.Close();
                 }
@@ -117,6 +121,8 @@ namespace WindowsFormsApplication2
 
 
         }
+
+        
 
         public Int64 Id { get; set; }
 
@@ -204,5 +210,7 @@ namespace WindowsFormsApplication2
         {
 
         }
+
+       // public System.Windows.Forms.Button adicionar;
     }
 }

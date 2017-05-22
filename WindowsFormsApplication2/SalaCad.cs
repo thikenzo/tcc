@@ -22,6 +22,9 @@ namespace WindowsFormsApplication2
 
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
+
+            btnEditar.Enabled = false;
+            
         }
 
         public class BDComun
@@ -50,12 +53,13 @@ namespace WindowsFormsApplication2
             this.Height = 430; //altura
             this.Width = 700; //largura
 
+            
         }
 
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (salatxt.Text == "" || identificacaotxt.Text == "" || tamanho.Text == "" || valortxt.Text == "" || situacao == "")
+            if (salatxt.Text == "" || identificacaotxt.Text == "" || tamanho.Text == "" || valortxt.Text == "" || situacao == "" || radioAtivo.Checked == false && radioInativo.Checked  == false)
             {
                 MessageBox.Show("Deve preencher todos os campos!!");
             }
@@ -78,6 +82,8 @@ namespace WindowsFormsApplication2
                     limpar();
                     tamanho.Text = "";
                     situacao = "";
+                    radioAtivo.Checked = false;
+                    radioInativo.Checked = false;
 
                 }
 
@@ -109,6 +115,9 @@ namespace WindowsFormsApplication2
 
                 MessageBox.Show("Alterção dos dados da Sala Concluído!");
                 limpar();
+                radioInativo.Checked = false;
+                radioAtivo.Checked = false;
+
             }
 
             else
@@ -127,6 +136,8 @@ namespace WindowsFormsApplication2
             salatxt.Clear();
             identificacaotxt.Clear();
             valortxt.Clear();
+            radioAtivo.Checked = false;
+            radioInativo.Checked = false;
 
         }
 
