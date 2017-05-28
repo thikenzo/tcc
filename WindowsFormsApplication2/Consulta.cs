@@ -161,7 +161,7 @@ namespace WindowsFormsApplication2
                 Cad.nivelacesso.Text = this.dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 Cad.Owner = this;
                 Cad.editar.Enabled = true;
-                Cad.adicionar.Enabled = true;
+                Cad.adicionar.Enabled = false;
 
 
                 Cad.Show();

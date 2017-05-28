@@ -184,7 +184,7 @@ namespace WindowsFormsApplication2
         {
 
             this.Hide();
-            MenuADM ss = new MenuADM();
+            AgendaServico ss = new AgendaServico();
             ss.Show();
         }
 

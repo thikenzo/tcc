@@ -26,8 +26,10 @@ namespace WindowsFormsApplication2
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
 
-            this.Height = 570; //altura
+            this.Height = 555; //altura
             this.Width = 870; //largura
+
+
         }
 
         public AgendaServico(string texto, string label22)
@@ -122,10 +124,16 @@ namespace WindowsFormsApplication2
 
         private void AgendaServico_Load(object sender, EventArgs e)
         {
-            conectcli c = new conectcli();
-            c.autocomplete(clientetxt);
+            linkLabel1.Visible = true;
 
 
+
+
+
+
+
+
+            ///////////////////////////////////////////
             sala.Items.Clear();
             con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -182,7 +190,15 @@ namespace WindowsFormsApplication2
 
         private void clientetxt_TextChanged(object sender, EventArgs e)
         {
+            conectcli c = new conectcli();
+            c.autocomplete(clientetxt);
 
+           
+
+            if (clientetxt.Text == "")
+            {
+                linkLabel1.Visible = false;
+            }
         }
 
         private void datalabel_Click(object sender, EventArgs e)
