@@ -150,7 +150,7 @@
             // sala
             // 
             this.sala.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.sala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sala.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.sala.FormattingEnabled = true;
             this.sala.Location = new System.Drawing.Point(288, 733);
             this.sala.Margin = new System.Windows.Forms.Padding(6);
@@ -158,6 +158,7 @@
             this.sala.Size = new System.Drawing.Size(320, 33);
             this.sala.TabIndex = 27;
             this.sala.SelectedIndexChanged += new System.EventHandler(this.sala_SelectedIndexChanged);
+            this.sala.Click += new System.EventHandler(this.sala_Click);
             // 
             // clientetxt
             // 
@@ -169,6 +170,9 @@
             this.clientetxt.Name = "clientetxt";
             this.clientetxt.Size = new System.Drawing.Size(556, 33);
             this.clientetxt.TabIndex = 28;
+            this.clientetxt.Click += new System.EventHandler(this.clientetxt_Click);
+            this.clientetxt.MouseClick += new System.Windows.Forms.MouseEventHandler(this.clientetxt_MouseClick);
+            this.clientetxt.ModifiedChanged += new System.EventHandler(this.clientetxt_ModifiedChanged);
             this.clientetxt.TextChanged += new System.EventHandler(this.clientetxt_TextChanged);
             // 
             // projetotxt
@@ -275,12 +279,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(1292, 474);
+            this.label13.Location = new System.Drawing.Point(1296, 474);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 25);
+            this.label13.Size = new System.Drawing.Size(0, 25);
             this.label13.TabIndex = 43;
-            this.label13.Text = "label13";
-            this.label13.Visible = false;
             // 
             // button1
             // 
@@ -337,12 +339,15 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Location = new System.Drawing.Point(853, 368);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(236, 25);
             this.linkLabel1.TabIndex = 48;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cliente não Cadastrado!\r\n";
+            this.linkLabel1.Visible = false;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // AgendaServico
             // 
@@ -351,12 +356,12 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1764, 1089);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
@@ -397,7 +402,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox servico;
-        private System.Windows.Forms.ComboBox sala;
         private System.Windows.Forms.TextBox clientetxt;
         private System.Windows.Forms.TextBox projetotxt;
         private System.Windows.Forms.Label label7;
@@ -414,5 +418,6 @@
         private DevExpress.XtraEditors.SimpleButton button4;
         private DevExpress.XtraEditors.SimpleButton button3;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        public System.Windows.Forms.ComboBox sala;
     }
 }

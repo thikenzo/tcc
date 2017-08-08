@@ -30,7 +30,7 @@ namespace WindowsFormsApplication2
             using (SqlConnection co = BDComun.ObterConexao())
             {
                 SqlCommand comandoo = new SqlCommand(string.Format(
-                    "Select Id, NomeEquip, classificacao, tipo, valor from InstruCad where NomeEquip like '%{0}%'", Pid), co);
+                    "Select Id, NomeEquip, classificacao, tipo, valor, situacao from InstruCad where NomeEquip like '%{0}%'", Pid), co);
 
                 SqlDataReader reader1 = comandoo.ExecuteReader();
 
@@ -42,7 +42,7 @@ namespace WindowsFormsApplication2
                     pInstrum.Classificacao = reader1.GetString(2);
                     pInstrum.Tipo = reader1.GetString(3);
                     pInstrum.valor = reader1.GetString(4);
-
+                    pInstrum.Situacao = reader1.GetString(5);
 
                     Lista1.Add(pInstrum);
 
@@ -116,8 +116,8 @@ namespace WindowsFormsApplication2
             int retorno = 0;
             using (SqlConnection Conn = BDComun.ObterConexao())
             {
-                SqlCommand Comando = new SqlCommand(string.Format("Insert Into InstruCad (NomeEquip, classificacao, tipo, valor ) values ('{0}', '{1}','{2}','{3}')",
-                    pInstrum.NomeEquip, pInstrum.Classificacao, pInstrum.Tipo, pInstrum.valor), Conn);
+                SqlCommand Comando = new SqlCommand(string.Format("Insert Into InstruCad (NomeEquip, classificacao, tipo, valor, situacao ) values ('{0}', '{1}','{2}','{3}','{4}')",
+                    pInstrum.NomeEquip, pInstrum.Classificacao, pInstrum.Tipo, pInstrum.valor, pInstrum.Situacao), Conn);
 
                 retorno = Comando.ExecuteNonQuery();
                 Conn.Close();
@@ -137,8 +137,8 @@ namespace WindowsFormsApplication2
             using (SqlConnection conexao = BDComun.ObterConexao())
             {
 
-                SqlCommand comando = new SqlCommand(string.Format("Update InstruCad set NomeEquip = '{0}', classificacao = '{1}', tipo = '{2}', valor = '{3}' where Id = {4} ",
-                    pInstrum.NomeEquip, pInstrum.Classificacao, pInstrum.Tipo, pInstrum.valor, pInstrum.Id ), conexao);
+                SqlCommand comando = new SqlCommand(string.Format("Update InstruCad set NomeEquip = '{0}', classificacao = '{1}', tipo = '{2}', valor = '{3}', situacao = '{4}' where Id = {5} ",
+                    pInstrum.NomeEquip, pInstrum.Classificacao, pInstrum.Tipo, pInstrum.valor,pInstrum.Situacao, pInstrum.Id ), conexao);
 
 
                 retorno = comando.ExecuteNonQuery();
@@ -174,7 +174,7 @@ namespace WindowsFormsApplication2
 
                 Instrum pInstrum = new Instrum();
                 SqlCommand comandoo = new SqlCommand(string.Format(
-                    "Select Id, NomeEquip, Classificacao, Tipo, valor from InstruCad where Id={0}", pId), conexao);
+                    "Select Id, NomeEquip, Classificacao, Tipo, valor, situacao from InstruCad where Id={0}", pId), conexao);
 
                 SqlDataReader reader1 = comandoo.ExecuteReader();
 
@@ -185,7 +185,7 @@ namespace WindowsFormsApplication2
                     pInstrum.Classificacao = reader1.GetString(2);
                     pInstrum.Tipo = reader1.GetString(3);
                     pInstrum.valor = reader1.GetString(4);
-                    
+                    pInstrum.Situacao = reader1.GetString(5);
                 }
 
 

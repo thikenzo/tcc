@@ -90,11 +90,16 @@
             // 
             // agendamento
             // 
-            this.agendamento.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.agendamento.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.agendamento.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.agendamento.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.agendamento.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.agendamento.AppearanceItem.Normal.Options.UseFont = true;
+            this.agendamento.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement1.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement1.Image")));
             tileItemElement1.ImageLocation = new System.Drawing.Point(153, 35);
             tileItemElement1.Text = "Agendamento";
+            tileItemElement1.TextLocation = new System.Drawing.Point(-2, 0);
             this.agendamento.Elements.Add(tileItemElement1);
             this.agendamento.Id = 1;
             this.agendamento.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -111,14 +116,18 @@
             // 
             // consala
             // 
-            this.consala.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.consala.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.consala.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.consala.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.consala.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.consala.AppearanceItem.Normal.Options.UseFont = true;
+            this.consala.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement2.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement2.Image")));
             tileItemElement2.ImageLocation = new System.Drawing.Point(40, -25);
             tileItemElement2.Text = "Consultar";
-            tileItemElement2.TextLocation = new System.Drawing.Point(45, 0);
+            tileItemElement2.TextLocation = new System.Drawing.Point(40, 0);
             tileItemElement3.Text = "Sala";
-            tileItemElement3.TextLocation = new System.Drawing.Point(-62, 180);
+            tileItemElement3.TextLocation = new System.Drawing.Point(-58, 180);
             this.consala.Elements.Add(tileItemElement2);
             this.consala.Elements.Add(tileItemElement3);
             this.consala.Id = 4;
@@ -128,14 +137,18 @@
             // 
             // Cadsala
             // 
-            this.Cadsala.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.Cadsala.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Cadsala.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.Cadsala.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.Cadsala.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.Cadsala.AppearanceItem.Normal.Options.UseFont = true;
+            this.Cadsala.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement4.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement4.Image")));
             tileItemElement4.ImageLocation = new System.Drawing.Point(45, -25);
             tileItemElement4.Text = "Cadastrar ";
-            tileItemElement4.TextLocation = new System.Drawing.Point(45, 0);
+            tileItemElement4.TextLocation = new System.Drawing.Point(40, 0);
             tileItemElement5.Text = "Sala";
-            tileItemElement5.TextLocation = new System.Drawing.Point(-62, 180);
+            tileItemElement5.TextLocation = new System.Drawing.Point(-60, 180);
             this.Cadsala.Elements.Add(tileItemElement4);
             this.Cadsala.Elements.Add(tileItemElement5);
             this.Cadsala.Id = 7;
@@ -145,8 +158,12 @@
             // 
             // conequip
             // 
-            this.conequip.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.conequip.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.conequip.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.conequip.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.conequip.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.conequip.AppearanceItem.Normal.Options.UseFont = true;
+            this.conequip.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement6.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement6.Image")));
             tileItemElement6.ImageLocation = new System.Drawing.Point(40, -25);
             tileItemElement6.Text = "Consultar ";
@@ -162,14 +179,18 @@
             // 
             // cadequip
             // 
-            this.cadequip.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.cadequip.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.cadequip.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.cadequip.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.cadequip.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.cadequip.AppearanceItem.Normal.Options.UseFont = true;
+            this.cadequip.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement8.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement8.Image")));
             tileItemElement8.ImageLocation = new System.Drawing.Point(45, -25);
             tileItemElement8.Text = "Cadastrar";
-            tileItemElement8.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement8.TextLocation = new System.Drawing.Point(43, 0);
             tileItemElement9.Text = "Equipamento";
-            tileItemElement9.TextLocation = new System.Drawing.Point(-8, 180);
+            tileItemElement9.TextLocation = new System.Drawing.Point(-6, 180);
             this.cadequip.Elements.Add(tileItemElement8);
             this.cadequip.Elements.Add(tileItemElement9);
             this.cadequip.Id = 6;
@@ -192,14 +213,17 @@
             this.relatorio.AppearanceItem.Hovered.Options.UseBackColor = true;
             this.relatorio.AppearanceItem.Hovered.Options.UseFont = true;
             this.relatorio.AppearanceItem.Hovered.Options.UseForeColor = true;
-            this.relatorio.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
-            this.relatorio.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.relatorio.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.relatorio.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.relatorio.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.relatorio.AppearanceItem.Normal.Options.UseBackColor = true;
             this.relatorio.AppearanceItem.Normal.Options.UseFont = true;
+            this.relatorio.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement10.Height = -1;
             tileItemElement10.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement10.Image")));
             tileItemElement10.ImageLocation = new System.Drawing.Point(140, 30);
             tileItemElement10.Text = "Relatório";
+            tileItemElement10.TextLocation = new System.Drawing.Point(-3, 0);
             this.relatorio.Elements.Add(tileItemElement10);
             this.relatorio.Id = 5;
             this.relatorio.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
@@ -208,14 +232,18 @@
             // 
             // cadpessoa
             // 
-            this.cadpessoa.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.cadpessoa.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.cadpessoa.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.cadpessoa.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.cadpessoa.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.cadpessoa.AppearanceItem.Normal.Options.UseFont = true;
+            this.cadpessoa.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement11.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement11.Image")));
             tileItemElement11.ImageLocation = new System.Drawing.Point(45, -25);
             tileItemElement11.Text = "Cadastrar";
-            tileItemElement11.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement11.TextLocation = new System.Drawing.Point(45, 0);
             tileItemElement12.Text = "Nome";
-            tileItemElement12.TextLocation = new System.Drawing.Point(-50, 180);
+            tileItemElement12.TextLocation = new System.Drawing.Point(-46, 180);
             this.cadpessoa.Elements.Add(tileItemElement11);
             this.cadpessoa.Elements.Add(tileItemElement12);
             this.cadpessoa.Id = 2;
@@ -225,14 +253,18 @@
             // 
             // conpessoa
             // 
-            this.conpessoa.AppearanceItem.Normal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.conpessoa.AppearanceItem.Normal.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.conpessoa.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.conpessoa.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Maroon;
             this.conpessoa.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.conpessoa.AppearanceItem.Normal.Options.UseFont = true;
+            this.conpessoa.AppearanceItem.Normal.Options.UseForeColor = true;
             tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
             tileItemElement13.ImageLocation = new System.Drawing.Point(45, -25);
             tileItemElement13.Text = "Consultar";
-            tileItemElement13.TextLocation = new System.Drawing.Point(50, 0);
+            tileItemElement13.TextLocation = new System.Drawing.Point(43, 0);
             tileItemElement14.Text = "Nome";
-            tileItemElement14.TextLocation = new System.Drawing.Point(-50, 180);
+            tileItemElement14.TextLocation = new System.Drawing.Point(-48, 180);
             this.conpessoa.Elements.Add(tileItemElement13);
             this.conpessoa.Elements.Add(tileItemElement14);
             this.conpessoa.Id = 3;
@@ -280,7 +312,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MenuADM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NOAR ESTÚDIO";
+            this.Text = "NOAR ESTÚDIO - MENU";
             this.Load += new System.EventHandler(this.MenuADM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

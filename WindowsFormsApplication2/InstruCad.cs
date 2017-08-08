@@ -22,10 +22,10 @@ namespace WindowsFormsApplication2
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
 
-            this.Height = 390; //altura
+            this.Height = 450; //altura
             this.Width = 690; //largura
 
-
+            radionacional.Checked = false;
 
             btnEditar.Enabled = false;
         }
@@ -54,6 +54,7 @@ namespace WindowsFormsApplication2
         public string classificacao { get; set; }
         public Cliente ClieteAtual { get; set; }
         public Instrum InstrumAtual { get; set; }
+        public string situacao { get; set; }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
@@ -69,6 +70,10 @@ namespace WindowsFormsApplication2
         {
             txtNomeEquip.Clear();
             txtValor.Clear();
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radiointernacional.Checked = false;
+            radionacional.Checked = false;
 
         }
 
@@ -76,6 +81,17 @@ namespace WindowsFormsApplication2
         private void combotipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             combotipo.Text = "";
+            
+
+            if (combotipo.Text == "")
+            {
+                label10.Visible = true;
+            }
+            else
+            {
+                label10.Visible = false;
+            }
+
         }
 
         private void combotipo_Enter(object sender, EventArgs e)
@@ -88,23 +104,51 @@ namespace WindowsFormsApplication2
         private void radionacional_CheckedChanged(object sender, EventArgs e)
         {
             classificacao = "Nacional";
+                label8.Visible = false;
 
         }
 
         private void radiointernacional_CheckedChanged(object sender, EventArgs e)
         {
             classificacao = "Internacional";
+            label8.Visible = false;
         }
 
         
 
 private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "" || radionacional.Checked == false && radiointernacional.Checked == false)
+            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "" || radionacional.Checked == false && radiointernacional.Checked == false || radioButton1.Checked == false && radioButton2.Checked == false)
             {
-                    MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
+                   // MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
                 
-              //  MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO CADASTRAR");
+
+                if(txtNomeEquip.Text  == "")
+                {
+                    label7.Visible = true;
+                }
+
+                if (radiointernacional.Checked == false && radionacional.Checked == false)
+                {
+                    label8.Visible = true;
+                }
+
+                if (txtValor.Text == "")
+                {
+                    label9.Visible = true;
+                }
+
+                if (combotipo.Text == "")
+                {
+                    label10.Visible = true;
+                }
+
+                if (radioButton1.Checked == false && radioButton2.Checked == false)
+                {
+                    label11.Visible = true;
+                }
+
+                label12.Visible = true;
             }
             else
             {
@@ -113,6 +157,7 @@ private void btnAdicionar_Click(object sender, EventArgs e)
                 Instrum.Classificacao = classificacao;
                 Instrum.Tipo = combotipo.Text;
                 Instrum.valor = txtValor.Text;
+                Instrum.Situacao = situacao;
 
 
 
@@ -126,6 +171,8 @@ private void btnAdicionar_Click(object sender, EventArgs e)
                     classificacao = "";
                     radiointernacional.Checked = false;
                     radionacional.Checked = false;
+                    radioButton1.Checked = false;
+                    radioButton2.Checked = false;
                 }
 
                 else
@@ -138,7 +185,7 @@ private void btnAdicionar_Click(object sender, EventArgs e)
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
-            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "")
+            if (txtNomeEquip.Text == "" || classificacao == "" || combotipo.Text == "" || txtValor.Text == "" || situacao == "")
             {
                 MessageBox.Show("Deve preencher todos os campos!!", "ERRO AO EDITAR");
             }
@@ -149,7 +196,7 @@ private void btnAdicionar_Click(object sender, EventArgs e)
             pInstrum.Classificacao = classificacao;
             pInstrum.Tipo = combotipo.Text;
             pInstrum.valor = txtValor.Text;
-         
+            pInstrum.Situacao = situacao;
 
 
 
@@ -165,6 +212,8 @@ private void btnAdicionar_Click(object sender, EventArgs e)
 
                 radiointernacional.Checked = false;
                 radionacional.Checked = false;
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
             }
 
             else
@@ -180,12 +229,54 @@ private void btnAdicionar_Click(object sender, EventArgs e)
 
         private void InstruCad_Load(object sender, EventArgs e)
         {
+
         }
 
        // public System.Windows.Forms.Button BtnAdicionar;
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            situacao = "Ativo";
+            label11.Visible = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            situacao = "Inativo";
+            label11.Visible = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomeEquip_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNomeEquip.Text == "")
+            {
+                label7.Visible = true;
+            }
+            else
+            {
+                label7.Visible = false;
+            }
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            if (txtValor.Text == "")
+            {
+                label9.Visible = true;
+            }
+            else
+            {
+                label7.Visible = false;
+            }
         }
     }
     }

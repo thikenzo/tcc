@@ -29,51 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agenda));
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new DevExpress.XtraEditors.SimpleButton();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button3 = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button4 = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button5 = new DevExpress.XtraEditors.SimpleButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button6 = new DevExpress.XtraEditors.SimpleButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button7 = new DevExpress.XtraEditors.SimpleButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button8 = new DevExpress.XtraEditors.SimpleButton();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button9 = new DevExpress.XtraEditors.SimpleButton();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button10 = new DevExpress.XtraEditors.SimpleButton();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.btnMenu = new DevExpress.XtraEditors.SimpleButton();
-            this.button1 = new DevExpress.XtraEditors.SimpleButton();
-            this.button2 = new DevExpress.XtraEditors.SimpleButton();
-            this.button3 = new DevExpress.XtraEditors.SimpleButton();
-            this.button4 = new DevExpress.XtraEditors.SimpleButton();
-            this.button5 = new DevExpress.XtraEditors.SimpleButton();
-            this.button6 = new DevExpress.XtraEditors.SimpleButton();
-            this.button7 = new DevExpress.XtraEditors.SimpleButton();
-            this.button8 = new DevExpress.XtraEditors.SimpleButton();
-            this.button9 = new DevExpress.XtraEditors.SimpleButton();
-            this.button10 = new DevExpress.XtraEditors.SimpleButton();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
+            this.calendarControl1 = new DevExpress.XtraEditors.Controls.CalendarControl();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,15 +91,8 @@
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(112, 477);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(26, 25, 26, 25);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label11
             // 
@@ -105,6 +105,7 @@
             this.label11.Size = new System.Drawing.Size(859, 123);
             this.label11.TabIndex = 19;
             this.label11.Text = "AGENDA DE SERVIÇOS";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // groupBox2
             // 
@@ -112,13 +113,25 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(703, 280);
+            this.groupBox2.Location = new System.Drawing.Point(728, 280);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(876, 109);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             this.groupBox2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button1.Appearance.Options.UseFont = true;
+            this.button1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button1.Location = new System.Drawing.Point(613, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 52);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "AGENDAR";
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label14
             // 
@@ -145,13 +158,25 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(703, 384);
+            this.groupBox1.Location = new System.Drawing.Point(728, 384);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(876, 100);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button2.Appearance.Options.UseFont = true;
+            this.button2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button2.Location = new System.Drawing.Point(613, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(191, 52);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "AGENDAR";
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label2
             // 
@@ -179,13 +204,25 @@
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(703, 477);
+            this.groupBox3.Location = new System.Drawing.Point(728, 477);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(876, 100);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             this.groupBox3.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button3.Appearance.Options.UseFont = true;
+            this.button3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button3.Location = new System.Drawing.Point(613, 34);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(191, 52);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "AGENDAR";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -212,13 +249,25 @@
             this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(703, 570);
+            this.groupBox4.Location = new System.Drawing.Point(728, 570);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(876, 100);
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
             this.groupBox4.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button4.Appearance.Options.UseFont = true;
+            this.button4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button4.Location = new System.Drawing.Point(613, 32);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(191, 52);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "AGENDAR";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label6
             // 
@@ -245,13 +294,25 @@
             this.groupBox5.Controls.Add(this.button5);
             this.groupBox5.Controls.Add(this.label7);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Location = new System.Drawing.Point(703, 664);
+            this.groupBox5.Location = new System.Drawing.Point(728, 664);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(876, 100);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "groupBox5";
             this.groupBox5.Visible = false;
+            // 
+            // button5
+            // 
+            this.button5.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button5.Appearance.Options.UseFont = true;
+            this.button5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button5.Location = new System.Drawing.Point(613, 35);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(191, 52);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "AGENDAR";
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label7
             // 
@@ -278,13 +339,25 @@
             this.groupBox6.Controls.Add(this.button6);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label10);
-            this.groupBox6.Location = new System.Drawing.Point(702, 755);
+            this.groupBox6.Location = new System.Drawing.Point(727, 755);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(877, 100);
             this.groupBox6.TabIndex = 28;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "groupBox6";
             this.groupBox6.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button6.Appearance.Options.UseFont = true;
+            this.button6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button6.Location = new System.Drawing.Point(614, 36);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(191, 52);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "AGENDAR";
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label9
             // 
@@ -311,13 +384,25 @@
             this.groupBox7.Controls.Add(this.button7);
             this.groupBox7.Controls.Add(this.label13);
             this.groupBox7.Controls.Add(this.label15);
-            this.groupBox7.Location = new System.Drawing.Point(702, 848);
+            this.groupBox7.Location = new System.Drawing.Point(727, 848);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(877, 100);
             this.groupBox7.TabIndex = 29;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "groupBox7";
             this.groupBox7.Visible = false;
+            // 
+            // button7
+            // 
+            this.button7.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button7.Appearance.Options.UseFont = true;
+            this.button7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button7.Location = new System.Drawing.Point(614, 35);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(191, 52);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "AGENDAR";
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label13
             // 
@@ -345,13 +430,25 @@
             this.groupBox8.Controls.Add(this.button8);
             this.groupBox8.Controls.Add(this.label16);
             this.groupBox8.Controls.Add(this.label17);
-            this.groupBox8.Location = new System.Drawing.Point(703, 943);
+            this.groupBox8.Location = new System.Drawing.Point(728, 943);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(876, 100);
             this.groupBox8.TabIndex = 30;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "groupBox8";
             this.groupBox8.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button8.Appearance.Options.UseFont = true;
+            this.button8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button8.Location = new System.Drawing.Point(613, 35);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(191, 52);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "AGENDAR";
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label16
             // 
@@ -378,13 +475,25 @@
             this.groupBox9.Controls.Add(this.button9);
             this.groupBox9.Controls.Add(this.label18);
             this.groupBox9.Controls.Add(this.label19);
-            this.groupBox9.Location = new System.Drawing.Point(703, 1037);
+            this.groupBox9.Location = new System.Drawing.Point(728, 1037);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(876, 100);
             this.groupBox9.TabIndex = 31;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "groupBox9";
             this.groupBox9.Visible = false;
+            // 
+            // button9
+            // 
+            this.button9.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button9.Appearance.Options.UseFont = true;
+            this.button9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button9.Location = new System.Drawing.Point(613, 34);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(191, 52);
+            this.button9.TabIndex = 11;
+            this.button9.Text = "AGENDAR";
+            this.button9.Click += new System.EventHandler(this.button8_Click);
             // 
             // label18
             // 
@@ -412,13 +521,25 @@
             this.groupBox10.Controls.Add(this.button10);
             this.groupBox10.Controls.Add(this.label20);
             this.groupBox10.Controls.Add(this.label21);
-            this.groupBox10.Location = new System.Drawing.Point(702, 1130);
+            this.groupBox10.Location = new System.Drawing.Point(727, 1130);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(877, 100);
             this.groupBox10.TabIndex = 32;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "groupBox10";
             this.groupBox10.Visible = false;
+            // 
+            // button10
+            // 
+            this.button10.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
+            this.button10.Appearance.Options.UseFont = true;
+            this.button10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.button10.Location = new System.Drawing.Point(614, 29);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(191, 52);
+            this.button10.TabIndex = 12;
+            this.button10.Text = "AGENDAR";
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label20
             // 
@@ -444,7 +565,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(816, 241);
+            this.label22.Location = new System.Drawing.Point(844, 241);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(94, 27);
             this.label22.TabIndex = 33;
@@ -456,7 +577,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(703, 241);
+            this.label23.Location = new System.Drawing.Point(728, 241);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(116, 27);
             this.label23.TabIndex = 34;
@@ -469,132 +590,93 @@
             this.btnMenu.Appearance.Options.UseFont = true;
             this.btnMenu.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(1428, 1266);
+            this.btnMenu.Location = new System.Drawing.Point(1428, 1269);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(206, 63);
             this.btnMenu.TabIndex = 35;
             this.btnMenu.Text = "MENU";
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // button1
+            // label24
             // 
-            this.button1.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button1.Appearance.Options.UseFont = true;
-            this.button1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button1.Location = new System.Drawing.Point(613, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 52);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "AGENDAR";
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(1501, 99);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(0, 25);
+            this.label24.TabIndex = 36;
             // 
-            // button2
+            // label25
             // 
-            this.button2.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button2.Appearance.Options.UseFont = true;
-            this.button2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button2.Location = new System.Drawing.Point(613, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(191, 52);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "AGENDAR";
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(1501, 124);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(0, 25);
+            this.label25.TabIndex = 37;
             // 
-            // button3
+            // label26
             // 
-            this.button3.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button3.Appearance.Options.UseFont = true;
-            this.button3.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button3.Location = new System.Drawing.Point(613, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 52);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "AGENDAR";
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1508, 99);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(0, 25);
+            this.label26.TabIndex = 38;
             // 
-            // button4
+            // label27
             // 
-            this.button4.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button4.Appearance.Options.UseFont = true;
-            this.button4.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button4.Location = new System.Drawing.Point(613, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(191, 52);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "AGENDAR";
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(1670, 223);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(0, 25);
+            this.label27.TabIndex = 39;
             // 
-            // button5
+            // label28
             // 
-            this.button5.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button5.Appearance.Options.UseFont = true;
-            this.button5.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button5.Location = new System.Drawing.Point(613, 35);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(191, 52);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "AGENDAR";
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(1666, 415);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(0, 25);
+            this.label28.TabIndex = 40;
             // 
-            // button6
+            // label29
             // 
-            this.button6.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button6.Appearance.Options.UseFont = true;
-            this.button6.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button6.Location = new System.Drawing.Point(614, 36);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(191, 52);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "AGENDAR";
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(1531, 51);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(0, 25);
+            this.label29.TabIndex = 41;
             // 
-            // button7
+            // calendarControl1
             // 
-            this.button7.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button7.Appearance.Options.UseFont = true;
-            this.button7.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button7.Location = new System.Drawing.Point(614, 35);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(191, 52);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "AGENDAR";
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button8.Appearance.Options.UseFont = true;
-            this.button8.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button8.Location = new System.Drawing.Point(613, 35);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(191, 52);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "AGENDAR";
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button9.Appearance.Options.UseFont = true;
-            this.button9.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button9.Location = new System.Drawing.Point(613, 34);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(191, 52);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "AGENDAR";
-            this.button9.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button10
-            // 
-            this.button10.Appearance.Font = new System.Drawing.Font("Tahoma", 7.875F, System.Drawing.FontStyle.Bold);
-            this.button10.Appearance.Options.UseFont = true;
-            this.button10.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.button10.Location = new System.Drawing.Point(614, 29);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(191, 52);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "AGENDAR";
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.calendarControl1.AllowAnimatedContentChange = true;
+            this.calendarControl1.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.calendarControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.calendarControl1.Appearance.Options.UseBackColor = true;
+            this.calendarControl1.Appearance.Options.UseFont = true;
+            this.calendarControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.calendarControl1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.calendarControl1.CalendarAppearance.DayCellSelected.BackColor = System.Drawing.Color.Silver;
+            this.calendarControl1.CalendarAppearance.DayCellSelected.Options.UseBackColor = true;
+            this.calendarControl1.CalendarAppearance.DayCellSpecial.BackColor = System.Drawing.Color.DimGray;
+            this.calendarControl1.CalendarAppearance.DayCellSpecial.Options.UseBackColor = true;
+            this.calendarControl1.CalendarAppearance.WeekDay.BackColor = System.Drawing.Color.White;
+            this.calendarControl1.CalendarAppearance.WeekDay.Options.UseBackColor = true;
+            this.calendarControl1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.calendarControl1.CalendarVerticalIndent = 0;
+            this.calendarControl1.CellPadding = new System.Windows.Forms.Padding(14, 5, 5, 5);
+            this.calendarControl1.Location = new System.Drawing.Point(67, 374);
+            this.calendarControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.calendarControl1.MonthHeaderPadding = new System.Windows.Forms.Padding(2);
+            this.calendarControl1.Name = "calendarControl1";
+            this.calendarControl1.Padding = new System.Windows.Forms.Padding(20, 24, 20, 20);
+            this.calendarControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.calendarControl1.Size = new System.Drawing.Size(483, 409);
+            this.calendarControl1.TabIndex = 42;
+            this.calendarControl1.WeekDayAbbreviationLength = 5;
+            this.calendarControl1.SelectionChanged += new System.EventHandler(this.calendarControl1_SelectionChanged);
+            this.calendarControl1.DateTimeChanged += new System.EventHandler(this.calendarControl1_DateTimeChanged);
+            this.calendarControl1.Click += new System.EventHandler(this.calendarControl1_Click);
+        
             // 
             // Agenda
             // 
@@ -603,6 +685,13 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(1818, 1354);
+            this.Controls.Add(this.calendarControl1);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
@@ -617,14 +706,14 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.monthCalendar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Agenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NOAR ESTÚDIO";
+            this.Text = "NOAR ESTÚDIO - AGENDAMENTO";
             this.Load += new System.EventHandler(this.Agenda_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -646,14 +735,13 @@
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.calendarControl1.CalendarTimeProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label12;
@@ -698,5 +786,13 @@
         private DevExpress.XtraEditors.SimpleButton button8;
         private DevExpress.XtraEditors.SimpleButton button9;
         private DevExpress.XtraEditors.SimpleButton button10;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private Telerik.WinControls.Themes.MaterialTheme materialTheme1;
+        private DevExpress.XtraEditors.Controls.CalendarControl calendarControl1;
     }
 }

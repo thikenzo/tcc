@@ -53,7 +53,7 @@ namespace WindowsFormsApplication2
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             {
-                if (dataGridView2.RowCount == 0)
+                if (dataGridView2.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Não se pode excluir, nenhuma sala selecionado!");
                 }
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication2
             salaC.Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
             salaC.salatxt.Text = this.dataGridView2.CurrentRow.Cells[1].Value.ToString();
             salaC.identificacaotxt.Text = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            salaC.tamanho.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();
+            salaC.tamanho1.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();
             salaC.valortxt.Text = this.dataGridView2.CurrentRow.Cells[4].Value.ToString();
             salaC.situacao = this.dataGridView2.CurrentRow.Cells[5].Value.ToString();
             salaC.Owner = this;
@@ -127,6 +127,11 @@ namespace WindowsFormsApplication2
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView2.ClearSelection();
         }
     }
 }

@@ -9,10 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
+
+
+using System.Collections;
+using DevExpress.XtraReports.UI;
+using DevExpress.LookAndFeel;
+using DevExpress.XtraReports.UserDesigner;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraPrinting.Preview;
+
 
 namespace WindowsFormsApplication2
 {
-    public partial class Pagamento : Form
+    public partial class Pagamento : XtraForm
     {
         static string strCn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30";
         SqlCommand com;
@@ -25,6 +36,9 @@ namespace WindowsFormsApplication2
 
             this.Height = 670; //altura
             this.Width = 970; //largura
+
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
         }
 
         public Pagamento(string texto, string total, string data, string hora)
@@ -36,12 +50,15 @@ namespace WindowsFormsApplication2
             label12.Text = total;
             label26.Text = data;
             label28.Text = hora;
+            label30.Text = total;
         }
-        
+
 
         private void Pagamento_Load(object sender, EventArgs e)
         {
             btnGerar.Enabled = true;
+            btnSalvar.Enabled = false;
+
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -57,7 +74,7 @@ namespace WindowsFormsApplication2
         private void tipopagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             tipopagamento.Text = "";
-            
+
 
 
             if (tipopagamento.SelectedIndex == 0)
@@ -69,16 +86,16 @@ namespace WindowsFormsApplication2
             {
                 groupBox1.Visible = false;
             }
-                if (tipopagamento.SelectedIndex == 1)
-                {
-                    groupBox2.Visible = true;
-                    groupBox2.Location = new Point(500, 130);
+            if (tipopagamento.SelectedIndex == 1)
+            {
+                groupBox2.Visible = true;
+                groupBox2.Location = new Point(500, 130);
             }
-                else
+            else
             {
                 groupBox2.Visible = false;
             }
-                
+
             if (tipopagamento.SelectedIndex == 2)
             {
                 groupBox3.Visible = true;
@@ -87,7 +104,7 @@ namespace WindowsFormsApplication2
             else
             {
                 groupBox3.Visible = false;
-                    }
+            }
 
 
 
@@ -96,7 +113,7 @@ namespace WindowsFormsApplication2
         private void tipopagamento_Enter(object sender, EventArgs e)
         {
         }
-        
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -115,7 +132,7 @@ namespace WindowsFormsApplication2
                 label23.Text = "2x";
                 label23.Visible = true;
                 label24.Visible = true;
-                label24.Text = (N1/ 2) + "";
+                label24.Text = (N1 / 2) + "";
             }
             if (comboBox1.SelectedIndex == 2)
             {
@@ -144,37 +161,49 @@ namespace WindowsFormsApplication2
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            calcula();
+            if (textBox3.Enabled == false)
+            {
+                //textBox3.AppendText("Hello");
+            }
+            else
+            {
+                calcula();
+            }
         }
 
 
         public void calcula()
         {
-            double N1, Prod, Red, res;
-            double N2;
-            label20.Text = "SEM DESCONTO";
-
-            if (string.IsNullOrEmpty(textBox3.Text))
-            {
-                N2 = 0;
-                
-            }
-            else {
-                N2 = Convert.ToDouble(textBox3.Text);
-                label20.Visible = true;
-            }
-            N1 = Convert.ToDouble(label15.Text);
-            if (string.IsNullOrEmpty(textBox3.Text))
-            {
+                double N1, Prod, Red, res;
+                double N2;
                 label20.Text = "SEM DESCONTO";
-            }
-            else
-            {
-                label20.Text = N1 * (1 - (N2 / 100)) + "";
 
-            }
-            
-       }
+                if (string.IsNullOrEmpty(textBox3.Text))
+                {
+                    N2 = 0;
+
+                }
+                else
+                {
+                    N2 = Convert.ToDouble(textBox3.Text);
+                    label20.Visible = true;
+                }
+                N1 = Convert.ToDouble(label15.Text);
+                if (string.IsNullOrEmpty(textBox3.Text))
+                {
+                    label20.Text = "SEM DESCONTO";
+                }
+                else
+                {
+                    label20.Text = N1 * (1 - (N2 / 100)) + "";
+
+                }
+
+                
+
+        }
+        
+
 
 
         private void textBox3_Enter(object sender, EventArgs e)
@@ -260,11 +289,15 @@ namespace WindowsFormsApplication2
             comboBox1.Text = "";
         }
 
+
+        
         private void btnGerar_Click(object sender, EventArgs e)
         {
-            if(tipopagamento.SelectedIndex == -1)
+
+
+            if (tipopagamento.SelectedIndex == -1 || textBox1.Text == "")
             {
-                MessageBox.Show("Escolha tipo de pagamento!");
+                MessageBox.Show("Deve preencher todos os dados !");
             }
             else
             {
@@ -273,13 +306,12 @@ namespace WindowsFormsApplication2
                 tipopagamento.Enabled = false;
                 textBox1.Enabled = false;
                 btnGerar.Enabled = false;
-                
+
             }
 
-            
-
-            if (tipopagamento.SelectedIndex == 0)
+                if (tipopagamento.SelectedIndex == 0)
             {
+
                 string sql = "INSERT INTO PgtoDin (Nome, Data, Hora, Valor, Desconto, VLDesconto, Obs) "
 
                           + "VALUES ('" + nomecliente.Text + "', '" + label26.Text + "', '"
@@ -294,8 +326,9 @@ namespace WindowsFormsApplication2
                 {
                     int i = cmd.ExecuteNonQuery();
 
-                    FormRepost ss1 = new FormRepost();
-                    ss1.Show();
+                    ReportNOAR a = new ReportNOAR();
+                    //FormRepost a = new FormRepost();
+                    a.ShowPreviewDialog();
                 }
                 catch (Exception ex)
                 {
@@ -318,8 +351,10 @@ namespace WindowsFormsApplication2
                 {
                     int i = cmd.ExecuteNonQuery();
 
-                    FormRepost ss1 = new FormRepost();
-                    ss1.Show();
+                    ReportNOAR1 a = new ReportNOAR1();
+                    //FormRepost a = new FormRepost();
+                    a.ShowPreview();
+
                 }
                 catch (Exception ex)
                 {
@@ -346,8 +381,9 @@ namespace WindowsFormsApplication2
                 {
                     int i = cmd.ExecuteNonQuery();
 
-                    FormRepost ss1 = new FormRepost();
-                    ss1.Show();
+                    ReportNOAR2 a = new ReportNOAR2();
+                    //FormRepost a = new FormRepost();
+                    a.ShowPreviewDialog();
                 }
                 catch (Exception ex)
                 {
@@ -376,6 +412,95 @@ namespace WindowsFormsApplication2
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            string.IsNullOrEmpty(textBox3.Text = "");
+
+            if (checkBox1.Checked == true)
+            {
+                textBox3.Enabled = false;
+
+                textBox3.AppendText("SEM DESCONTO");
+            }
+
+            if (checkBox1.Checked == false)
+            {
+                string.IsNullOrEmpty(textBox3.Text = "");
+                textBox3.Enabled = true;
+            }
+
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número e nem backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
+
+        private void label24_Click(object sender, EventArgs e)
         {
 
         }

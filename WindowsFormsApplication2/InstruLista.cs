@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
 
 namespace WindowsFormsApplication2
 {
-    public partial class InstruLista : Form
+    public partial class InstruLista : XtraForm
     {
 
 
@@ -22,9 +24,11 @@ namespace WindowsFormsApplication2
             this.Height = 670; //altura
             this.Width = 880; //largura
 
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
         }
 
-        public InstruLista(string texto, string label22, string hora, string valor)
+        public InstruLista(string texto, string label22, string hora, string valor, string desc, string proj, string projcom, string sal)
         {
             InitializeComponent();
 
@@ -32,24 +36,22 @@ namespace WindowsFormsApplication2
             label5.Text = label22;
             label6.Text = hora;
             label7.Text = valor;
+            label9.Text = desc;
+            label10.Text = proj;
+            label11.Text = projcom;
+            label12.Text = sal;
 
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-
-            this.Hide();
-            MenuADM ss = new MenuADM();
-            ss.Show();
         }
 
         private void btnAgenda_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AgendaServico ss = new AgendaServico();
+            AgendaServico ss = new AgendaServico(label4.Text, label6.Text, label5.Text, label7.Text, label9.Text, label10.Text, label11.Text, label12.Text);
             ss.Show();
 
-        }
+   
+
+            }
 
         private void btnInternacional_Click(object sender, EventArgs e)
         {
@@ -79,10 +81,13 @@ namespace WindowsFormsApplication2
 
         private void InstruLista_Load(object sender, EventArgs e)
         {
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
+            this.Height = 670; //altura
+            this.Width = 880; //largura
+
+            //label4.Visible = false;
+            //label5.Visible = false;
+            //label6.Visible = false;
+            //label7.Visible = false;
 
 
             // add some row to datagridview
@@ -187,39 +192,74 @@ namespace WindowsFormsApplication2
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            if (dataGridView2.RowCount == 0)
             {
-                //InstruSele Agend = new InstruSele();
-                //Agend.Nome = label5.Text;
-                //Agend.Data = label4.Text;
-                //int resultado = InstruSeleFunc.btnIntru(Agend);
+                MessageBox.Show("Necessário escolher algum instrumneto!");
+            }
+            else
+            {
 
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
-                SqlCommand cmd = new SqlCommand("INSERT INTO InstruSelec (Nome, Data, Hora, NomeEquip,Tipo,Valor) values ( @Nome, @Data, @Hora, @NomeEquip, @Tipo,@valor)", con);
+                for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                {
+                    //InstruSele Agend = new InstruSele();
+                    //Agend.Nome = label5.Text;
+                    //Agend.Data = label4.Text;
+                    //int resultado = InstruSeleFunc.btnIntru(Agend);
 
-                cmd.Parameters.AddWithValue("@Nome", label5.Text);
-                cmd.Parameters.AddWithValue("@Data", label4.Text);
-                cmd.Parameters.AddWithValue("@Hora", label6.Text);
-                cmd.Parameters.AddWithValue("@NomeEquip", dataGridView2.Rows[i].Cells[0].Value);
-                cmd.Parameters.AddWithValue("@Tipo", dataGridView2.Rows[i].Cells[1].Value);
-                cmd.Parameters.AddWithValue("@Valor", dataGridView2.Rows[i].Cells[2].Value);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
+                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
+                    SqlCommand cmd = new SqlCommand("INSERT INTO InstruSelec (Nome, Data, Hora, NomeEquip,Tipo,Valor) values (@Nome, @Data, @Hora, @NomeEquip, @Tipo,@valor)", con);
 
-                label8.Text = (Convert.ToDecimal(label7.Text) + Convert.ToDecimal(label2.Text)).ToString();
+                    cmd.Parameters.AddWithValue("@Nome", label5.Text);
+                    cmd.Parameters.AddWithValue("@Data", label4.Text);
+                    cmd.Parameters.AddWithValue("@Hora", label6.Text);
+                    cmd.Parameters.AddWithValue("@NomeEquip", dataGridView2.Rows[i].Cells[0].Value);
+                    cmd.Parameters.AddWithValue("@Tipo", dataGridView2.Rows[i].Cells[1].Value);
+                    cmd.Parameters.AddWithValue("@Valor", dataGridView2.Rows[i].Cells[2].Value);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    label8.Text = (Convert.ToDecimal(label7.Text) + Convert.ToDecimal(label2.Text)).ToString();
+                }
+
+
+
+                Agend Agend = new Agend();
+                Agend.Data = label4.Text;
+                Agend.Hora = label6.Text;
+                Agend.Cliente = label5.Text;
+                Agend.Projeto = label10.Text;
+                Agend.Servico = label11.Text;
+                Agend.Sala = label12.Text;
+                Agend.Descricao = label9.Text;
+
+                int resultado = AgendFunc.btnInstrum(Agend);
+                
+                if (resultado > 0)
+                {
+                    this.Hide();
+                    Pagamento novaForm = new Pagamento(label5.Text, label8.Text, label4.Text, label6.Text);
+                    novaForm.Show();
+                }
+
+
             }
 
-
-            this.Hide();
-            Pagamento novaForm = new Pagamento(label5.Text, label8.Text, label4.Text, label6.Text);
-            novaForm.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView2.ClearSelection();
         }
 
 

@@ -30,7 +30,6 @@ namespace WindowsFormsApplication2
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
 
-
             editar.Enabled = false;
         }
 
@@ -40,16 +39,15 @@ namespace WindowsFormsApplication2
         {
             this.Hide();
 
-            Maincs ss = new Maincs();
+            MenuADM ss = new MenuADM();
             ss.Show();
         }
 
         private void Cad_Load(object sender, EventArgs e)
         {
-            this.Height = 640; //altura
+            this.Height = 590; //altura
             this.Width = 550; //largura
-
-            editar.Enabled = false; 
+            
         }
 
 
@@ -71,11 +69,69 @@ namespace WindowsFormsApplication2
 
         private void adicionar_Click(object sender, EventArgs e)
         {
+            txtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtCelular.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtRg.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            txtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
 
             if (nivelacesso.Text == "" || txtNome.Text == "" || txtTelefone.Text == "" || txtCelular.Text == "" || txtEmail.Text == "" || txtEndereco.Text == ""
-                   || txtN.Text == "" || txtBairro.Text == "" || txtRg.Text == "" || txtCpf.Text == "" || txtCpf.Text == "NOAR" || txtCpf.Text == "NOAR")
+                   || txtN.Text == "" || txtBairro.Text == "" || txtRg.Text == "" || txtCpf.Text == ""  )
             {
-                MessageBox.Show("Deve preencher todos os campos!!");
+                // MessageBox.Show("Deve preencher todos os campos!!");
+                label12.Visible = true;
+
+
+                if(nivelacesso.Text =="")
+                {
+                    label13.Visible = true;
+                }
+
+                if (txtNome.Text == "")
+                {
+                    label14.Visible = true;
+                }
+
+                if (txtTelefone.Text == "")
+                {
+                    label15.Visible = true;
+                }
+
+                if (txtCelular.Text == "")
+                {
+                    label16.Visible = true;
+                }
+
+                if (txtEmail.Text == "")
+                {
+                    label17.Visible = true;
+                }
+
+                if (txtRg.Text == "")
+                {
+                    label18.Visible = true;
+                }
+
+                if (txtCpf.Text == "")
+                {
+                    label19.Visible = true;
+                }
+
+                if (txtEndereco.Text == "")
+                {
+                    label20.Visible = true;
+                }
+
+                if (txtN.Text == "")
+                {
+                    label21.Visible = true;
+                }
+
+                if (txtBairro.Text == "")
+                {
+                    label22.Visible = true;
+                }
+                
+                
             }
             else
             {
@@ -96,6 +152,7 @@ namespace WindowsFormsApplication2
                     int i = cmd.ExecuteNonQuery();
                     if (i > 0)
                         MessageBox.Show("Cadastro realizado com sucesso!");
+                    
                 }
                 catch (Exception ex)
                 {
@@ -114,6 +171,18 @@ namespace WindowsFormsApplication2
                     txtEmail.Text = "";
                     nivelacesso.Text = "";
                     nivelacesso.SelectedIndex = -1;
+
+                    label12.Visible = false;
+                    label13.Visible = false;
+                    label14.Visible = false;
+                    label15.Visible = false;
+                    label16.Visible = false;
+                    label17.Visible = false;
+                    label18.Visible = false;
+                    label19.Visible = false;
+                    label20.Visible = false;
+                    label21.Visible = false;
+                    label22.Visible = false;
 
                     con.Close();
                 }
@@ -192,6 +261,15 @@ namespace WindowsFormsApplication2
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             nivelacesso.Text = "";
+            if (nivelacesso.Text == "")
+            {
+                label13.Visible = true;
+            }
+            else
+            {
+                label13.Visible = false;
+            }
+
         }
 
         private void nivelacesso_Enter(object sender, EventArgs e)
@@ -203,7 +281,14 @@ namespace WindowsFormsApplication2
 
         private void txtEndereco_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtEndereco.Text == "")
+            {
+                label20.Visible = true;
+            }
+            else
+            {
+                label20.Visible = false;
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -211,6 +296,100 @@ namespace WindowsFormsApplication2
 
         }
 
-       // public System.Windows.Forms.Button adicionar;
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNome.Text == "")
+            {
+                label14.Visible = true;
+            }
+            else
+            {
+                label14.Visible = false;
+            }
+        }
+
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTelefone.Text == "")
+            {
+                label15.Visible = true;
+            }
+            else
+            {
+                label15.Visible = false;
+            }
+        }
+
+        private void txtCelular_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCelular.Text == "")
+            {
+                label16.Visible = true;
+            }
+            else
+            {
+                label16.Visible = false;
+            }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "")
+            {
+                label17.Visible = true;
+            }
+            else
+            {
+                label17.Visible = false;
+            }
+        }
+
+        private void txtRg_TextChanged(object sender, EventArgs e)
+        {
+            if (txtRg.Text == "")
+            {
+                label18.Visible = true;
+            }
+            else
+            {
+                label18.Visible = false;
+            }
+        }
+
+        private void txtCpf_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCpf.Text == "")
+            {
+                label19.Visible = true;
+            }
+            else
+            {
+                label19.Visible = false;
+            }
+        }
+
+        private void txtN_TextChanged(object sender, EventArgs e)
+        {
+            if (txtN.Text == "")
+            {
+                label21.Visible = true;
+            }
+            else
+            {
+                label21.Visible = false;
+            }
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBairro.Text == "")
+            {
+                label22.Visible = true;
+            }
+            else
+            {
+                label22.Visible = false;
+            }
+        }
     }
 }

@@ -48,6 +48,7 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(250, 32);
             this.txtusuario.TabIndex = 0;
+            this.txtusuario.TextChanged += new System.EventHandler(this.txtusuario_TextChanged);
             // 
             // txtsenha
             // 
@@ -58,6 +59,7 @@
             this.txtsenha.PasswordChar = '*';
             this.txtsenha.Size = new System.Drawing.Size(250, 34);
             this.txtsenha.TabIndex = 1;
+            this.txtsenha.TextChanged += new System.EventHandler(this.txtsenha_TextChanged);
             // 
             // tileControl1
             // 

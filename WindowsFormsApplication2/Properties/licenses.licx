@@ -1,9 +1,13 @@
 DevExpress.Patch.InMemoryPatch, DevExpress.Patch.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7fc7bfca2443de66
+Telerik.WinControls.UI.RadCalendar, Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
 DevExpress.XtraCharts.ChartControl, DevExpress.XtraCharts.v16.2.UI, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.WinControls.Themes.MaterialTheme, Telerik.WinControls.Themes.Material, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraPrinting.Preview.DocumentViewer, DevExpress.XtraPrinting.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraDiagram.DiagramControl, DevExpress.XtraDiagram.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.Repository.RepositoryItemProgressBar, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraBars.Ribbon.RibbonControl, DevExpress.XtraBars.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.DashboardWin.DashboardDesigner, DevExpress.Dashboard.v16.2.Win, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.XtraEditors.TileControl, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.XtraEditors.ButtonEdit, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-DevExpress.XtraEditors.Repository.RepositoryItemProgressBar, DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-DevExpress.DashboardWin.DashboardDesigner, DevExpress.Dashboard.v16.2.Win, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-DevExpress.XtraPrinting.Preview.DocumentViewer, DevExpress.XtraPrinting.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-DevExpress.XtraBars.Ribbon.RibbonControl, DevExpress.XtraBars.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a

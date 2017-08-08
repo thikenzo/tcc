@@ -22,6 +22,10 @@ namespace WindowsFormsApplication2
             InitializeComponent();
             this.Height = 630; //altura
             this.Width = 930; //largura
+
+
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.UserSkins.BonusSkins.Register();
         }
 
 
@@ -52,7 +56,7 @@ namespace WindowsFormsApplication2
             
             this.Hide();
 
-            Maincs ss = new Maincs();
+            MenuADM ss = new MenuADM();
             ss.Show();
         }
 
@@ -180,7 +184,7 @@ namespace WindowsFormsApplication2
         {
             
             {
-                if (dataGridView1.RowCount == 0)
+                if (dataGridView1.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Não se pode excluir, nenhum nome selecionado!");
                 }
@@ -235,6 +239,11 @@ namespace WindowsFormsApplication2
 
         private void nomepesquisa_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
         }
     }
 }

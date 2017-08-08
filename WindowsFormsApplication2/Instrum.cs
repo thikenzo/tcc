@@ -13,7 +13,7 @@ namespace WindowsFormsApplication2
         public String Classificacao { get; set; }
         public String Tipo { get; set; }
         public String valor { get; set; }
-
+        public String Situacao { get; set; }
 
 
 
@@ -21,7 +21,7 @@ namespace WindowsFormsApplication2
 
         public Instrum() { }
 
-        public Instrum(Int64 pId, String pNomeEquip, String pClassificacao, String pTipo, String pValor)
+        public Instrum(Int64 pId, String pNomeEquip, String pClassificacao, String pTipo, String pValor, String pSituacao)
 
 
         {
@@ -30,7 +30,7 @@ namespace WindowsFormsApplication2
             this.Classificacao = pClassificacao;
             this.Tipo = pTipo;
             this.valor = pValor;
-            
+            this.Situacao = pSituacao;
 
         }
     }

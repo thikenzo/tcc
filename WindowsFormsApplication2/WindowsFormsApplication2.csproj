@@ -41,6 +41,7 @@
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v16.2.UI, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Diagram.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Map.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -56,6 +57,7 @@
     <Reference Include="DevExpress.XtraCharts.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v16.2.UI, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v16.2.Wizard, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDiagram.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGauges.v16.2.Presets, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -69,14 +71,24 @@
     <Reference Include="DevExpress.XtraReports.v16.2.Extensions, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v16.2.Extensions, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FarsiLibrary.Win">
+      <HintPath>..\flatcalendar\Calendar\FarsiLibrary.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,6 +99,11 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.Themes.Material, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2017.2.502.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agend.cs" />
@@ -95,6 +112,12 @@
     </Compile>
     <Compile Include="Agenda.Designer.cs">
       <DependentUpon>Agenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agenda1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda1.Designer.cs">
+      <DependentUpon>Agenda1.cs</DependentUpon>
     </Compile>
     <Compile Include="Agendamento.cs" />
     <Compile Include="AgendaServico.cs">
@@ -109,15 +132,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bancoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bancoDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bancoDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bancoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bancoDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cad.Designer.cs">
       <DependentUpon>Cad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cad1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cad1.Designer.cs">
+      <DependentUpon>Cad1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeInBDcs.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteFunc.cs" />
     <Compile Include="conectcli.cs" />
+    <Compile Include="Connection.cs" />
     <Compile Include="ConSala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +171,23 @@
     <Compile Include="Consulta.Designer.cs">
       <DependentUpon>Consulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consulta1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta1.Designer.cs">
+      <DependentUpon>Consulta1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaEquip.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaEquip.Designer.cs">
       <DependentUpon>ConsultaEquip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaEquip1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaEquip1.Designer.cs">
+      <DependentUpon>ConsultaEquip1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -182,6 +235,18 @@
     <Compile Include="MenuADM.Designer.cs">
       <DependentUpon>MenuADM.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuFUNC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuFUNC.Designer.cs">
+      <DependentUpon>MenuFUNC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MudarLogSen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MudarLogSen.Designer.cs">
+      <DependentUpon>MudarLogSen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,17 +260,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Relat.cs" />
+    <Compile Include="RelatFunc.cs" />
     <Compile Include="Relatorio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Relatorio.Designer.cs">
       <DependentUpon>Relatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio1.Designer.cs">
+      <DependentUpon>Relatorio1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportNOAR.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportNOAR.Designer.cs">
       <DependentUpon>ReportNOAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNOAR1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportNOAR1.Designer.cs">
+      <DependentUpon>ReportNOAR1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNOAR2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportNOAR2.Designer.cs">
+      <DependentUpon>ReportNOAR2.cs</DependentUpon>
     </Compile>
     <Compile Include="Sala.cs" />
     <Compile Include="SalaCad.cs">
@@ -220,11 +305,17 @@
     <EmbeddedResource Include="Agenda.resx">
       <DependentUpon>Agenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Agenda1.resx">
+      <DependentUpon>Agenda1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgendaServico.resx">
       <DependentUpon>AgendaServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cad.resx">
       <DependentUpon>Cad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cad1.resx">
+      <DependentUpon>Cad1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConSala.resx">
       <DependentUpon>ConSala.cs</DependentUpon>
@@ -232,8 +323,14 @@
     <EmbeddedResource Include="Consulta.resx">
       <DependentUpon>Consulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consulta1.resx">
+      <DependentUpon>Consulta1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaEquip.resx">
       <DependentUpon>ConsultaEquip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaEquip1.resx">
+      <DependentUpon>ConsultaEquip1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -256,6 +353,12 @@
     <EmbeddedResource Include="MenuADM.resx">
       <DependentUpon>MenuADM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuFUNC.resx">
+      <DependentUpon>MenuFUNC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MudarLogSen.resx">
+      <DependentUpon>MudarLogSen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pagamento.resx">
       <DependentUpon>Pagamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,8 +371,17 @@
     <EmbeddedResource Include="Relatorio.resx">
       <DependentUpon>Relatorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio1.resx">
+      <DependentUpon>Relatorio1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportNOAR.resx">
       <DependentUpon>ReportNOAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNOAR1.resx">
+      <DependentUpon>ReportNOAR1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportNOAR2.resx">
+      <DependentUpon>ReportNOAR2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaCad.resx">
       <DependentUpon>SalaCad.cs</DependentUpon>
@@ -284,6 +396,28 @@
     </None>
     <None Include="bancoDataSet.xss">
       <DependentUpon>bancoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bancoDataSet11.xsc">
+      <DependentUpon>bancoDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="bancoDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bancoDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bancoDataSet11.xss">
+      <DependentUpon>bancoDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="bancoDataSet2.xsc">
+      <DependentUpon>bancoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="bancoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bancoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bancoDataSet2.xss">
+      <DependentUpon>bancoDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -345,6 +479,24 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

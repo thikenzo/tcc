@@ -59,16 +59,44 @@ namespace WindowsFormsApplication2
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (salatxt.Text == "" || identificacaotxt.Text == "" || tamanho.Text == "" || valortxt.Text == "" || situacao == "" || radioAtivo.Checked == false && radioInativo.Checked  == false)
+            if (salatxt.Text == "" || identificacaotxt.Text == "" || tamanho1.Text == "" || valortxt.Text == "" || situacao == "" || radioAtivo.Checked == false && radioInativo.Checked  == false)
             {
-                MessageBox.Show("Deve preencher todos os campos!!");
+                //MessageBox.Show("Deve preencher todos os campos!!");
+                label7.Visible = true;
+
+                if(salatxt.Text =="")
+                {
+                    label8.Visible = true;
+                }
+
+                if (identificacaotxt.Text == "")
+                {
+                    label9.Visible = true;
+                }
+
+                if (tamanho1.Text == "")
+                {
+                    label10.Visible = true;
+                }
+
+                if (valortxt.Text == "")
+                {
+                    label11.Visible = true;
+                }
+
+                if (radioInativo.Checked == false && radioAtivo.Checked == false)
+                {
+                    label12.Visible = true;
+                }
+
+
             }
             else
             {
                 Sala Instrum = new Sala();
                 Instrum.NomeSala = salatxt.Text;
                 Instrum.Identificacao = identificacaotxt.Text;
-                Instrum.Tamanho = tamanho.Text;
+                Instrum.Tamanho = tamanho1.Text;
                 Instrum.Valor = valortxt.Text;
                 Instrum.Situacao = situacao;
 
@@ -80,7 +108,7 @@ namespace WindowsFormsApplication2
                 {
                     MessageBox.Show("Sala Cadastrado, OK! ");
                     limpar();
-                    tamanho.Text = "";
+                    tamanho1.Text = "";
                     situacao = "";
                     radioAtivo.Checked = false;
                     radioInativo.Checked = false;
@@ -103,7 +131,7 @@ namespace WindowsFormsApplication2
             pSala.Id = Id;
             pSala.NomeSala = salatxt.Text;
             pSala.Identificacao = identificacaotxt.Text;
-            pSala.Tamanho = tamanho.Text;
+            pSala.Tamanho = tamanho1.Text;
             pSala.Valor = valortxt.Text;
             pSala.Situacao = situacao;
             
@@ -139,6 +167,13 @@ namespace WindowsFormsApplication2
             radioAtivo.Checked = false;
             radioInativo.Checked = false;
 
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
+            label11.Visible = false;
+            label12.Visible = false;
+
         }
 
 
@@ -153,16 +188,66 @@ namespace WindowsFormsApplication2
         private void radioAtivo_CheckedChanged(object sender, EventArgs e)
         {
             situacao = "ATIVO";
+            label12.Visible = false;
         }
 
         private void radioInativo_CheckedChanged(object sender, EventArgs e)
         {
             situacao = "INATIVO";
+            label12.Visible = false;
         }
 
         private void tamanho_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void salatxt_TextChanged(object sender, EventArgs e)
+        {
+            if (salatxt.Text == "")
+            {
+                label8.Visible = true;
+            }
+            else
+            {
+                label8.Visible = false;
+            }
+        }
+
+        private void identificacaotxt_TextChanged(object sender, EventArgs e)
+        {
+            if (identificacaotxt.Text == "")
+            {
+                label9.Visible = true;
+            }
+            else
+            {
+                label9.Visible = false;
+            }
+        }
+
+        private void tamanho_TextChanged(object sender, EventArgs e)
+        {
+            if (tamanho1.Text == "")
+            {
+                label10.Visible = true;
+            }
+            else
+            {
+                label10.Visible = false;
+            }
+        }
+
+        private void valortxt_TextChanged(object sender, EventArgs e)
+        {
+            if (valortxt.Text == "")
+            {
+                label11.Visible = true;
+            }
+            else
+            {
+                label11.Visible = false;
+            }
         }
     }
 }

@@ -1,0 +1,1 @@
+SELECT NomeSala FROM SalaCad

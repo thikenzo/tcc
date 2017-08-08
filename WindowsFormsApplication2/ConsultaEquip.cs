@@ -20,11 +20,12 @@ namespace WindowsFormsApplication2
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.UserSkins.BonusSkins.Register();
 
-            this.Height = 460; //altura
-            this.Width = 858; //largura
+            this.Height = 520; //altura
+            this.Width = 700; //largura
+
         }
 
-        
+
         public Instrum InstrumSelecionado { get; set; }
 
 
@@ -39,49 +40,52 @@ namespace WindowsFormsApplication2
                 MessageBox.Show("Nenhum Nome encontrado!! ", "ERRO");
 
             }
+
+
+
+
+            if (dataGridView2.SelectedRows == null)
+            {
+                MessageBox.Show("Não se pode excluir nenhum equipamento selecionado!");
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView2.SelectedRows.Count == 0)
             {
-                if (dataGridView2.RowCount == 0)
+                MessageBox.Show("Não se pode excluir nenhum equipamento selecionado!");
+            }
+            else
+            {
+
+                Int64 Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
+
+                InstrumSelecionado = InstrumFunc.ObterEquip(Id);
+
+                if (MessageBox.Show("Tem certeza que deseja exluir o Equipamento??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Não se pode excluir nenhum equipamento selecionado!");
-                }
-                else
-                
+
+                    int resultado = InstrumFunc.Excluir(InstrumSelecionado.Id);
+
+                    if (resultado > 0)
                     {
-                        Int64 Id = Convert.ToInt64(dataGridView2.CurrentRow.Cells[0].Value);
 
-                        InstrumSelecionado = InstrumFunc.ObterEquip(Id);
-                    
-                        if (MessageBox.Show("Tem certeza que deseja exluir o Equipamento??", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-
-                            int resultado = InstrumFunc.Excluir(InstrumSelecionado.Id);
-
-                            if (resultado > 0)
-                            {
-
-                                MessageBox.Show("Equipamento excluído com sucesso!", "Equipamento Excluído", MessageBoxButtons.OK);
-
-                            }
-
-                            else
-                            {
-                                MessageBox.Show("Não se pode excluir o equipamento, ocorreu um erro!!");
-                            }
-
-                        }
-                        else
-                            MessageBox.Show("Você cancelou a exclusão, equipamento não excluído!", "Cancelado");
+                        MessageBox.Show("Equipamento excluído com sucesso!", "Equipamento Excluído", MessageBoxButtons.OK);
 
                     }
 
+                    else
+                    {
+                        MessageBox.Show("Não se pode excluir o equipamento, ocorreu um erro!!");
+                    }
+
                 }
-            
-    }
+                else
+                    MessageBox.Show("Você cancelou a exclusão, equipamento não excluído!", "Cancelado");
+            }
+        }
+    
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -97,6 +101,7 @@ namespace WindowsFormsApplication2
                 InstruCad.classificacao = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
                 InstruCad.combotipo.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();
                 InstruCad.txtValor.Text = this.dataGridView2.CurrentRow.Cells[4].Value.ToString();
+                InstruCad.situacao = this.dataGridView2.CurrentRow.Cells[5].Value.ToString();
                 InstruCad.Owner = this;
                 InstruCad.btnAdicionar.Enabled = false;
                 InstruCad.btnEditar.Enabled = true;
@@ -131,7 +136,7 @@ namespace WindowsFormsApplication2
 
         private void ConsultaEquip_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -158,6 +163,11 @@ namespace WindowsFormsApplication2
 
 
             InstruCad.ShowDialog();
+        }
+
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView2.ClearSelection();
         }
     }
 }

@@ -13,6 +13,16 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraBars;
 
 
+
+using System.Collections;
+using DevExpress.XtraReports.UI;
+using DevExpress.LookAndFeel;
+using DevExpress.XtraReports.UserDesigner;
+
+
+
+
+
 //https://www.youtube.com/watch?v=D2m0OGFyufU
 //https://www.youtube.com/watch?v=D2m0OGFyufU
 
@@ -21,8 +31,6 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : XtraForm
     {
-
-
 
 
         public static string Acesso;
@@ -50,67 +58,88 @@ namespace WindowsFormsApplication2
 
         public void LogarF()
         {
-
-
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
-            // funciona - SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='"+ txtusuario.Text + "' and Password = '" +txtsenha.Text+ "' and NivelAcesso = @NivelAcesso ", con);
-
-            SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso ", con);
-
-            cmd.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
-            cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
-            cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Administrador";
-            //cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Administrador";
-            con.Open();
-
-            SqlDataReader le = null;
-            le = cmd.ExecuteReader();
-            if (le.Read())
+            if (txtusuario.Text.Any(ch => char.IsUpper(ch)) && txtusuario.Text.Any(ch => char.IsLower(ch) && txtsenha.Text.Any(ch1 => char.IsUpper(ch1)) && txtsenha.Text.Any(ch1 => char.IsLower(ch1))) || txtusuario.Text == "NOAR" && txtsenha.Text == "NOAR")
             {
-                // SqlCommand cmd1 = new SqlCommand("Select * From CAD where NivelAcesso = 'Administrador'", con);
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\THIAGO KOSHIBA\DESKTOP\WINDOWSFORMSAPPLICATION2\BANCO.MDF;Integrated Security=True;Connect Timeout=30");
+                SqlCommand cmd = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso ", con);
 
-                this.Hide();
-                MenuADM ss = new MenuADM();
-                ss.Show();
-                le.Close();
-            }
-            else
-            {
-                le.Close();
-                SqlCommand cmd111 = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso", con);
-                cmd111.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
-                cmd111.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
-                cmd111.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Usuário";
+                cmd.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
+                cmd.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
+                cmd.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Administrador";
+                con.Open();
 
-                le = cmd111.ExecuteReader();
-
+                SqlDataReader le = null;
+                le = cmd.ExecuteReader();
                 if (le.Read())
                 {
-                    this.Hide();
-                    Maincs ss1 = new Maincs();
-                    ss1.Show();
-                    le.Close();
+
+                    if (txtusuario.Text == "NOAR" && txtsenha.Text == "NOAR")
+                    {
+                        this.Hide();
+                        MudarLogSen ss1 = new MudarLogSen();
+                        ss1.Show();
+                        le.Close();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        MenuADM ss = new MenuADM();
+                        ss.Show();
+                        le.Close();
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Usuário e Senha incorretos!", "ERRO AO LOGAR");
+                    le.Close();
+                    SqlCommand cmd111 = new SqlCommand("Select * From CAD where LOGIN = @Login and Senha = @Senha and NivelAcesso = @NivelAcesso", con);
+                    cmd111.Parameters.Add("@Login", SqlDbType.VarChar).Value = txtusuario.Text;
+                    cmd111.Parameters.Add("@Senha", SqlDbType.VarChar).Value = txtsenha.Text;
+                    cmd111.Parameters.Add("@NivelAcesso", SqlDbType.VarChar).Value = "Usuário";
+
+                    le = cmd111.ExecuteReader();
+
+                    if (le.Read())
+                    {
+                        if (txtusuario.Text == "NOAR" && txtsenha.Text == "NOAR")
+                        {
+                            this.Hide();
+                            MudarLogSen ss1 = new MudarLogSen();
+                            ss1.Show();
+                            le.Close();
+                        }
+                        else
+                        {
+                            this.Hide();
+                            MenuFUNC ss1 = new MenuFUNC();
+                            ss1.Show();
+                            le.Close();
+                        }
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Usuário ou Senha incorretos!", "ERRO AO LOGAR");
+                    }
+
                 }
-            
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou Senha incorretos!", "ERRO AO LOGAR");
             }
         }
-        
-                  
 
 
 
-    private void logar_Click_1(object sender, EventArgs e)
+        private void logar_Click_1(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(txtsenha.Text))
             {
                 if (string.IsNullOrEmpty(txtusuario.Text))
                 {
                     txtusuario.Text = "";
-                    MessageBox.Show("Campo Login e Senha em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                    MessageBox.Show("Campo Login ou Senha em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
                     txtusuario.Focus();
 
                     return;
@@ -125,22 +154,23 @@ namespace WindowsFormsApplication2
             {
                 //LogarF();
             }
-                
+
             /////////////////////////////
             if (string.IsNullOrEmpty(txtusuario.Text))
-                {
-                    txtusuario.Text = "";
-                    MessageBox.Show("Campo Login em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
-                    txtusuario.Focus();
+            {
+                txtusuario.Text = "";
+                MessageBox.Show("Campo Login em branco, OBRIGATÓRIO!!", "ERRO AO LOGAR");
+                txtusuario.Focus();
 
-                    return;
-                }
-                else
-                {
-                    LogarF();
-                }
+                return;
             }
-        
+            else
+            {
+
+                LogarF();
+
+            }
+        }
 
 
 
@@ -148,14 +178,15 @@ namespace WindowsFormsApplication2
         private void nivelacesso_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-        
-    
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.LookAndFeel.LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
         }
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -183,16 +214,29 @@ namespace WindowsFormsApplication2
         private void button4_Click(object sender, EventArgs e)
         {
 
+
             this.Hide();
-            AgendaServico ss = new AgendaServico();
-            ss.Show();
+            MudarLogSen aqa = new MudarLogSen();
+            aqa.Show();
+
         }
 
         private void tileControl1_Click(object sender, EventArgs e)
         {
-            
         }
 
+        private void txtusuario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtusuario.Text.Any(ch => char.IsUpper(ch)) && txtusuario.Text.Any(ch => char.IsLower(ch)))
+            {
+            }
+        }
+
+        private void txtsenha_TextChanged(object sender, EventArgs e)
+        {
+            if (txtsenha.Text.Any(ch => char.IsUpper(ch)) && txtsenha.Text.Any(ch => char.IsLower(ch)))
+            {
+            }
+        }
     }
-    
 }
